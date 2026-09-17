@@ -1,0 +1,581 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[italian]{babel}
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX}
+\IfFontExistsTF{TeX Gyre Pagella}{\setmainfont{TeX Gyre Pagella}}{\setmainfont{DejaVu Serif}}
+\IfFontExistsTF{TeX Gyre Heros}{\setsansfont{TeX Gyre Heros}}{\setsansfont{DejaVu Sans}}
+\IfFontExistsTF{Latin Modern Mono}{\setmonofont{Latin Modern Mono}}{\setmonofont{DejaVu Sans Mono}}
+\IfFontExistsTF{TeX Gyre Schola}{\newfontfamily\handfont{TeX Gyre Schola}}{\newfontfamily\handfont{DejaVu Serif}}
+\usepackage[a4paper,margin=18mm]{geometry}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{calc,positioning,decorations.pathmorphing,arrows.meta,patterns,shapes.geometric}
+\usepackage[most]{tcolorbox}
+\usepackage{tabularx,array,booktabs,longtable}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{ragged2e}
+\usepackage{setspace}
+\usepackage{hyperref}
+\hypersetup{hidelinks,pdftitle={Notti di Yharnam - Dossier degli Handout},pdfauthor={Materiale amatoriale per uso privato}}
+
+\definecolor{ink}{HTML}{191716}
+\definecolor{blood}{HTML}{5A171B}
+\definecolor{ash}{HTML}{69635E}
+\definecolor{paper}{HTML}{F3EFE5}
+\definecolor{oldpaper}{HTML}{E8DECA}
+\definecolor{church}{HTML}{E7E4DC}
+\definecolor{blueprint}{HTML}{E8ECEB}
+\definecolor{rulegray}{HTML}{B8B0A4}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyfoot[C]{\scriptsize\color{ash}Materiale di gioco - non distribuire l'indice ai giocatori}
+
+\newcommand{\gmcode}[1]{\begin{tikzpicture}[remember picture,overlay]\node[anchor=south east,font=\tiny\sffamily,color=ash] at ($(current page.south east)+(-6mm,5mm)$) {#1};\end{tikzpicture}}
+\newcommand{\ornament}{\par\smallskip\begin{center}\begin{tikzpicture}\draw[blood,line width=.7pt] (-2.7,0)--(-.35,0);\draw[blood,line width=.7pt] (.35,0)--(2.7,0);\node[text=blood] at (0,0) {$\diamond$};\end{tikzpicture}\end{center}\smallskip}
+\newcommand{\handtitle}[2]{\begin{center}{\Large\bfseries\textsc{#1}}\\[2mm]{\small\itshape #2}\end{center}\ornament}
+\newcommand{\churchseal}{\begin{tikzpicture}[baseline=-.5ex,scale=.32]\draw[blood,line width=1pt] (0,0) circle (1);\draw[blood,line width=.8pt] (0,-.72)--(0,.75);\draw[blood,line width=.8pt] (-.55,.2)--(.55,.2);\draw[blood,line width=.6pt] (-.38,-.3)--(0,-.68)--(.38,-.3);\end{tikzpicture}}
+\newcommand{\huntermark}{\begin{tikzpicture}[baseline=-.5ex,scale=.32]\draw[ink,line width=1pt] (-.8,.8)--(0,-.8)--(.8,.8);\draw[ink,line width=1pt] (-.55,.25)--(.55,.25);\draw[ink,line width=1pt] (-.35,-.15)--(.35,-.15);\end{tikzpicture}}
+
+\newtcolorbox{gmnote}[1][]{colback=paper,colframe=blood,boxrule=.6pt,arc=0mm,title=#1,fonttitle=\bfseries\sffamily,left=3mm,right=3mm,top=2mm,bottom=2mm}
+\newtcolorbox{documentbox}[1][]{colback=oldpaper,colframe=ink,boxrule=.6pt,arc=0mm,left=7mm,right=7mm,top=7mm,bottom=7mm,#1}
+\newtcolorbox{churchbox}[1][]{colback=church,colframe=blood,boxrule=1pt,arc=0mm,left=8mm,right=8mm,top=7mm,bottom=7mm,borderline={.4pt}{2pt}{blood},#1}
+\newtcolorbox{bluebox}[1][]{colback=blueprint,colframe=ash,boxrule=.7pt,arc=0mm,left=6mm,right=6mm,top=5mm,bottom=5mm,#1}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\newcommand{\newhandout}[3]{\clearpage\thispagestyle{empty}\gmcode{#1}\handtitle{#2}{#3}}
+
+\begin{document}
+
+% ----------------------------------------------------------------
+% INDICE GM
+% ----------------------------------------------------------------
+\thispagestyle{fancy}
+\begin{center}
+{\Huge\bfseries\textsc{Dossier degli Handout}}\\[2mm]
+{\large Fate: Notti di Yharnam - Il Progetto}
+\end{center}
+\ornament
+
+\begin{gmnote}[Uso del fascicolo]
+Questa prima pagina è riservata al GM. Ogni documento successivo occupa una pagina autonoma e può essere stampato, separato e consegnato senza spiegazioni. Il codice Hxx compare soltanto in piccolo nell'angolo inferiore destro. Gli handout fondamentali non sostituiscono le informazioni automatiche previste dalla Guida del GM: le rendono tangibili e confrontabili.
+\end{gmnote}
+
+\scriptsize
+\renewcommand{\arraystretch}{1.05}
+\begin{longtable}{>{\bfseries}p{8mm}p{39mm}p{31mm}p{72mm}}
+\toprule
+ID & Documento & Nodo / consegna & Funzione investigativa \\
+\midrule
+H01 & Taccuino di Elias I & Casa Ward & Stabilisce che Elias indagava su pesi, turni e registri. \\
+H02 & Cartina annotata & Casa Ward & Offre piste simultanee: Fonderia, Archivio, Ospedale. \\
+H03 & Frammento di progetto & Studio / Officina & Collega i componenti moderni alle vecchie invenzioni di Elias. \\
+H04 & Registro della Fonderia & Fonderia & Mostra incongruenze tra peso dichiarato e verificato. \\
+H05 & Ricevuta non registrata & Fonderia / magazzino & Prova l'esistenza di una cassa fuori registro diretta al Laboratorio Alchemico. \\
+H06 & Pagina dell'Archivio & Archivio Ecclesiastico & Collega ordini frammentati, Ospedale e Laboratorio; introduce il sigillo interno. \\
+H07 & Ordine interno della Chiesa & Archivio / Padre Aldren & Rivela il trasferimento riservato senza spiegare il vero Progetto. \\
+H08 & Referto medico di Elias & Ospedale Vecchio & Conferma sintomi iniziali ma lucidità conservata. \\
+H09 & Nota privata del dottor Sile & Ospedale & Mostra paura, denuncia e organismo incompleto. \\
+H10 & Avviso di caccia & Rifugio dei Cacciatori & Spiega perché Elias è considerato preda intelligente e pericolosa. \\
+H11 & Annotazioni di Miriam Voss & Biblioteca Proibita & Fornisce il vocabolario dell'imitazione del cordone e dell'“ascolto”. \\
+H12 & Taccuino di Elias II & Biblioteca / Laboratorio & Dimostra che il Laboratorio Alchemico è un transito e che Elias è sceso sotto terra. \\
+H13 & Inventario alchemico & Laboratorio Alchemico & Fa emergere materiali assenti, condotte e trasferimenti sotterranei. \\
+H14 & Schema delle condotte & Laboratorio / fogne & Permette ai giocatori di pianificare l'accesso al nodo finale. \\
+H15 & Tavola dell'apparato & Il Progetto & Mostra l'uso distorto dei progetti di Elias nel supporto biologico. \\
+H16 & Protocollo sperimentale & Il Progetto & Rivela finalità, tessuti non consensuali e rischio di attivazione. \\
+H17 & Ultimi appunti di Elias & Finale & Chiarisce il sabotaggio e lascia aperta la decisione morale. \\
+\bottomrule
+\end{longtable}
+\normalsize
+
+% ----------------------------------------------------------------
+% H01
+% ----------------------------------------------------------------
+\newhandout{H01}{Appunti sparsi}{Foglio strappato da un taccuino da lavoro}
+\begin{documentbox}
+\handfont
+\large
+\textbf{Turno della notte - terza campana}
+
+Cassa 17: dichiarati \textbf{412 libbre}.\\
+Bilancia orientale: \textbf{391}.\\
+Bilancia piccola: \textbf{391 e un quarto}.
+
+Non è un errore. Due strumenti non sbagliano nello stesso modo.
+
+\medskip
+Valvola di compensazione, seconda serie. Mia.\\
+O una copia abbastanza buona da esserlo.
+
+\medskip
+Perché proprio il turno di notte?\\
+Perché il registro viene ricopiato dopo la chiusura?\\
+Chi decide quali casse non devono arrivare?
+
+\vfill
+\hfill\textit{Controllare l'Archivio. Non parlarne con Marta finché non so.}
+\end{documentbox}
+
+% ----------------------------------------------------------------
+% H02
+% ----------------------------------------------------------------
+\newhandout{H02}{Pianta piegata della città}{Annotazioni a grafite attribuite a Elias Ward}
+\begin{bluebox}
+\centering
+\begin{tikzpicture}[x=1cm,y=1cm,font=\small]
+\draw[ash,line width=.4pt] (-7,-5) rectangle (7,5);
+\draw[ash!60,line width=.4pt] plot[smooth cycle,tension=.6] coordinates {(-6,1)(-5,4)(-1,4.5)(2.5,4)(5.8,2)(6,-2)(3,-4.3)(-2,-4.5)(-5.5,-2.5)};
+\draw[ash!55,line width=.5pt] (-5.5,-1)--(-3,1)--(-1,2.5)--(2,2)--(5,3);
+\draw[ash!55,line width=.5pt] (-4,3)--(-2,1)--(0,-1)--(3,-2)--(5,-1);
+\draw[ash!55,line width=.5pt] (-5,-3)--(-2,-2)--(0,0)--(2,2.5)--(4,4);
+\draw[ash!55,line width=.5pt] (-1,4)--(-.5,1)--(-1,-2)--(0,-4);
+
+\node[draw=ink,fill=paper,inner sep=2pt] (f) at (-4.6,-1.8) {Fonderia};
+\node[draw=ink,fill=paper,inner sep=2pt] (a) at (1.2,2.9) {Archivio};
+\node[draw=ink,fill=paper,inner sep=2pt] (o) at (3.9,.1) {Ospedale};
+\node[draw=ink,fill=paper,inner sep=2pt] (l) at (1.8,-2.8) {Lab. Alchemico};
+\node[draw=ash,fill=paper,inner sep=2pt] at (-1.5,1.0) {Mercato};
+\node[draw=ash,fill=paper,inner sep=2pt] at (-.7,-3.5) {Fogne};
+\node[draw=ash,fill=paper,inner sep=2pt] at (4.2,3.7) {Cattedrale};
+
+\draw[blood,line width=1.1pt] (f) circle (.95);
+\draw[blood,line width=1.1pt] (a) circle (.85);
+\draw[blood,line width=1.1pt] (o) circle (.85);
+\draw[blood,dashed,line width=.8pt,->] (f)--(l);
+\draw[blood,dashed,line width=.8pt,->] (l)--(o);
+\draw[blood,dotted,line width=.8pt] (o)--(a);
+\node[rotate=-8,text=blood,font=\itshape] at (-2.8,-3.3) {non segue la strada};
+\node[rotate=6,text=blood,font=\itshape] at (3.5,-1.5) {sotto?};
+\node[rotate=-5,text=ink,font=\itshape] at (-2.2,3.5) {registro ricopiato qui};
+\end{tikzpicture}
+\end{bluebox}
+
+% ----------------------------------------------------------------
+% H03
+% ----------------------------------------------------------------
+\newhandout{H03}{Regolatore di pressione - Serie II}{Frammento recuperato dal vecchio studio di Elias}
+\begin{bluebox}
+\begin{tikzpicture}[x=1cm,y=1cm,font=\footnotesize]
+\draw[ink,line width=.7pt] (-5,0) rectangle (-2,2.2);
+\draw[ink,line width=.7pt] (-2,1.1)--(0,1.1);
+\draw[ink,line width=.7pt] (0,.3) rectangle (2.3,1.9);
+\draw[ink,line width=.7pt] (2.3,1.1)--(4.8,1.1);
+\draw[ink,line width=.7pt] (-3.5,0)--(-3.5,-2.1);
+\draw[ink,line width=.7pt] (-4.4,-1.3) rectangle (-2.6,-2.1);
+\draw[ink,line width=.7pt] (.4,.3)--(.4,-1.7);
+\draw[ink,line width=.7pt] (.4,-1.7)--(3.5,-1.7);
+\draw[ink,line width=.7pt] (3.5,-2.2) rectangle (4.8,-1.2);
+\draw[ink,->] (-5.8,1.1)--(-5,1.1);
+\draw[ink,->] (4.8,1.1)--(5.7,1.1);
+\draw[ink,decorate,decoration={zigzag,segment length=4pt,amplitude=2pt}] (-1.5,.5)--(-.5,1.7);
+\node at (-3.5,1.1) {camera primaria};
+\node at (1.15,1.1) {compensatore};
+\node at (-3.5,-1.65) {scarico};
+\node at (4.15,-1.7) {ritorno};
+\draw[ash,<->] (-5,2.7)--(-2,2.7) node[midway,fill=blueprint] {18 pollici};
+\draw[ash,<->] (0,2.4)--(2.3,2.4) node[midway,fill=blueprint] {11};
+\node[align=left,anchor=west] at (-5,-3) {\textit{Nota originaria:} progettato per mantenere stabile\\la pressione durante trasfusioni prolungate.};
+\node[align=left,anchor=west,text=blood] at (-5,-4) {\textit{Annotazione successiva:} se collegato in serie,\\può sostenere un carico molto più grande di un corpo umano.};
+\end{tikzpicture}
+\vfill
+\small\itshape Firma parziale: E. W---. Il margine destro è annerito dal fuoco.
+\end{bluebox}
+
+% ----------------------------------------------------------------
+% H04
+% ----------------------------------------------------------------
+\newhandout{H04}{Fonderia Municipale}{Registro di pesatura - turno notturno}
+\begin{documentbox}
+\sffamily
+\begin{center}\Large\bfseries REGISTRO DI PESATURA E USCITA\end{center}
+\vspace{2mm}
+\renewcommand{\arraystretch}{1.45}
+\begin{tabularx}{\linewidth}{c c c c X}
+\toprule
+Data & Cassa & Dichiarato & Verificato & Destinazione \\
+\midrule
+12 & 14 & 286 lb & 286 lb & Ospedale Vecchio \\
+12 & 15 & 174 lb & 175 lb & Laboratorio Alchemico \\
+13 & 16 & 322 lb & 322 lb & Ospedale Vecchio \\
+13 & 17 & 412 lb & \textbf{391 lb} & \textit{non indicata} \\
+14 & 18 & 208 lb & 208 lb & Laboratorio Alchemico \\
+14 & 19 & 146 lb & 146 lb & Ospedale Vecchio \\
+15 & 20 & 297 lb & 296 lb & Laboratorio Alchemico \\
+\bottomrule
+\end{tabularx}
+
+\vspace{7mm}
+\textbf{Osservazioni del turno}
+
+Cassa 17 sigillata prima della verifica. Ordine di non aprire. La differenza è stata confermata da due bilance. Il sigillo non appartiene all'amministrazione municipale.
+
+\vfill
+\begin{tabularx}{\linewidth}{X X}
+Caporeparto: \textit{Marta Ghal} & Verificatore: \textit{E. Ward}\\
+\end{tabularx}
+\end{documentbox}
+
+% ----------------------------------------------------------------
+% H05
+% ----------------------------------------------------------------
+\newhandout{H05}{Ricevuta di trasferimento}{Copia carbone priva di registrazione ufficiale}
+\begin{churchbox}
+\begin{center}
+\churchseal\quad {\Large\bfseries SERVIZIO RISERVATO DI TRASPORTO}\quad\churchseal
+\end{center}
+\ornament
+\begin{tabularx}{\linewidth}{>{\bfseries}p{42mm}X}
+Numero collo & 17-B \\
+Origine & Fonderia Municipale, cancello orientale \\
+Destinazione dichiarata & Laboratorio Alchemico \\
+Destinazione effettiva & \rule{70mm}{.4pt} \\
+Peso accettato & 391 libbre e un quarto \\
+Contenuto & Camera di compensazione, vetriatura, minuteria d'argento \\
+Consegna & Dopo la terza campana; ingresso inferiore \\
+Autorizzazione & Sigillo del \textit{Servizio dell'Ascolto} \\
+\end{tabularx}
+
+\vspace{8mm}
+\textit{Nota a margine, altra mano:} «Non portare nell'ala pubblica. La pressione deve restare costante durante la discesa.»
+
+\vfill
+\hfill Firma del vetturale: \textit{T. Harrow}
+\end{churchbox}
+
+% ----------------------------------------------------------------
+% H06
+% ----------------------------------------------------------------
+\newhandout{H06}{Archivio Ecclesiastico}{Pagina 44 - commesse straordinarie}
+\begin{churchbox}
+\begin{center}{\large\bfseries CHIESA DELLA CURA - REGISTRO DELLE COMMESSE}\end{center}
+\small
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\linewidth}{c X X c}
+\toprule
+Rif. & Materiale & Destinatario ufficiale & Sigillo \\
+\midrule
+44-11 & Tubazioni di rame, giunti sterili & Ospedale Vecchio & Cappellania \\
+44-12 & Vetriatura spessa, supporti molleggiati & Laboratorio Alchemico & \churchseal \\
+44-13 & Tessuti di sutura, sali conservanti & Ospedale Vecchio & Infermeria \\
+44-14 & Regolatori di pressione, serie II & Laboratorio Alchemico & \textbf{\churchseal\,\churchseal} \\
+44-15 & Lastre d'argento e fili sottili & \textit{voce raschiata} & \textbf{\churchseal\,\churchseal} \\
+44-16 & Carbone purificato, campane minute & Torre Astronomica & Accademia \\
+\bottomrule
+\end{tabularx}
+
+\vspace{5mm}
+Le voci con doppio sigillo sono sottratte alla consultazione ordinaria. I documenti accessori devono essere trasferiti all'ala inferiore dell'Ospedale e distrutti dopo la verifica.
+
+\vfill
+\textit{In matita, nel margine:} «Il sigillo non compare nei registri degli ordini. Chi lo riconosce?»
+\end{churchbox}
+
+% ----------------------------------------------------------------
+% H07
+% ----------------------------------------------------------------
+\newhandout{H07}{Ordine di servizio interno}{Copia incompleta, contrassegnata “non archiviare”}
+\begin{churchbox}
+\begin{center}
+\churchseal\quad {\Large\bfseries AD USO DEL CLERO AUTORIZZATO}\quad\churchseal
+\end{center}
+\vspace{5mm}
+Ai responsabili dell'Ospedale Vecchio, del Laboratorio Alchemico e dell'Archivio:
+
+Le apparecchiature comprese nelle commesse 44-12, 44-14 e 44-15 dovranno essere trasferite attraverso i passaggi di servizio senza contatto con il personale ordinario. Ogni richiesta di chiarimento sarà ricondotta al programma di miglioramento emoterapico.
+
+Il soggetto maschile identificato come \textbf{Elias Ward}, già ingegnere e ora operaio municipale, ha posto domande relative alle consegne. Non deve essere arrestato pubblicamente. Qualora si presenti in una struttura della Chiesa, trattenerlo con cortesia e informare Padre Aldren Vale.
+
+Le sue carte devono essere recuperate integre.
+
+\vspace{8mm}
+\textit{La presente disposizione non costituisce ammissione dell'esistenza di alcun programma ulteriore.}
+
+\vfill
+\hfill Per ordine del Servizio dell'Ascolto
+\end{churchbox}
+
+% ----------------------------------------------------------------
+% H08
+% ----------------------------------------------------------------
+\newhandout{H08}{Ospedale Vecchio}{Referto di visita non protocollato}
+\begin{documentbox}
+\sffamily
+\begin{center}{\Large\bfseries SCHEDA DI OSSERVAZIONE CLINICA}\end{center}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{>{\bfseries}p{38mm}X}
+Paziente & Elias Ward, anni 42 circa \\
+Professione & Operaio di fonderia; precedenti mansioni tecniche \\
+Motivo della visita & Insonnia, irritabilità, ipersensibilità olfattiva, cefalea \\
+Temperatura & Elevata ma stabile \\
+Pupille & Reattive; lieve dilatazione \\
+Linguaggio & Coerente, rapido, ossessivamente preciso \\
+Memoria & Integra \\
+Segni bestiali & Nessuna alterazione ossea; unghie ispessite; risposta aggressiva a odore di sangue \\
+\end{tabularx}
+
+\vspace{5mm}
+\textbf{Osservazioni:} il paziente comprende pienamente il proprio stato e teme una progressione. Ha rifiutato emoterapia aggiuntiva. Ha chiesto se «una macchina possa trasmettere una febbre senza toccare il malato».
+
+\textbf{Valutazione:} non classificabile come bestia al momento della visita. Sorveglianza consigliata.
+
+\vfill
+Medico: \textit{Dott. Oren Sile}\hfill Data: nove giorni fa
+\end{documentbox}
+
+% ----------------------------------------------------------------
+% H09
+% ----------------------------------------------------------------
+\newhandout{H09}{Nota mai spedita}{Carta personale del dottor Oren Sile}
+\begin{documentbox}
+\handfont
+Caro collega,
+
+non so più a chi affidare queste righe. Ward non delirava. Parlava troppo in fretta, ma ogni numero che mi mostrò coincideva con ciò che ho visto nell'ala inferiore.
+
+Tre notti fa mi ordinarono di preparare sei pazienti per un «trasferimento terapeutico». Nessuno di loro aveva dato consenso. Nel vano di servizio vidi una vasca coperta, collegata a pompe industriali. Qualcosa al suo interno si mosse quando le campane della cappella tacquero.
+
+Ho informato Padre Aldren della visita di Ward. Credevo di proteggerlo. Da allora l'ala è chiusa e due pazienti sono scomparsi dai registri.
+
+Se Ward torna, non consegnarlo senza garanzie. Se non torna, temo di sapere dove sia andato.
+
+\vfill
+\hfill Oren
+\end{documentbox}
+
+% ----------------------------------------------------------------
+% H10
+% ----------------------------------------------------------------
+\newhandout{H10}{Avviso di caccia provvisorio}{Affisso all'interno del Rifugio dei Cacciatori}
+\begin{documentbox}
+\begin{center}
+\huntermark\quad {\Large\bfseries SOGGETTO DA INTERCETTARE}\quad\huntermark
+\end{center}
+\vspace{4mm}
+\begin{tabularx}{\linewidth}{>{\bfseries}p{38mm}X}
+Nome & Elias Ward \\
+Età & circa quarantadue anni \\
+Corporatura & media, spalle incurvate, mano destra ustionata \\
+Ultimo abbigliamento & cappotto da operaio, borsa di attrezzi, pistola corta \\
+Sintomi riferiti & insonnia, aggressività, olfatto alterato, forza intermittente \\
+Ultima traccia & area compresa tra Ospedale Vecchio, Laboratorio Alchemico e condotti fognari \\
+\end{tabularx}
+
+\vspace{5mm}
+Il soggetto conserva intelligenza eccezionale e conoscenza di macchinari, serrature, pressione e dispositivi di sicurezza. Una trasformazione completa potrebbe produrre una preda capace di preparare trappole e sabotare infrastrutture cittadine.
+
+\textbf{Ordine:} contenere se possibile. Abbattere al primo segno di perdita irreversibile del controllo. Recuperare taccuini e strumenti.
+
+\vfill
+\hfill Capitana Roland Kreiss
+\end{documentbox}
+
+% ----------------------------------------------------------------
+% H11
+% ----------------------------------------------------------------
+\newhandout{H11}{Marginalia sull'Ascolto}{Annotazioni attribuite alla dottoressa Miriam Voss}
+\begin{documentbox}
+\handfont
+\textbf{Estratto copiato da un testo pthumeriano:}
+
+\begin{quote}\itshape
+Il figlio non chiama con la bocca. Il legame ascolta per lui. Dove il legame è reciso, il sangue ricorda la strada ma non il nome.
+\end{quote}
+
+\textbf{Note:}
+
+- Il «legame» non sembra un organo nel senso comune. È funzione, passaggio, accordatura.
+
+- Un cordone autentico non può essere fabbricato. Si potrebbe però imitare temporaneamente la sua funzione con tre elementi: \textit{materia vivente}, \textit{sangue affine}, \textit{ritmo stabile}.
+
+- Le pompe della Chiesa possono fornire il ritmo. Le campane minute potrebbero sostituire ciò che i testi chiamano «voce senza suono».
+
+- L'apparato non creerebbe un essere superiore. Creerebbe qualcosa che tenta di essere udito.
+
+\vspace{6mm}
+\textit{Annotazione verticale nel margine:} «Se Ward ha riconosciuto il ritmo, allora il suo progetto è già parte dell'esperimento.»
+\end{documentbox}
+
+% ----------------------------------------------------------------
+% H12
+% ----------------------------------------------------------------
+\newhandout{H12}{Appunti sparsi - seconda pagina}{Carta macchiata d'olio e piegata più volte}
+\begin{documentbox}
+\handfont
+\large
+Il Laboratorio Alchemico non consuma abbastanza carbone per tutte le macchine che riceve.
+
+Non produce abbastanza scarico.\\
+Non conserva abbastanza personale.\\
+Non è il laboratorio.
+
+\medskip
+Le pompe lavorano a valle. Si sente il ritorno nei tubi quando l'edificio è fermo.
+
+Tre accessi possibili:
+
+1. condotto dell'Ospedale;\\
+2. ascensore merci sotto il deposito;\\
+3. scarico verso le fogne, ma il livello sale alla quarta campana.
+
+\medskip
+Ho lasciato la valvola orientale instabile. Tre colpi, pausa, due colpi: seguire la vibrazione.
+
+\vfill
+\hfill\textit{Non portare Eleanor. Non ancora.}
+\end{documentbox}
+
+% ----------------------------------------------------------------
+% H13
+% ----------------------------------------------------------------
+\newhandout{H13}{Laboratorio Alchemico}{Inventario di reparto - beni in transito}
+\begin{documentbox}
+\sffamily
+\begin{center}{\Large\bfseries INVENTARIO DELLA SETTIMANA}\end{center}
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\linewidth}{X c c X}
+\toprule
+Voce & Entrata & Presente & Note \\
+\midrule
+Regolatori Serie II & 4 & 0 & trasferiti inferiormente \\
+Vetriature grandi & 6 & 1 & cinque trasferite \\
+Fili d'argento & 18 bobine & 2 & sedici trasferite \\
+Sali conservanti & 12 casse & 3 & nove trasferite \\
+Carbone purificato & 20 sacchi & 18 & consumo ordinario \\
+Campane minute & 24 & 0 & non registrare in uscita \\
+Tessuto biologico sigillato & 7 contenitori & 0 & consegna diretta \\
+\bottomrule
+\end{tabularx}
+
+\vspace{7mm}
+\textbf{Trasferimento inferiore:} usare l'ascensore soltanto dopo la terza campana. In caso di guasto, aprire lo scarico orientale e attendere il segnale: tre colpi, pausa, due colpi.
+
+\vfill
+\textit{Correzione a matita:} «Valvola orientale sabotata. Chiamare un tecnico che non faccia domande.»
+\end{documentbox}
+
+% ----------------------------------------------------------------
+% H14
+% ----------------------------------------------------------------
+\newhandout{H14}{Schema delle condotte inferiori}{Copia tecnica non aggiornata}
+\begin{bluebox}
+\centering
+\begin{tikzpicture}[x=1cm,y=1cm,font=\footnotesize,>=Latex]
+\node[draw,align=center,minimum width=3cm,minimum height=1cm] (h) at (0,3.5) {Ospedale Vecchio\\ala inferiore};
+\node[draw,align=center,minimum width=3cm,minimum height=1cm] (a) at (-4,0) {Laboratorio\\Alchemico};
+\node[draw,align=center,minimum width=2.7cm,minimum height=1cm] (s) at (4,0) {Scarico\\fognario};
+\node[draw=blood,align=center,line width=1pt,minimum width=3.2cm,minimum height=1.2cm] (p) at (0,-3.3) {CAMERA INFERIORE\\accesso riservato};
+\node[draw,diamond,aspect=2] (v) at (0,1.3) {V-Est};
+\node[draw,circle] (lift) at (-2,-1.7) {A};
+\node[draw,circle] (gate) at (2,-1.7) {G};
+
+\draw[->,line width=1pt] (h)--(v);
+\draw[->,line width=1pt] (a)--(v);
+\draw[->,line width=1pt] (s)--(gate);
+\draw[->,line width=1pt] (v)--(p);
+\draw[->,line width=1pt] (a)--(lift)--(p);
+\draw[->,line width=1pt] (gate)--(p);
+\draw[blood,dashed,line width=1pt] (-.8,1.3) arc (180:350:.8);
+\node[text=blood,align=left] at (3.7,2.7) {V-Est instabile\\ritmo 3--2};
+\node[align=left] at (-4,-3.3) {A: ascensore merci\\chiave doppia};
+\node[align=left] at (4,-3.3) {G: grata di scarico\\alta marea alla IV campana};
+\end{tikzpicture}
+
+\vfill
+\small\textit{Sul retro, una nota di Elias:} «La camera è sotto l'Ospedale, ma il controllo arriva dal Laboratorio. Tagliare una sola linea non basta.»
+\end{bluebox}
+
+% ----------------------------------------------------------------
+% H15
+% ----------------------------------------------------------------
+\newhandout{H15}{Apparato di risonanza ematica}{Tavola tecnica affissa nella camera inferiore}
+\begin{bluebox}
+\begin{tikzpicture}[x=1cm,y=1cm,font=\footnotesize]
+\draw[ink,line width=.8pt] (-1.5,-1.4) ellipse (2.1 and 2.7);
+\draw[ink,line width=.7pt] (-1.5,1.3) ellipse (1.2 and .55);
+\draw[ink,line width=.7pt] (-1.5,-3.5) ellipse (1.5 and .4);
+\draw[ink,line width=1pt] (-4.8,-.2) rectangle (-3,1.7);
+\draw[ink,line width=1pt] (2.2,-.2) rectangle (4,1.7);
+\draw[ink,line width=.7pt] (-3,1)--(-2.7,1)--(-2.7,.3)--(-2.1,.3);
+\draw[ink,line width=.7pt] (2.1,.3)--(2.7,.3)--(2.7,1)--(2.2,1);
+\draw[ink,line width=.7pt] (-3.9,-.2)--(-3.9,-2.5)--(-2.3,-2.5);
+\draw[ink,line width=.7pt] (3.1,-.2)--(3.1,-2.5)--(-.7,-2.5);
+\draw[ink,decorate,decoration={coil,segment length=4pt,amplitude=3pt}] (-.6,.8)--(-.6,-1.7);
+\draw[ink,decorate,decoration={coil,segment length=4pt,amplitude=3pt}] (-2.4,.8)--(-2.4,-1.7);
+\node at (-3.9,.75) {pompa A};
+\node at (3.1,.75) {pompa B};
+\node[align=center] at (-1.5,-.3) {supporto\\biologico};
+\node[align=left,anchor=west] at (4.4,2.1) {1. stabilizzare pressione};
+\node[align=left,anchor=west] at (4.4,1.5) {2. introdurre sangue affine};
+\node[align=left,anchor=west] at (4.4,.9) {3. avviare campane};
+\node[align=left,anchor=west,text=blood] at (4.4,.1) {4. attendere risposta};
+\draw[ash,<->] (-1.5,2.8)--(-1.5,1.85) node[midway,right] {ritmo};
+\draw[ash,<->] (-5.4,-.2)--(-5.4,1.7) node[midway,left] {Serie II};
+\node[align=left,anchor=west] at (-5.2,-4.2) {\textit{Correzione a mano di Elias:} Le pompe non tengono in vita ciò che è nella vasca.\\Tengono aperto qualcosa attraverso di essa.};
+\end{tikzpicture}
+\end{bluebox}
+
+% ----------------------------------------------------------------
+% H16
+% ----------------------------------------------------------------
+\newhandout{H16}{Protocollo VII - Prima risonanza}{Documento del Servizio dell'Ascolto}
+\begin{churchbox}
+\begin{center}
+\churchseal\quad {\Large\bfseries PROTOCOLLO VII}\quad\churchseal\\[2mm]
+{\small Prima risonanza dell'imitazione ombelicale}
+\end{center}
+\vspace{4mm}
+\begin{enumerate}[leftmargin=7mm]
+\item Stabilizzare il supporto biologico con due pompe Serie II in opposizione.
+\item Introdurre sangue affine in tre incrementi. Il terzo deve coincidere con la settima sequenza di campane.
+\item Collegare i fili d'argento ai tessuti auricolari e spinali.
+\item Se il supporto reagisce alla presenza di persone non sottoposte a emoterapia, annotare nomi e sintomi.
+\item Non interrompere il ritmo dopo l'inizio della risposta. Una cessazione improvvisa può trasferire lo stress biologico al soggetto affine più vicino.
+\end{enumerate}
+
+\textbf{Materiale biologico autorizzato:} campioni ospedalieri 3, 4 e 6; residui pthumeriani; tessuti neonatali non reclamati.
+
+\textbf{Esito atteso:} non nascita, ma apertura temporanea di un canale percettivo.
+
+\textbf{Esito avverso:} agitazione delle bestie, perdita di coscienza, crescita incontrollata, risposta esterna non identificata.
+
+\vfill
+Autorizzazione: \textit{Madre Celestine Vey}\hfill Non duplicare
+\end{churchbox}
+
+% ----------------------------------------------------------------
+% H17
+% ----------------------------------------------------------------
+\newhandout{H17}{Ultimi appunti di Elias}{Foglio trovato nei vani tecnici del Progetto}
+\begin{documentbox}
+\handfont
+\large
+Le valvole orientali sono aperte al contrario. L'apparato può ancora funzionare, ma non a piena pressione.
+
+Ho separato il ritorno dell'Ospedale. Se attivano adesso, perderanno il supporto oppure trasferiranno il carico su chiunque abbia sangue compatibile nelle vicinanze.
+
+Non so quale delle due cose sia peggiore.
+
+\medskip
+La vasca non contiene un figlio. Contiene un tentativo di chiamarne uno.
+
+Le mie macchine danno il ritmo. Il sangue dà la strada. Qualcosa dall'altra parte deve soltanto decidere se ascoltare.
+
+\medskip
+La febbre peggiora. Ho ferito un uomo e ricordo di aver scelto di non ucciderlo. Questo significa che sono ancora io, oppure significa soltanto che la bestia sa aspettare?
+
+\medskip
+Se Eleanor è qui, ditele che non sono rimasto per la conoscenza.
+
+\textit{Ho continuato a studiare perché non sapevo come distruggerlo senza uccidere tutti quelli collegati.}
+
+\vfill
+\hfill E.
+\end{documentbox}
+
+\end{document}
