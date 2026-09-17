@@ -1,0 +1,1347 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[a4paper,margin=16mm,headheight=15pt]{geometry}
+\usepackage{fontspec}
+\usepackage[italian]{babel}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc,shapes.geometric}
+\usepackage[most]{tcolorbox}
+\usepackage{tabularx,booktabs,array,longtable,multicol}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{ragged2e}
+\usepackage{pifont}
+\usepackage{setspace}
+\usepackage{needspace}
+
+\defaultfontfeatures{Ligatures=TeX}
+\IfFontExistsTF{TeX Gyre Pagella}{\setmainfont{TeX Gyre Pagella}}{\setmainfont{DejaVu Serif}}
+\IfFontExistsTF{TeX Gyre Heros}{\setsansfont{TeX Gyre Heros}}{\setsansfont{DejaVu Sans}}
+\IfFontExistsTF{TeX Gyre Pagella}{\newfontfamily\displayfont{TeX Gyre Pagella}}{\newfontfamily\displayfont{DejaVu Serif}}
+
+\definecolor{ink}{HTML}{171717}
+\definecolor{ash}{HTML}{E7E3DC}
+\definecolor{mist}{HTML}{F4F2ED}
+\definecolor{blood}{HTML}{5E1018}
+\definecolor{iron}{HTML}{555555}
+\definecolor{pale}{HTML}{FAF9F6}
+\color{ink}
+
+\hypersetup{colorlinks=true,linkcolor=blood,urlcolor=blood,pdftitle={Fate: Notti di Yharnam - Guida del GM - Il Progetto},pdfauthor={Materiale amatoriale per uso privato}}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textsc{Fate: Notti di Yharnam}}
+\fancyhead[R]{\small\textsc{Guida del GM -- Il Progetto}}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\titleformat{\section}{\displayfont\Large\bfseries\color{blood}}{}{0pt}{}[\vspace{-2pt}\rule{\linewidth}{0.5pt}]
+\titleformat{\subsection}{\displayfont\large\bfseries\color{ink}}{}{0pt}{}
+\titleformat{\subsubsection}{\sffamily\bfseries\color{blood}}{}{0pt}{}
+\setlist[itemize]{leftmargin=5mm,itemsep=1.5pt,topsep=3pt}
+\setlist[enumerate]{leftmargin=6mm,itemsep=2pt,topsep=3pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+
+\newtcolorbox{rulebox}[1][]{enhanced,breakable,colback=mist,colframe=iron,boxrule=0.5pt,arc=0mm,left=3mm,right=3mm,top=2mm,bottom=2mm,#1}
+\newtcolorbox{bloodbox}[1][]{enhanced,breakable,colback=ash!50,colframe=blood,boxrule=0.8pt,arc=0mm,left=3mm,right=3mm,top=2mm,bottom=2mm,#1}
+\newtcolorbox{gmbox}[1][]{enhanced,breakable,colback=pale,colframe=ash!60!iron,boxrule=0.4pt,arc=1mm,left=3mm,right=3mm,top=2mm,bottom=2mm,title={\textbf{Promemoria del GM}},fonttitle=\sffamily,#1}
+\newtcolorbox{cluebox}[1][]{enhanced,breakable,colback=white,colframe=blood!65!black,boxrule=0.45pt,arc=0mm,left=3mm,right=3mm,top=2mm,bottom=2mm,title={\textbf{Informazioni e indizi}},fonttitle=\sffamily,#1}
+\newtcolorbox{fatebox}[1][]{enhanced,breakable,colback=mist,colframe=iron,boxrule=0.45pt,arc=0mm,left=3mm,right=3mm,top=2mm,bottom=2mm,title={\textbf{Uso in Fate}},fonttitle=\sffamily,#1}
+\newtcolorbox{clockbox}[1][]{enhanced,breakable,colback=ash!45,colframe=blood,boxrule=0.65pt,arc=0mm,left=3mm,right=3mm,top=2mm,bottom=2mm,title={\textbf{Se il tempo avanza}},fonttitle=\sffamily,#1}
+
+\newcommand{\nodehead}[3]{%
+\clearpage
+\section{#1}
+\begin{bloodbox}
+\textbf{Ruolo:} #2\\
+\textbf{Domanda del nodo:} #3
+\end{bloodbox}}
+\newcommand{\aspect}[1]{\textit{#1}}
+\newcommand{\tickbox}{\ding{113}}
+\newcommand{\linkto}[1]{\textbf{Collega a:} #1}
+
+\begin{document}
+
+\begin{titlepage}
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay]
+  \draw[line width=1.2pt,blood] ([xshift=9mm,yshift=-9mm]current page.north west) rectangle ([xshift=-9mm,yshift=9mm]current page.south east);
+  \draw[line width=0.35pt,iron] ([xshift=12mm,yshift=-12mm]current page.north west) rectangle ([xshift=-12mm,yshift=12mm]current page.south east);
+  \node[opacity=.07] at (current page.center) {\fontsize{210}{210}\selectfont\textcolor{blood}{\ding{69}}};
+\end{tikzpicture}
+\vspace*{31mm}
+\begin{center}
+{\displayfont\fontsize{32}{37}\selectfont\bfseries FATE}\par
+\vspace{2mm}
+{\displayfont\fontsize{23}{28}\selectfont\bfseries NOTTI DI YHARNAM}\par
+\vspace{6mm}
+{\displayfont\fontsize{18}{22}\selectfont\color{blood}\bfseries IL PROGETTO}\par
+\vspace{13mm}
+{\large Guida del Game Master}\par
+\vspace{20mm}
+\begin{minipage}{.72\textwidth}
+\centering\itshape
+Una mini-campagna investigativa a nodi per 2--3 sessioni. I personaggi tornano a Yharnam per cercare un uomo scomparso e scoprono una verità che nessuna fazione dovrebbe possedere interamente.
+\end{minipage}
+\vfill
+{\small Materiale amatoriale non ufficiale per uso privato. La continuità dell'ambientazione è volutamente elastica.}
+\end{center}
+\end{titlepage}
+
+\tableofcontents
+\clearpage
+
+\section{1. La campagna in breve}
+
+\begin{bloodbox}
+\textbf{Obiettivo apparente:} ritrovare Elias Ward, scomparso da circa una settimana.\\
+\textbf{Obiettivo emergente:} ricostruire l'indagine che Elias stava conducendo.\\
+\textbf{Verità finale:} una cerchia clandestina interna alla Chiesa sta usando i vecchi progetti di Elias per sostenere biologicamente un organismo artificiale destinato a imitare una proprietà del cordone di un Grande Essere.\\
+\textbf{Scelta finale:} decidere il destino di Elias, del prototipo e delle conoscenze raccolte.
+\end{bloodbox}
+
+\subsection{Tono e scala}
+Questa non è una storia su come salvare Yharnam. La degenerazione provocata dal Sangue Antico è già troppo vasta per essere arrestata dai protagonisti. La vittoria possibile è locale e umana: salvare Elias, impedire un singolo esperimento, proteggere alcune persone, preservare o distruggere una verità.
+
+Le bestie sono una pressione costante, non il contenuto principale della campagna. Gli scontri dovrebbero essere rari, rapidi e collegati a persone, errori o decisioni.
+
+\subsection{Struttura suggerita}
+\begin{tabularx}{\linewidth}{>{\bfseries}p{25mm} X X}
+Sessione 1 & Dov'è Elias? & I PG capiscono che non è fuggito casualmente: stava indagando sulle spedizioni della Fonderia.\\
+Sessione 2 & Che cosa aveva scoperto? & La rete delle spedizioni conduce a strutture della Chiesa, vecchi progetti e accessi sotterranei.\\
+Sessione 3 & Che cosa facciamo della verità? & I PG trovano Elias nel Progetto mentre le fazioni convergono sul luogo.\\
+\end{tabularx}
+
+\begin{gmbox}
+Il laboratorio finale non è un obiettivo annunciato. È la risposta alla scomparsa di Elias. Non forzare i PG verso un percorso prestabilito: fai emergere il quadro attraverso persone, luoghi, oggetti e movimenti delle fazioni.
+\end{gmbox}
+
+\section{2. Principi di conduzione}
+
+\subsection{Gli indizi fondamentali non richiedono un tiro}
+Quando i PG cercano nel posto giusto o fanno una domanda sensata, ottengono l'informazione necessaria. I tiri stabiliscono rapidità, discrezione, precisione, vantaggi creati e complicazioni.
+
+\subsection{Indizi ridondanti}
+Non affidare un passaggio obbligato a un solo documento. La matrice distingue fonti e limiti: un PNG presente nello stesso luogo del documento non è un nodo indipendente. Se una pista viene chiusa, rendi disponibile una fonte alternativa già motivata. La funzione cosmica può restare incompleta fino al finale; per raggiungerlo bastano la scomparsa di Elias e un accesso verificato.
+
+\subsection{Ogni PNG conosce tre livelli diversi}
+\begin{itemize}
+\item \textbf{Sa}: fatti osservati direttamente.
+\item \textbf{Crede}: interpretazione, spesso incompleta o errata.
+\item \textbf{Nasconde}: informazione che non offre senza pressione, fiducia o scambio.
+\end{itemize}
+
+\subsection{Le fazioni sono alleati instabili}
+La Chiesa, i Cacciatori e l'Accademia possono aprire porte e risolvere problemi. Ogni aiuto aumenta però la loro influenza sulla conclusione. Nessuna fazione è controllabile fino in fondo.
+
+\subsection{Fallire significa pagare un costo}
+Un fallimento non cancella l'indizio. Può far avanzare l'orologio, attirare attenzioni, compromettere un PNG, consumare una risorsa o consegnare la stessa informazione in una posizione sfavorevole.
+
+\section{3. La verità del master}
+
+\begin{bloodbox}
+Questa sezione fissa i fatti della campagna. Le convinzioni dei personaggi sono indicate separatamente: neppure Celestine conosce la natura di ciò che può rispondere. Il funzionamento del Progetto qui descritto è un'invenzione specifica dell'avventura, non una regola generale del setting.
+\end{bloodbox}
+
+\subsection{Celestine: obiettivo, prove e autoinganno}
+Madre Celestine Vey ha diretto per anni un reparto dell'Ospedale Vecchio. Le trasfusioni guarivano ferite e sostenevano corpi debilitati, ma alcuni malati perdevano progressivamente lucidità e si trasformavano. Vuole preservare la coscienza di quelle persone: riconoscere i propri cari e scegliere le proprie azioni, anche in un corpo compromesso.
+
+Sei mesi fa la sua cerchia ha ottenuto un reperto biologico dai sotterranei pthumeriani. Esposto a vibrazioni regolari, il reperto induceva reazioni simultanee in pazienti trattati con Sangue Antico: quiete, parole identiche e brevi ritorni al riconoscimento. Celestine vi ha visto l'intervento di una coscienza superiore. Ha costruito il Progetto per rendere stabile quel collegamento, imitando la funzione attribuita nei testi a un cordone di Grande Essere.
+
+\textbf{Fatto verificato:} gli effetti condivisi esistono, ma le prove causano spossatezza, vuoti di memoria e peggioramento dei sintomi. Nessuna guarigione duratura è stata osservata.\par
+\textbf{Interpretazione di Celestine:} i danni dipendono dall'incompletezza del contatto; una risonanza stabile permetterà una lucidità stabile.\par
+\textbf{Errore morale:} considera sacrificabili i malati attuali per salvare quelli futuri. Separa i referti degli effetti avversi dai risultati positivi perché sa che una revisione completa fermerebbe la ricerca.
+
+La maggioranza della Chiesa conosce soltanto un programma di miglioramento emoterapico. Il nome interno della cerchia è \textit{Servizio dell'Ascolto}; sui documenti di trasporto compare solo il suo sigillo. Il nome esteso si trova nel laboratorio finale.
+
+\subsection{Che cosa fanno organismo, apparato e pazienti}
+\begin{itemize}
+\item \textbf{Organismo:} tessuti ospedalieri coltivati attorno al reperto. Non è un figlio né un Grande Essere. Si contrae in risposta agli stimoli; non comunica desideri né mostra una coscienza individuale accertabile. Non va presentato come certamente insensibile.
+\item \textbf{Apparato:} due pompe Serie II sostengono la circolazione. Il regolatore orientale V-Est governa il ramo che amplifica gli impulsi; il sostegno di base resta separato da quel ramo.
+\item \textbf{Camera di risonanza:} piccole campane metalliche, azionate meccanicamente, accordano gli impulsi. Non sono le campane cittadine che segnano le ore. Le vibrazioni preparano un canale percettivo; non evocano fisicamente una creatura.
+\item \textbf{Pazienti:} sei persone trasferite senza consenso dal reparto pubblico. Il circuito scambia sangue trattato con l'organismo e ne stabilizza l'attività. Due pazienti sono ormai dipendenti dal sostegno; gli altri quattro sono deboli ma scollegabili gradualmente.
+\end{itemize}
+
+\textbf{Sangue affine} è il termine interno per il sangue dei pazienti selezionati nelle prove perché reagisce al reperto. Non è una compatibilità che il GM deve assegnare a sorpresa ai PG. Il pericolo ematico riguarda chi è fisicamente collegato; persone vicine possono subire visioni e panico, ma non diventano automaticamente nuovi donatori.
+
+Durante una prova parziale alcuni pazienti pronunciano la stessa frase o recuperano ricordi per pochi istanti. Dopo la prova la lucidità svanisce e il deterioramento aumenta. Il primo contatto completo provocherà un episodio percettivo condiviso e un grave peggioramento nei sei pazienti, non la cura sperata. L'identità e le intenzioni di ciò che risponde restano ignote.
+
+\subsection{I progetti di Elias e la scelta di Silas}
+Elias progettava pompe, strumenti e regolatori per trasfusioni prolungate. Due anni fa scoprì che una sua macchina era stata adattata per torturare prigionieri. Bruciò lo studio e i disegni decisivi, poi divenne operaio alla Fonderia. La Chiesa sequestrò frammenti e prototipi, insufficienti da soli a ricostruire il regolatore.
+
+Sette mesi fa Silas vendette una copia di lavoro che aveva conservato. Aveva debiti e il compratore ecclesiastico prometteva un impiego ospedaliero: Silas si convinse che quella vendita potesse essere utile. La copia completò i disegni sequestrati e rese possibile l'apparato. Elias lo scopre durante l'indagine. Silas teme di essere considerato responsabile delle vittime e, prima di confessare, ammette solo vecchie commesse per la Chiesa.
+
+\subsection{Forniture e falsificazioni}
+Un'officina ecclesiastica prepara i componenti; la Fonderia esegue le finiture di precisione e li rispedisce. Il Laboratorio Alchemico è un deposito di transito con ascensore merci. L'Ospedale fornisce sangue, tessuti, personale e pazienti attraverso l'ala inferiore. L'Archivio conserva ordini e coperture: non spedisce materiale biologico. L'Accademia non partecipa alla costruzione.
+
+\textbf{La cassa 17 e la 17-B sono la stessa cassa.} Il contabile della Chiesa ha descritto un regolatore medico come un ricambio industriale ordinario, copiando il peso standard di 412 libbre. Il contenuto reale pesa 391 libbre e un quarto; la bilancia grande arrotonda a 391. Non manca materiale e non esiste un doppio fondo. Per non correggere pubblicamente la falsa descrizione, il contabile chiude la voce 17 come sospesa e fa uscire il collo con il codice riservato 17-B. H04 è il foglio di pesatura originale conservato da Marta; H05 è la ricevuta di uscita del vetturale T. Harrow. Il peso e l'annotazione di ricodifica permettono il confronto. Questa prova dimostra un occultamento amministrativo, non ancora il fine dell'esperimento.
+
+\subsection{Malattia e conoscenze di Elias}
+Quattro mesi fa Elias ha ricevuto trasfusioni dopo un'ustione alla mano destra. Ha continuato il trattamento per tornare al lavoro. I primi sintomi compaiono sedici giorni prima dell'arrivo dei PG; nove giorni prima Oren li registra in H08. La malattia precede l'ingresso nei sotterranei. La vicinanza alle prove ne accelera la progressione. Non c'è una seconda contaminazione causata da un campione.
+
+Elias interpreta inizialmente gli indizi come uso illecito delle sue macchine. Solo dopo aver visto le reazioni dei pazienti e averne discusso con Miriam formula l'ipotesi dell'ascolto. Non conosce la cosmologia; conosce le proprie macchine e ciò che ha osservato. Nel finale sa di essere malato da prima, ma non sa quanto tempo gli resti.
+
+\subsection{Cronologia causale}
+\textbf{Riferimento dei documenti:} oggi è il giorno 28 del mese corrente. Le date 12--15 in H04 indicano i giorni del mese. Le ore indicate dalle campane cittadine scandiscono i turni; alla quarta campana notturna viene aperta una chiusa di lavaggio, che rende impraticabile lo scarico per circa un'ora. Non dipende dalla marea.
+
+\begin{longtable}{>{\bfseries}p{29mm} p{126mm}}
+Due anni fa & Elias brucia lo studio dopo aver scoperto l'uso della macchina sui prigionieri. La Chiesa sequestra materiale incompleto. Silas conserva una copia privata.\\
+Sette mesi fa & Silas vende la copia al compratore ecclesiastico per saldare debiti, accettando la giustificazione medica. Il compratore usa il sigillo interno che Silas potrà riconoscere.\\
+Sei mesi fa & Celestine avvia il Progetto dopo le prime reazioni al reperto. Le forniture vengono divise fra officina, Fonderia, Laboratorio e Ospedale; l'Archivio ne conserva le coperture.\\
+Quattro mesi fa & Elias riceve sangue per l'ustione alla mano. Eleanor conosce le cure; Oren ne conserva la registrazione.\\
+Giorno 12 & Compaiono insonnia e irritabilità. Elias le attribuisce al lavoro e continua a lavorare.\\
+Giorno 13 & Elias riconosce il regolatore e pesa la cassa 17 con due strumenti. Scrive H01. Vuole sapere chi abbia ricostruito il suo progetto.\\
+Giorno 14 & Visita Silas con uno schizzo del pezzo. Silas confessa la vendita. Elias teme un nuovo abuso medico e decide di seguire le forniture.\\
+Giorno 16 & Marta gli copre un turno. Elias segue il carro fino al Laboratorio e vede che il deposito non svolge lavorazioni sufficienti a giustificare le consegne.\\
+Giorno 18 & Con i numeri di commessa consulta l'Archivio. Trova autorizzazioni riservate, il sigillo e il collegamento con l'Ospedale. Disegna H02; ``sotto?'' è ancora un'ipotesi.\\
+Giorno 19 & Oren, suo vecchio contatto medico, lo visita e scrive H08. Gli mostra due pazienti che riconoscono insieme una presenza e poi ricadono nel torpore, sperando in una spiegazione tecnica. Elias collega la reazione al ritmo nei tubi.\\
+Giorno 20 & Miriam riceve Elias su presentazione di Silas. Confronta sigillo, disegno e osservazioni con i testi. Formula l'ipotesi di un organo di comunione e scrive H11. Elias ne parla a Eleanor quella sera.\\
+Giorno 21 & Oren informa Aldren sperando che faccia verificare il possibile guasto e protegga Elias come malato. Aldren dispone il ritiro degli appunti e un colloquio sorvegliato (H07), avvisando l'amministrazione di Celestine. Elias vede gli incaricati, ha una crisi in casa e fugge per non coinvolgere Eleanor.\\
+Giorni 22--24 & Elias dorme in un vano dismesso vicino alle fogne, con acqua e provviste portate da casa. Osserva turni, ascensore e scarico; non è ancora nel laboratorio finale. Allestisce allarmi e ostacoli non letali contro gli inseguitori.\\
+Giorno 25 & Eleanor invia le lettere ai PG. Nell'Ospedale sei pazienti vengono portati nell'ala inferiore; due spariscono dai registri pubblici. Oren scrive H09.\\
+Giorno 26 & Elias entra durante un trasferimento, ferisce al braccio un sorvegliante che tenta di trattenerlo e fugge senza finirlo. Raggiunge i vani tecnici, scopre i pazienti collegati e blocca V-Est, lasciando attive le pompe di base. Scrive H12 e annota H14 nel tratto di manutenzione sotto il deposito.\\
+Giorno 27 & Celestine riceve il rapporto del sorvegliante e riconosce un sabotaggio competente. Fa segnalare ai Cacciatori un intruso malato e armato, omettendo l'esperimento. Roland emette H10 e verifica le tracce. I tecnici cercano il guasto; Elias studia il circuito ausiliario e scrive H17.\\
+Giorno 28 & Arrivano i PG. Elias è nascosto da circa due giorni, esausto ma lucido. Le sue provviste stanno finendo e il passaggio verso il deposito è sorvegliato. Celestine attende la riparazione per la prova completa.\\
+\end{longtable}
+
+\subsection{Perché Elias non ha già distrutto il Progetto}
+V-Est limita l'intensità della risonanza, ma le pompe continuano a sostenere i pazienti. Elias ha bloccato soltanto quel regolatore. Non ha reciso il ritorno dell'Ospedale e non ha creato un trasferimento occulto del carico sui presenti. Le vibrazioni irregolari sono il segno del regolatore bloccato, non un messaggio cifrato.
+
+Per arrestare il sistema occorre avviare la pompa ausiliaria del reparto, trasferirvi uno alla volta i due pazienti dipendenti, scollegare gradualmente gli altri quattro e chiudere il circuito dell'organismo dalla sala tecnica. Un operatore deve mantenere il sostegno mentre altri spostano i pazienti. Elias può guidare il lavoro, ma non presidiare entrambe le sale. Oren, Maud o un PG competente possono aiutarlo. La pompa e le barelle sono già presenti: non occorre inventare una ricerca aggiuntiva nel finale.
+
+Spegnere tutto di colpo provoca il collasso dei due pazienti dipendenti e mette in pericolo gli altri; danneggiare condotte pressurizzate può ferire chi sta vicino. Questi rischi sono visibili nei tubi, nei manometri e nelle reazioni dei malati. Prima di una scelta irreversibile, descrivili e permetti a Elias o ai sanitari di spiegarli. Una sequenza prudente può salvare tutti e sei: non imporre una morte soltanto per rendere il finale tragico.
+
+\subsection{Che cosa fanno gli altri e perché non hanno trovato Elias}
+Celestine conosce l'intrusione e fa ispezionare i passaggi per settori. Elias conosce gli alloggiamenti delle pompe e si sposta quando sente gli ispettori; non possiede una mappa perfetta delle catacombe. La ricerca è lenta perché chiudere o danneggiare i condotti comprometterebbe i pazienti e l'esperimento. Il vantaggio di Elias è temporaneo.
+
+Aldren conosce gli ordini riservati e la denuncia di Oren, ma crede a un programma medico. Vuole recuperare le carte prima che diventino uno scandalo. Celestine conosce anche gli effetti avversi e usa la segnalazione ai Cacciatori per bloccare la fuga dell'intruso. Roland conosce sintomi, aggressione e tracce: il sorvegliante ha ammesso che Elias avrebbe potuto ucciderlo e non lo ha fatto. Questo sostiene l'autocontrollo, mentre il semplice sabotaggio dimostra solo intelligenza.
+
+Miriam conosce le osservazioni raccontate da Elias, non l'ubicazione esatta della camera né il suo sabotaggio. Può interpretare il fenomeno senza poter ancora trovare l'ingresso. Un aiuto delle fazioni va legato a informazioni effettivamente ottenute o condivise dai PG.
+
+\subsection{Provenienza degli appunti e comunicazioni}
+H01 e H02 restano a Casa Ward. H03 è un frammento conservato da Silas; la nota sul collegamento in serie è di Silas e deriva da una commessa successiva. H11 rimane a Miriam dopo il colloquio del giorno 20. H12 viene lasciato da Elias dietro il pannello di manutenzione sotto il deposito, sperando che un tecnico o un soccorritore segua la pista; non torna in Biblioteca. H14 è affisso accanto al pannello. H15 e H17 sono annotati nella camera finale e nei suoi vani tecnici.
+
+Tre colpi, pausa, due colpi è il segnale di servizio con cui il personale conferma che lo scarico è sgombro prima di un trasferimento. Elias lo ha appreso osservando i turni. Il segnale non significa alternativamente ``sotto'' o ``pressione''. Un tecnico può spiegarlo; H12 e H13 lo descrivono nello stesso modo.
+
+
+\section{4. Orologio della crisi}
+
+Inizia allo stadio 1. Avanza quando trascorre una fase della giornata senza ostacoli alle riparazioni, oppure quando una conseguenza concreta consegna ai tecnici tempo o accesso. Non avanzare per la sola fine della sessione. Annuncia segnali visibili e registra eventuali ritardi ottenuti dai PG: sottrarre un ricambio o liberare un corridoio deve cambiare la situazione.
+
+\begin{tabularx}{\linewidth}{>{\bfseries}p{12mm} p{35mm} X}
+1 & Indagini discrete & Le fazioni osservano. La Chiesa invia Padre Aldren a offrire aiuto. I Cacciatori fanno domande alla Fonderia.\\
+2 & Prove confiscate & L'Archivio viene chiuso, un registro scompare e un PNG secondario viene interrogato.\\
+3 & Vie di fuga presidiate & I Cacciatori chiudono gli accessi noti e i tecnici individuano V-Est. Roland annuncia un termine per la ricerca sorvegliata.\\
+4 & Riparazione & Arriva un regolatore sostitutivo. Le squadre restringono i nascondigli. Si sentono prove intermittenti delle piccole campane; non è ancora il contatto.\\
+5 & Prima risonanza & Se nessuno interviene, Elias tenta di fermare la riparazione e viene catturato. Celestine attiva: visioni condivise, perdita di coscienza e peggioramento dei sei pazienti. Non avviene una cura.\\
+\end{tabularx}
+
+\begin{clockbox}
+L'orologio non deve bloccare l'indagine. Se una prova viene rimossa, lascia tracce della rimozione; se un PNG sparisce, qualcuno lo ha visto; se un luogo chiude, esiste un accesso rischioso o una fazione disposta ad aprirlo in cambio di qualcosa.
+\end{clockbox}
+
+\textbf{Trasferimento solo come reazione:} se i PG rendono imminente un'ispezione o un assalto, Celestine sospende la prova e prepara lo spostamento. I sei pazienti richiedono pompe portatili e un convoglio lento: il laboratorio non sparisce fuori scena. Segui il convoglio attraverso lo scarico o intercettalo al deposito. Il trasferimento sospende l'avanzamento verso l'attivazione finché l'impianto non è rimontato.
+
+\section{5. Le fazioni}
+
+\subsection{La Chiesa della Cura}
+\textbf{Volto pubblico:} ordine, guarigione, stabilità.\\
+\textbf{Obiettivo reale nella campagna:} trovare Elias prima che renda pubblico ciò che ha visto e proteggere l'istituzione, anche se alcuni vertici ignorano il Progetto.\\
+\textbf{Può offrire:} lasciapassare, cure, accesso all'Ospedale, autorità, protezione di Eleanor.\\
+\textbf{Prezzo:} consegnare appunti, testimonianze o Elias; accettare la supervisione di Padre Aldren.\\
+\textbf{Aspetti:} \aspect{La cura giustifica il silenzio}; \aspect{Ogni porta ha un confessore}.\\
+\textbf{Linea rossa:} esposizione pubblica del Progetto o accesso non autorizzato ai sotterranei.
+
+\subsection{I Cacciatori}
+\textbf{Volto pubblico:} uomini e donne armati che tengono lontane le bestie.\\
+\textbf{Obiettivo:} intercettare Elias, contenerlo se possibile e abbatterlo se perde irreversibilmente il controllo. Roland teme una bestia capace di progettare trappole, ma H10 non è ancora un ordine di esecuzione.\\
+\textbf{Può offrire:} scorta, conoscenza dei sintomi, accesso ai quartieri pericolosi, informazioni sulle tracce più recenti.\\
+\textbf{Prezzo:} diritto di decidere quando Elias non è più umano.\\
+\textbf{Aspetti:} \aspect{Meglio un colpo troppo presto che cento morti troppo tardi}; \aspect{La Caccia ricorda ogni esitazione}.\\
+\textbf{Linea rossa:} un'aggressione incontrollata che non può essere contenuta. Scoprire che i PG nascondono Elias provoca una richiesta di verifica e un confronto, non un abbattimento automatico.
+
+\subsection{L'Accademia}
+\textbf{Volto pubblico:} studiosi isolati, medici teorici e antiquari.\\
+\textbf{Obiettivo:} capire che cosa Elias abbia scoperto e sottrarre alla Chiesa almeno una parte del materiale.\\
+\textbf{Può offrire:} interpretazione dei sigilli, testi proibiti, analisi biologiche, passaggi antichi.\\
+\textbf{Prezzo:} campioni, copie degli appunti o accesso al Progetto.\\
+\textbf{Aspetti:} \aspect{Ogni limite è un'ipotesi non ancora smentita}; \aspect{La verità non promette misericordia}.\\
+\textbf{Linea rossa:} distruzione completa del Progetto senza averne salvato alcuna parte.
+
+\section{6. Personaggi: conoscenze, motivazioni e reazioni}
+
+\begin{gmbox}
+Le schede descrivono la situazione al giorno 28, prima dell'intervento dei PG. Aggiorna ciò che ogni PNG sa solo quando assiste a un fatto, riceve una notizia o legge una prova. La conoscenza di una fazione non si trasferisce automaticamente a tutti i suoi membri.
+
+Le informazioni indicate come spontanee emergono con una domanda pertinente, senza tiro. Fiducia, pressione e scambio riguardano segreti e collaborazione; non devono diventare l'unico modo di ottenere una pista indispensabile. Un tiro favorevole può ottenere una concessione motivata, non una conoscenza che il PNG non possiede.
+\end{gmbox}
+
+\subsection{Eleanor Ward}
+\textbf{Ruolo e presenza:} moglie di Elias, committente; si trova a Casa Ward. Riporta la ricerca a una persona concreta, senza poter spiegare il mistero.\par
+\textbf{Come interpretarla:} ascolta una proposta fino in fondo, poi chiede che cosa accadrà a Elias. Tiene i conti domestici in ordine e corregge le date: ha ricostruito più volte gli ultimi giorni. Parla con precisione, non con allusioni.
+
+\textbf{Vuole, perché:} ritrovarlo vivo e permettergli di scegliere, finché è in grado di farlo. Dopo risposte evasive di Guardia e Chiesa, chiama persone di cui Elias si fidava. Prima della scena concorda con ogni giocatore un legame semplice: vecchio lavoro, favore ricevuto o amicizia. Nessun legame deve conferire conoscenze automatiche del Progetto.
+
+\textbf{Sa e fonte:}
+\begin{itemize}
+\item Ha assistito alle cure per la mano quattro mesi fa e ai sintomi dal giorno 12. Non conosce una diagnosi certa.
+\item Elias le mostrava pesi e numeri delle spedizioni: sa che l'indagine comincia alla Fonderia. H01 e H02 sono rimasti in casa.
+\item Il giorno 20 lui le disse di aver parlato con Miriam, su presentazione di Silas, e che le macchine potevano ``ascoltare''. Ripete una sua ipotesi, non una propria scoperta.
+\item Il giorno 21 vide incaricati ecclesiastici cercarlo; dopo la crisi lo vide partire con attrezzi, cibo e pistola. Non lo ha visto né ricevuto messaggi da allora.
+\end{itemize}
+\textbf{Crede / non sa:} pensa a forniture illecite o a esperimenti sui malati. Non sa dove Elias si nasconda, né che ci siano sei pazienti collegati. Non può certificare la sua lucidità attuale.
+
+\textbf{Nasconde e teme:} Elias le strinse il braccio tanto da lasciarle un livido. Lei minimizza perché teme che quel fatto basti a farlo abbattere. Non nega gli altri sintomi e non falsifica gli appunti.
+
+\textbf{Interazione:} consegna H01 e H02 e racconta le visite note senza chiedere promesse impossibili. Alla domanda ``Vi ha fatto male?'' inizialmente risponde ``Non è per questo che vi ho chiamati''. Ammette il fatto se i PG spiegano che serve a preparare un recupero sicuro e non a condannarlo in anticipo. Non pretende che espongano altre persone a un'aggressione.
+
+\textbf{Aiuto e limite:} può riconoscere grafia e attrezzi, offrire provviste e un rifugio temporaneo. Non accompagna automaticamente una spedizione armata. Se i PG propongono di consegnare Elias, chiede a chi, con quali garanzie e chi potrà visitarlo.
+
+\textbf{Se ignorata o minacciata:} cerca notizie alla Fonderia. Se la Chiesa offre protezione mentre i PG spariscono, può accettare per ottenere informazioni: non conosce abbastanza da riconoscere il controllo dietro l'offerta. Se minacciata dai PG, interrompe la confidenza e si rivolge a Marta.\par
+\textbf{Voce:} ``Non vi chiedo di promettermi che guarirà. Vi chiedo di parlargli prima di decidere per lui.''
+
+\subsection{Elias Ward}
+\textbf{Ruolo e presenza:} ingegnere scomparso; nei vani tecnici del Progetto, salvo cattura allo stadio 5. È un testimone competente e un collaboratore possibile, non il portavoce onnisciente della trama.\par
+\textbf{Come interpretarlo:} interrompe una spiegazione per ascoltare una pompa, controlla la mano che trema e chiede ai presenti di tenersi lontani dalle condotte. La precisione è il modo con cui cerca di conservare il controllo.
+
+\textbf{Vuole, perché:} salvare i sei pazienti, arrestare l'apparato e impedirne la ricostruzione. Il precedente impiego delle sue macchine sui prigionieri lo rende incapace di considerare quelle vittime un problema altrui. La sua priorità è il soccorso, anche quando l'ossessione per una soluzione perfetta gli fa perdere tempo.
+
+\textbf{Sa e fonte:}
+\begin{itemize}
+\item Riconosce la Serie II perché l'ha progettata. Sa della vendita perché Silas gliel'ha confessata il giorno 14.
+\item Le reazioni simultanee le ha viste con Oren; l'interpretazione dell'ascolto viene dal colloquio con Miriam. Non sa chi risponda.
+\item Ha seguito le condotte nei vani: conosce V-Est, sostegno principale, circuito ausiliario e percorso fra sala tecnica e reparto. Ha osservato il collasso incipiente dei due pazienti dipendenti quando il sostegno calava.
+\item Ha bloccato soltanto il ramo di risonanza e studiato una sequenza di arresto. H12, H14, H15 e H17 registrano fasi diverse di questo lavoro.
+\item I sintomi precedevano l'ingresso; aumentano durante le prove. Non conosce il proprio tempo residuo né una cura.
+\end{itemize}
+\textbf{Crede / non sa:} teme che qualsiasi copia consenta di ricostruire il Progetto, ma non ha censito tutti gli archivi ecclesiastici. Non sa che Celestine abbia mandato la segnalazione ai Cacciatori e non sa se Eleanor abbia chiamato i PG.
+
+\textbf{Nasconde e teme:} durante il primo contatto minimizza stanchezza e spasmi, perché teme di essere escluso dal salvataggio o consegnato come cavia. Ammette di aver ferito il sorvegliante se interrogato; non ne inventa una colpa ulteriore. La sua paura maggiore è perdere il controllo mentre qualcuno dipende da lui.
+
+\textbf{Interazione:} a ``Perché non sei tornato?'' risponde mostrando il collegamento dei pazienti. A ``Perché non spegni?'' indica i due punti che devono essere presidiati contemporaneamente. Consegna H17 e spiega i rischi prima che i PG scelgano: non tiene segreto il pericolo per ottenere obbedienza.
+
+\textbf{Aiuto e limite:} guida l'arresto, riconosce i comandi e può restare alle pompe. Accetta un piano diverso dal suo se protegge i malati e impedisce la prova. Si oppone alla consegna di persone a Celestine; può tollerare copie utili a denunciare gli abusi se vengono separate dalle istruzioni di attivazione. Non è obbligato a trovare perfetta la soluzione dei PG.
+
+\textbf{Sotto pressione:} se vede armi puntate si ripara e chiede chi li mandi. Un PG conosciuto o informazioni verificabili su Eleanor possono aprire il dialogo. La rabbia, da sola, non lo rende irreversibilmente bestiale. Mostra segnali progressivi prima di una perdita di controllo e consenti ai PG di reagire. Se ignorato, tenta di impedire il ricambio di V-Est come previsto dall'orologio.\par
+\textbf{Aspetti:} \aspect{Non posso lasciare un errore irrisolto}; \aspect{Le mie invenzioni hanno già versato troppo sangue}; \aspect{La bestia impara in fretta}.\par
+\textbf{Voce:} ``Posso fermarla. Non posso tenere aperto il ritorno e spostare quei letti nello stesso momento.''
+
+\subsection{Padre Aldren Vale}
+\textbf{Ruolo e presenza:} referente amministrativo della Chiesa; Archivio, Ospedale o incontro concordato con i PG. Offre accessi reali, ma vuole controllare l'indagine.\par
+\textbf{Come interpretarlo:} prende nota delle richieste, offre una sedia e trasforma ogni urgenza in una procedura. Chiede di vedere i documenti prima di commentarli.
+
+\textbf{Vuole, perché:} recuperare le carte e ricondurre Elias sotto supervisione. Ritiene che la fiducia nella Chiesa sostenga l'assistenza e l'ordine cittadino; teme che uno scandalo danneggi anche cure che funzionano. Protegge inoltre la propria posizione.
+
+\textbf{Sa e fonte:}
+\begin{itemize}
+\item Il giorno 21 Oren gli riferì visita, sintomi e sospetto guasto. L'amministrazione di Celestine confermò una ricerca medica riservata e chiese le carte di Elias.
+\item Ha disposto il colloquio sorvegliato, il silenzio di Oren e la restrizione dei registri. H07 rende verificabile il suo ruolo.
+\item Sa che le forniture scendono nell'ala inferiore e che Celestine dirige il programma; non è entrato nella camera sperimentale. Può chiedere un incontro, non garantire accesso senza condizioni.
+\end{itemize}
+\textbf{Crede / non sa:} si aspetta ricerca clinica rischiosa ma giustificabile. Non conosce i prelievi senza consenso, il collegamento dei sei pazienti, gli effetti avversi occultati o il vero scopo percettivo. Non ha ideato la segnalazione a Roland.
+
+\textbf{Nasconde e teme:} presenta il recupero delle carte come tutela, omettendo di aver ordinato che Elias venga trattenuto. Ha taciuto a Oren che non avrebbe avuto un'ispezione indipendente. Teme che ammettere un errore lo renda sacrificabile ai superiori.
+
+\textbf{Interazione:} rivela che esiste una pratica di ricerca e offre consultazione limitata o accesso al reparto pubblico. Se interrogato sul suo nome in H07, ammette l'ordine ma lo difende come misura sanitaria. Se i PG mostrano solo un sigillo, non ricava magicamente l'esperimento. Se gli mostrano H09 e gli permettono di confrontare i registri, può iniziare a dubitare.
+
+\textbf{Che cosa lo muove:} pazienti collegati contro la propria volontà, referti occultati e H16 possono convincerlo a chiedere la sospensione. Perché passi dalle parole ai fatti serve anche una via praticabile: testimoni, evacuazione e custodia delle prove. Non deve diventare innocente per aiutare; può fermare Celestine e continuare a voler insabbiare le responsabilità istituzionali.
+
+\textbf{Aiuto e limite:} firma lasciapassare amministrativi, tratta con i custodi e può offrire protezione a Eleanor. Non comanda Roland né i tecnici della camera. Chiede copie, aggiornamenti e consegna delle prove alla Chiesa.\par
+\textbf{Se ostacolato:} restringe gli accessi che controlla e comunica ai superiori ciò che ha realmente appreso. Una minaccia pubblica può indurlo a invocare la Guardia, non a conoscere all'istante la posizione dei PG.\par
+\textbf{Voce:} ``Se esiste un abuso, deve essere accertato. Ma chi custodirà le vostre prove mentre lo accertiamo?''
+
+\subsection{Capitana Roland Kreiss}
+\textbf{Ruolo e presenza:} comandante della squadra locale dei Cacciatori; Rifugio e pattuglie. Può fornire forza, contenimento e scorta.\par
+\textbf{Come interpretarla:} controlla uscite, distanze e persone vulnerabili. Prima di accettare un piano domanda chi proteggerà i presenti se Elias cede.
+
+\textbf{Vuole, perché:} evitare vittime senza scambiare una speranza per una misura di sicurezza. In passato esitò ad abbattere una persona già trasformata che sembrava riconoscerla; la successiva aggressione costò cinque vite. Da allora richiede prove di autocontrollo e un piano di contenimento.
+
+\textbf{Sa e fonte:}
+\begin{itemize}
+\item Il giorno 27 ricevette dall'Ospedale una segnalazione di intruso malato e armato. Il contatto fu organizzato da Celestine, ma Roland conosce solo la provenienza ospedaliera.
+\item Il sorvegliante ferito le raccontò che Elias lo aveva colpito al braccio per liberarsi e poi risparmiato. Roland distingue quel fatto dall'ipotesi di una futura bestia intelligente.
+\item Le sue pattuglie hanno trovato ostacoli non letali e tracce nella zona Ospedale--Laboratorio--fogne. Non hanno ancora individuato la camera finale.
+\end{itemize}
+\textbf{Crede / non sa:} la competenza tecnica rende Elias pericoloso se si trasforma; non dimostra che sia già una bestia. Non conosce l'esperimento e non sa che la denuncia ometta deliberatamente il contesto.
+
+\textbf{Nasconde e teme:} non racconta spontaneamente la vecchia esitazione perché teme che venga usata per screditare ogni sua valutazione. Può ammetterla in privato a chi propone garanzie concrete, senza che il racconto sia necessario a negoziare.
+
+\textbf{Interazione:} mostra H10, descrive tracce e ferito; a ``È già una bestia?'' risponde che non lo ha visto. A ``Ci darete tempo?'' chiede luogo di ritrovo, termine e modo di controllare gli accessi. H08 prova lucidità al giorno 19, non quella attuale; un incontro nel quale Elias risponde, si ferma a richiesta e coopera vale di più.
+
+\textbf{Aiuto e limite:} può accompagnare i PG o tenere libere le vie di evacuazione. Accetta di osservare Elias e non colpire per il solo aspetto o uno spasmo. Se aggredisce senza riuscire a fermarsi e non può essere contenuto, interviene; annuncia il rischio e lascia una possibilità di reazione quando la scena lo consente. Scoprire un nascondiglio dei PG provoca un confronto e una richiesta di controllo, non un'esecuzione automatica.
+
+\textbf{Se ignorata o ingannata:} rafforza le pattuglie sugli accessi effettivamente scoperti, chiede a Nox di seguire le piste e riduce il credito dei PG che mentono su un pericolo. Può rivedere la valutazione davanti a prove nuove. Nel finale la protezione dei pazienti può darle uno scopo condiviso con Elias.\par
+\textbf{Voce:} ``Posso concedervi tempo. Ditemi chi tiene libera la porta e chi lo ferma se non ascolta più.''
+
+\subsection{Dottoressa Miriam Voss}
+\textbf{Ruolo e presenza:} studiosa legata all'Accademia, nella Biblioteca Proibita. Offre interpretazioni e verifiche; non rappresenta un consenso di tutti gli studiosi.\par
+\textbf{Come interpretarla:} distingue a voce alta ciò che ha letto da ciò che qualcuno le ha riferito. Diventa meno prudente quando intravede la possibilità di un'osservazione diretta.
+
+\textbf{Vuole, perché:} verificare se i testi descrivano un fenomeno riproducibile e preservarne le prove. Teme che la segretezza ecclesiastica o una distruzione indiscriminata rendano impossibile capire gli abusi e il fenomeno; usa questa ragione valida per giustificare anche la propria ambizione.
+
+\textbf{Sa e fonte:}
+\begin{itemize}
+\item Silas la conosce per consulenze su strumenti e testi tecnici e le presentò Elias. Nel colloquio del giorno 20 vide disegno e sigillo e ascoltò il racconto dell'Ospedale.
+\item I testi pthumeriani le suggeriscono una funzione di comunione; H11 contiene ipotesi e osservazioni riferite, non un protocollo sperimentale verificato.
+\item La pianta antica documenta catacombe sotto l'Ospedale, ma non attesta quali porte siano ancora aperte o sorvegliate.
+\end{itemize}
+\textbf{Crede / non sa:} pensa possibile un contatto e pericoloso un tentativo incontrollato. Non conosce Celestine come responsabile finché qualcuno glielo rivela; non ha visto i sei pazienti né il guasto di V-Est. Non possiede H12, scritto dopo il loro incontro. L'Accademia non ha fornito i componenti.
+
+\textbf{Nasconde e teme:} sarebbe disposta a ritardare l'arresto per osservare una risposta, pur senza sapere se l'evacuazione possa aspettare. Presenta inizialmente la richiesta come necessità di documentare. Se interrogata direttamente ammette la priorità scientifica; non garantisce una cura.
+
+\textbf{Interazione:} interpreta il sigillo e racconta l'incontro senza esigere campioni come pedaggio per ogni indizio. In cambio di analisi prolungate o aiuto personale chiede copie, un campione conservabile o il diritto di osservare. Alla domanda ``Come fai a saperlo?'' specifica testo, testimone e limite dell'ipotesi.
+
+\textbf{Che cosa la muove:} una documentazione sufficiente può farle accettare la distruzione dell'organismo. Salvare campioni non richiede necessariamente mantenere i pazienti collegati; i PG possono proporre prelievi già disponibili e copie dei risultati. Non sposta di continuo le condizioni per forzare l'attivazione.
+
+\textbf{Aiuto e limite:} interpreta H16, confronta fenomeni e può occuparsi dei documenti mentre altri evacuano. Non sa condurre da sola l'intera procedura clinica. Per arrivare al finale deve ricevere un accesso, accompagnare i PG o seguire una pista concreta.\par
+\textbf{Se esclusa:} cerca prove all'Ospedale o tratta con chi possiede i documenti; registra ciò che ottiene. Se distruggono ogni prova interrompe l'alleanza, ma non attacca automaticamente persone per vendetta.\par
+\textbf{Voce:} ``Questo lo ha visto Ward. Questo lo dice il testo. Che siano la stessa cosa è ancora un'ipotesi.''
+
+\subsection{Madre Celestine Vey}
+\textbf{Ruolo e presenza:} responsabile del Progetto, nella camera sotterranea. Comanda tecnici e sorveglianti assegnati all'esperimento, non l'intera Chiesa.\par
+\textbf{Come interpretarla:} controlla la coperta di un paziente e subito dopo ordina una nuova prova. Chiama le persone per nome quando le assiste e per numero quando registra i risultati. Il contrasto nasce dalle sue decisioni, non da una voce minacciosa.
+
+\textbf{Vuole, perché:} completare il contatto e ottenere lucidità duratura. Gli anni di fallimenti clinici le hanno fatto credere che fermarsi significhi abbandonare anche i malati futuri. La morte dei pazienti attuali è un costo che accetta, non un risultato che desidera.
+
+\textbf{Sa e fonte:}
+\begin{itemize}
+\item Ha diretto coltura, prelievi e prove; sa che ogni beneficio è temporaneo e che i danni aumentano. Ha autorizzato sei collegamenti senza consenso e la separazione dei referti.
+\item Conosce l'origine dei progetti attraverso la documentazione di acquisizione, ma non la conversazione privata fra Silas ed Elias.
+\item Dal rapporto del sorvegliante e dalla natura del guasto deduce che Elias è nei vani. Non conosce il nascondiglio esatto né i contatti dei PG.
+\item Ha fatto segnalare l'intruso ai Cacciatori. Sa che il rapporto omette l'esperimento e che Aldren crede ancora alla copertura medica.
+\end{itemize}
+\textbf{Crede / non sa:} crede che l'instabilità causi i danni e che il contatto completo li risolva. Non conosce entità, intenzioni o garanzie di guarigione. Non sa che il primo contatto fallirà come cura: questa è conoscenza del master.
+
+\textbf{Nasconde e teme:} occulta consenso mancante, peggioramento e manipolazione dei rapporti. Teme la distruzione dei dati e il riconoscimento che i sacrifici possano essere stati inutili. Quando viene contraddetta tende a chiedere un'ultima prova invece di rivalutare l'ipotesi.
+
+\textbf{Interazione:} a ``Che cosa state facendo?'' risponde che tenta di preservare la coscienza; può mostrare i risultati parziali. A ``Avete guarito qualcuno?'' deve ammettere, se incalzata sui tempi, che nessun effetto è durato. A ``Hanno acconsentito?'' sostiene che non fossero in grado di scegliere. H16 e la testimonianza dei sanitari rendono verificabili le omissioni. Non confessa spontaneamente la segnalazione ai Cacciatori.
+
+\textbf{Offerta concreta:} sospende per una breve trattativa le ricerche di Elias, offre medicazioni e propone una prova sorvegliata. Le medicazioni sono reali; la promessa di cura non lo è. Non può garantire protezione dai Cacciatori senza negoziare con Roland.
+
+\textbf{Concessioni e limiti:} accetta un ritardo per mettere in sicurezza l'impianto. Una possibilità credibile di conservare dati e affrontare una revisione può farle accettare la sospensione se ha perso il controllo operativo. Un discorso compassionevole da solo difficilmente rovescia mesi di scelte; prove, rapporti di forza e alternative possono farlo. Se si arrende non attiva di nascosto per obbligare comunque il finale previsto.
+
+\textbf{Sotto minaccia:} prima ordina il fermo degli intrusi, poi cerca di salvare protocollo e risultati. Se è imminente un'ispezione o un assalto e dispone di una via praticabile, prepara il trasferimento già descritto. Se perde pazienti e circuito non può produrre ugualmente un contatto. Dopo lo stadio 5 interpreta la risposta come conferma e chiede di continuare, ma le condizioni dei malati rendono il suo autoinganno evidente.\par
+\textbf{Voce:} ``Ha riconosciuto sua figlia per quaranta secondi. Io voglio che quei quaranta secondi durino. So che cosa mi state chiedendo di interrompere.''
+
+\subsection{Dottor Oren Sile}
+\textbf{Ruolo e presenza:} medico dell'Ospedale Vecchio, testimone degli effetti e possibile soccorritore. Non è un membro informato della cerchia.\par
+\textbf{Come interpretarlo:} abbassa la voce quando nomina Aldren, ma torna preciso quando descrive un sintomo. La competenza clinica rimane anche quando il coraggio gli manca.
+
+\textbf{Vuole, perché:} evitare altre vittime e sottrarsi alle conseguenze della denuncia. Vorrebbe fuggire, ma lasciare i malati confermerebbe l'idea di essere diventato complice.
+
+\textbf{Sa e fonte:} conosce Elias da precedenti collaborazioni mediche e ne consulta la storia trasfusionale. Il giorno 19 lo visita e gli mostra le reazioni simultanee di due degenti. Il 21 avvisa Aldren, sperando in una verifica tecnica e protezione per Elias. Il 25 prepara il trasferimento dei sei, vede la vasca, osserva la ricaduta e scrive H09. La direzione gli concedeva accessi clinici limitati; non aveva visto prima l'intero apparato.
+
+\textbf{Crede / non sa:} prima sospettava un effetto o guasto delle apparecchiature; ora teme abusi deliberati. Non può spiegare il contatto, localizzare Elias o sapere chi abbia parlato a Roland. Distingue lucidità durante la visita e condizione attuale ignota.
+
+\textbf{Nasconde e teme:} tace inizialmente di essere la fonte di Aldren e di avere preparato un trasferimento senza consenso. Teme arresto, perdita della professione e disprezzo di Eleanor. Conserva H09 senza spedirlo perché non sa a chi affidarlo senza esporre un altro testimone.
+
+\textbf{Interazione:} fornisce visita e H08 a chi sta cercando Elias; una conversazione privata evita di esporlo al personale ecclesiastico. Alla domanda sulla denuncia ammette prima di aver chiesto un consulto, poi la responsabilità completa se i PG mostrano H07/H09 o gli offrono un'azione concreta di riparazione. Non occorre assolverlo per ottenere collaborazione.
+
+\textbf{Aiuto e limite:} può riconoscere i sei pazienti, confrontare cartelle e, raggiunto il reparto, valutare chi dipenda dal sostegno. Con Elias o uno schema tecnico può gestire la pompa ausiliaria e lo scollegamento; non sa disattivare da solo la camera. Se i PG gli chiedono di accompagnarli, vuole una via di uscita e qualcuno che protegga il lavoro clinico.
+
+\textbf{Se ignorato o minacciato:} prepara la fuga ma non evapora dalla scena: Maud può indicare il suo turno e vedere che sta raccogliendo le carte. Se Aldren lo convoca, cerca di lasciare H09 a Maud. Minacciarlo può ottenere una confessione, ma non lo rende affidabile come volontario al finale.\par
+\textbf{Voce:} ``Pensavo che un superiore avrebbe fermato un errore. Gli ho consegnato l'uomo che se n'era accorto.''
+
+\subsection{Silas ``Tre Dita''}
+\textbf{Ruolo e presenza:} fabbro all'Officina delle Lame; collega il passato di Elias alle forniture attuali.\par
+\textbf{Come interpretarlo:} continua a lavorare mentre parla di affari; depone l'utensile quando si nomina l'incendio. Usa ironia per evitare giudizi, non per rendere ogni risposta enigmatica.
+
+\textbf{Vuole, perché:} aiutare Elias senza essere ridotto al traditore che ha reso possibile l'esperimento. Vendette la copia per pagare debiti, accettando una giustificazione ospedaliera che gli permetteva di non interrogarsi troppo.
+
+\textbf{Sa e fonte:} lavorava con Elias, conosce l'impiego originario della Serie II e il motivo dell'incendio. Vendette la copia sette mesi fa e riconosce il sigillo del compratore, presentatosi come incaricato della Chiesa; non conosceva il nome di Celestine. Una commessa successiva al Laboratorio gli diede accesso all'ingresso di servizio e una chiave rimasta in suo possesso. La nota in H03 è sua. Il giorno 14 confessò la vendita a Elias; in seguito gli procurò l'incontro con Miriam, che conosce per consulenze su vecchi strumenti.
+
+\textbf{Crede / non sa:} temeva un uso medico coercitivo, ma non conosce organismo, pazienti collegati o sabotaggio. Non può garantire che la chiave apra ancora né che l'interno sia libero. Non ha visto Elias dopo la fuga.
+
+\textbf{Nasconde e teme:} ammette commesse e sequestro, omettendo all'inizio la copia privata. Teme la rabbia di Elias e un'accusa di traffico di materiale ecclesiastico; non possiede un'altra copia completa da vendere ai PG.
+
+\textbf{Interazione:} mostra H03 e riconosce il componente senza pretendere fiducia assoluta. Alla domanda ``Come hanno ricostruito ciò che era bruciato?'' evade una volta parlando del sequestro. Chi nota che mancavano le parti decisive, oppure propone di usare la verità per fermare il danno, gli offre una ragione per confessare. Il bisogno di denaro spiega la scelta; non la giustifica automaticamente.
+
+\textbf{Aiuto e limite:} consegna la chiave o accompagna i PG all'ingresso se il piano non è un assalto cieco. Può riparare un componente noto o aiutare sotto istruzioni; non inventa una macchina risolutiva. La sua confessione resta ottenibile anche se H03 viene perso.
+
+\textbf{Se ignorato o minacciato:} mette al sicuro il frammento e cerca notizie tramite Marta. Se la Chiesa reagisce alle indagini può arrestarlo per le commesse e la copia venduta; il suo posto vuoto e i testimoni dell'arresto conducono alla Caserma. Minacciato dai PG, chiude la bottega e cerca protezione, non diventa automaticamente un agente di Celestine.\par
+\textbf{Voce:} ``Mi dissero che serviva per un ospedale. Era vero. È tutto il resto che non ho voluto chiedere.''
+
+\subsection{Marta Ghal}
+\textbf{Ruolo e interpretazione:} caporeparto della Fonderia; brusca, controlla che la conversazione non avvenga davanti al contabile. Vuole proteggere gli operai e il loro salario, incluso Elias, non difendere ogni decisione della Chiesa.
+
+\textbf{Sa e fonte:} conserva il foglio originale H04, ha visto pesature e ricopiatura e coprì il turno del giorno 16. Sa che Elias voleva seguire il carro; non vide dove arrivò. Sa dove vengono conservate le copie carbone H05 e può indicare il vetturale.
+
+\textbf{Crede / nasconde / teme:} sospetta frodi nelle commesse. Nasconde il turno alterato perché potrebbe costarle il posto e offrire un pretesto per chiudere la Fonderia. Non conosce un traffico di tessuti e non inventa un doppio fondo.
+
+\textbf{Interazione e aiuto:} conferma anomalie e assenza di Elias con una domanda pertinente. Mostra l'originale in privato; permette una copia se i PG evitano di sequestrare pubblicamente i registri davanti al contabile. Ammette il favore al turno se le spiegano come proteggeranno gli altri operai. Non può garantire l'innocuità attuale di Elias.
+
+\textbf{Reazione:} se scatta la confisca, conserva o consegna una copia quando ha tempo materiale per farlo; altrimenti ricorda numeri e testimoni. Una minaccia ai lavoratori la rende ostile anche se i PG cercano Elias.\par
+\textbf{Voce:} ``Il peso l'abbiamo controllato. Chiedete a chi ha cambiato il registro, non a chi reggeva la bilancia.''
+
+\subsection{Sorella Ilyne}
+\textbf{Ruolo e interpretazione:} archivista ecclesiastica; controlla firme e numeri prima di dare un'opinione. Crede che registrazioni corrette permettano alla Chiesa di rispondere dei propri atti.
+
+\textbf{Sa e fonte:} gestisce H06 e le restrizioni di consultazione, vide Elias cercare commesse il giorno 18. Ha notato un sigillo non censito e ordini di sottrarre documenti alla consultazione; può confrontare H07 con la procedura abituale. Non conosce il nome Servizio dell'Ascolto o l'obiettivo della cerchia.
+
+\textbf{Crede / nasconde / teme:} sospetta che qualcuno usi l'autorità ecclesiastica senza risponderne. Non offre subito il proprio sospetto perché teme di accusare ingiustamente colleghi e perdere l'accesso all'Archivio. Ha già eseguito restrizioni che ora considera dubbie.
+
+\textbf{Interazione e aiuto:} una richiesta con numero di commessa basta a individuare i registri ordinari. Per le copie riservate vuole una motivazione verificabile e un uso circoscritto, non un giuramento di fedeltà. Peso, ricodifica e cancellazioni rendono concreta la richiesta. Può dare H07 in privato o attestare una rimozione; non conosce a memoria tutte le pagine distrutte.
+
+\textbf{Reazione:} se arriva un ordine di chiusura ne registra autore e momento. Può indicare la restrizione ad Aldren e chiedere che se ne assuma la responsabilità. Minacciata, chiama i custodi e chiude la consultazione; restano i documenti già ottenuti e le altre fonti.\par
+\textbf{Voce:} ``Un ordine riservato ha comunque un responsabile. Qui hanno lasciato il sigillo e tolto il nome.''
+
+\subsection{Maud Kerren}
+\textbf{Ruolo e interpretazione:} infermiera dell'Ospedale; ricorda abitudini e bisogni dei degenti, parla dei pazienti per nome. Vuole evitarne un altro trasferimento senza spiegazioni.
+
+\textbf{Sa e fonte:} assisteva i sei prima del trasferimento del giorno 25 e può riconoscerli; confrontando il registro di reparto con quello pubblico nota le due cancellazioni. Conosce botola, magazzino clinico e attrezzature ausiliarie per il proprio lavoro. Non ha studiato la camera rituale.
+
+\textbf{Crede / nasconde / teme:} sospetta esperimenti dannosi, ma non sa che cosa misurino. Conserva una copia dei nomi invece di distruggerla come richiesto. Teme che perdere il posto significhi perdere ogni possibilità di seguire i malati.
+
+\textbf{Interazione e aiuto:} racconta il trasferimento e può mostrare la lista se i PG offrono un modo per rintracciare e soccorrere i sei. Non conosce H09 finché Oren glielo affida o qualcuno lo trova tra le sue carte: non glielo assegnare retroattivamente. Può guidare nel reparto e aiutare con il sostegno su indicazione clinica; da sola non arresta la risonanza.
+
+\textbf{Reazione:} quando le vietano l'ala cerca un collega o i PG. Se la proteggono e le danno un compito concreto li accompagna; se vogliono distruggere tutto con i pazienti ancora collegati si oppone e cerca altro aiuto.\par
+\textbf{Voce:} ``Erano sei quando li abbiamo accompagnati giù. Sul registro di sopra, adesso, ne restano quattro.''
+
+\subsection{Nox}
+\textbf{Ruolo e interpretazione:} giovane cacciatore agli ordini di Roland; controlla spesso la reazione della capitana prima di parlare. Vuole essere considerato affidabile e teme che prudenza significhi codardia.
+
+\textbf{Sa e fonte:} conosce H10 e gli ordini ricevuti; sa solo ciò che ha visto durante le pattuglie. Se viene mandato alla Fonderia impara lì nomi e percorsi. Non sa dove sia Elias prima di seguirne le tracce.
+
+\textbf{Crede / nasconde / teme:} interpreta l'ansia della capitana come invito ad anticipare il pericolo. Non conosce necessariamente la storia delle cinque vittime. Nasconde i propri dubbi ostentando sicurezza; non ha un tradimento segreto.
+
+\textbf{Interazione e aiuto:} può guidare una pattuglia e tenere libera un'uscita. Un incarico preciso, riconosciuto da Roland, riduce il bisogno di dimostrare coraggio sparando. I PG possono richiamarlo all'ordine scritto di contenere se possibile.
+
+\textbf{Reazione:} segue i PG soltanto se incaricato o se ha una pista concreta, e può perderli. Di fronte a spasmi di Elias porta la mano all'arma e avverte; non attacca fuori scena per imporre un conflitto. Se vede un'aggressione può intervenire prematuramente, ma un ordine, un ostacolo o un'azione dei PG possono fermarlo.\par
+\textbf{Voce:} ``Ditemi quale porta devo tenere. E ditemi quando posso lasciarla.''
+
+\subsection{Abel Norn}
+\textbf{Ruolo e interpretazione:} bibliotecario cieco; conosce l'ordine dei volumi e le abitudini degli studiosi. La cecità non gli conferisce percezioni soprannaturali.
+
+\textbf{Sa e fonte:} riconobbe Miriam accompagnata da un visitatore il giorno 20 e ne udì la presentazione come Elias Ward. Può ritrovare, con i contrassegni degli scaffali o l'aiuto di un assistente, il testo consultato. Non vide disegni o sigilli e non lesse gli appunti privati di Elias.
+
+\textbf{Vuole / nasconde / teme:} vuole preservare testi e consultazione. Mantiene riservati i nomi dei lettori perché teme ritorsioni sugli studiosi; non protegge un culto. Se i PG spiegano la scomparsa può confermare la visita e cercare Miriam.
+
+\textbf{Aiuto e reazione:} se Miriam manca, permette di consultare il passo citato in H11; per traduzioni e deduzioni serve ancora una competenza pertinente. Teme fuoco e confisca, quindi allontana candele e mette al sicuro i volumi quando la situazione si agita. Non fornisce un nuovo accesso al Progetto.\par
+\textbf{Voce:} ``Posso dirvi quale libro hanno chiesto. Perché lo cercassero dovete chiederlo a loro.''
+
+\subsection{Personale operativo: risposte per il master}
+Queste figure completano le azioni già presenti nella trama. Non occorre assegnare un nuovo nodo o un retroscena a ciascuna.
+
+\textbf{T. Harrow, vetturale di H05.} Ha trasportato il collo 17-B al deposito il giorno 16 e conosce la ricodifica perché ha firmato la ricevuta. Vuole essere pagato e non diventare il capro espiatorio del contabile. Conferma percorso, peso e firma; non conosce il contenuto oltre la descrizione e non ha consegnato la cassa nella camera. Un colloquio privato o una copia di H05 basta a rendere concreta la domanda. Non sa spiegare la malattia di Elias.
+
+\textbf{Contabile ecclesiastico alla Fonderia.} Ha applicato la descrizione di copertura e autorizzato 17-B. Conosce il carattere riservato delle forniture, non il contatto o i sei collegamenti. Difende inizialmente la ricodifica come procedura; davanti ai due documenti deve ammettere che il peso standard non fu misurato. Teme un'accusa di frode e segnala ai superiori chi ha visto le carte. Può confiscare registri tramite l'autorità ecclesiastica, ma non eliminare copie di cui ignora l'esistenza.
+
+\textbf{Sorvegliante ferito.} È l'uomo colpito da Elias il giorno 26, non un operaio della Fonderia. Presidiava il trasferimento e tentò di trattenerlo. Ha riferito a Celestine e poi a Roland che Elias lo colpì al braccio e fuggì senza finirlo. Vuole cure e non essere accusato di aver lasciato passare l'intruso. Una domanda sul gesto concreto può confermare che fu risparmiato; non può certificare che Elias rimarrà lucido. Può essere sentito attraverso Roland o rintracciato al posto di cura dell'Ospedale. Non è contemporaneamente la guardia in servizio al deposito.
+
+\textbf{Due tecnici del Laboratorio.} Conoscono inventario H13, ascensore, segnale di scarico e V-Est bloccata. Il tecnico incaricato della riparazione conosce il ramo interessato e l'ordine di conservare il sostegno, non la teoria cosmica. Temono guasti, licenziamento e punizioni per accessi non autorizzati. Indicano l'ingresso e il prossimo carico a chi presenti autorità credibile o una via sicura per collaborare. Possono aiutare alle pompe; se minacciati cercano riparo, non si sacrificano automaticamente per Celestine.
+
+\textbf{Sorvegliante in servizio al deposito.} È una guardia diversa dal ferito. Controlla lasciapassare e passaggi riservati. Sa dell'intruso e dell'obbligo di riferire, ma non possiede tutte le conoscenze di Celestine. Davanti a un ordine di Aldren verifica ciò che l'ordine autorizza; una richiesta di ingresso nella camera richiede conferma ulteriore. In caso di allarme chiama aiuto percorrendo un tragitto o mandando un messaggero: i PG possono vedere e interrompere la comunicazione.
+
+\subsection{Relazioni e condizioni di collaborazione}
+Usa questa tabella per valutare proposte nuove. Le concessioni dipendono dalle condizioni, non da un esito già deciso della storia.
+\begin{longtable}{p{32mm} p{64mm} p{52mm}}
+\toprule
+\textbf{Rapporto} & \textbf{Tensione concreta} & \textbf{Possibile accordo}\\
+\midrule
+Eleanor / Roland & Lei teme una condanna preventiva; Roland teme vittime durante il recupero. & Parlare a Elias sotto osservazione, con uscita e contenimento preparati.\\
+Elias / Silas & La vendita ha reso inutile la distruzione dei disegni. Elias conosce già la colpa. & Silas aiuta il soccorso senza pretendere perdono immediato.\\
+Oren / Aldren & Oren chiese una verifica; Aldren trasformò la richiesta in controllo e silenzio. & Una sospensione documentata e il soccorso possono farli cooperare, senza cancellare la denuncia.\\
+Aldren / Celestine & Aldren difende la ricerca che crede medica; Celestine gli occulta costo e obiettivo. & Può cercare una revisione interna; se lei rifiuta davanti alle prove, può sostenerne il fermo.\\
+Elias / Miriam & Entrambi vogliono capire, ma Elias ha visto il costo umano dopo il loro colloquio. & Conservare dati e campioni già prelevati mentre si liberano i pazienti.\\
+Miriam / Celestine & Miriam vuole accesso verificabile; Celestine vuole mantenere controllo e attivare. & Uno scambio di prove è possibile; non implica che Miriam accetti ogni sacrificio.\\
+Roland / Nox & Nox cerca approvazione anticipando il pericolo. & Un ordine esplicito e un compito utile gli permettono di dimostrare affidabilità.\\
+\bottomrule
+\end{longtable}
+
+\begin{gmbox}
+\textbf{Prima di far cambiare schieramento a qualcuno:} quale fatto ha appreso? Quale paura è stata affrontata? Che cosa ottiene o perde? Se non sai rispondere, mantieni la sua posizione oppure fagli chiedere una garanzia concreta. Evita che tutti diventino alleati per lo stesso discorso o nemici perché serve uno scontro.
+\end{gmbox}
+
+\section{7. Mappa della rete}
+
+\begin{center}
+\resizebox{\linewidth}{!}{%
+\begin{tikzpicture}[
+ node distance=13mm and 17mm,
+ every node/.style={font=\small,align=center},
+ main/.style={draw=blood,thick,fill=ash!55,minimum width=31mm,minimum height=10mm},
+ nodebox/.style={draw=iron,fill=mist,minimum width=30mm,minimum height=9mm},
+ final/.style={draw=blood,very thick,fill=blood!10,minimum width=34mm,minimum height=11mm},
+ edge/.style={-{Latex[length=2mm]},thin,iron}
+]
+\node[main] (home) {Casa Ward};
+\node[nodebox,below left=of home] (foundry) {Fonderia};
+\node[nodebox,below=of home] (studio) {Studio distrutto - Officina delle lame};
+\node[nodebox,below right=of home] (hunters) {Rifugio dei Cacciatori};
+\node[nodebox,below left=of foundry] (archive) {Archivio Ecclesiastico};
+\node[nodebox,below=of studio] (hospital) {Ospedale Vecchio};
+\node[nodebox,below right=of hunters] (library) {Biblioteca Proibita};
+\node[nodebox,below=19mm of hospital] (alchemy) {Laboratorio Alchemico};
+\node[final,below=17mm of alchemy] (project) {Il Progetto};
+\draw[edge] (home)--(foundry);
+\draw[edge] (home)--(studio);
+\draw[edge] (home)--(hunters);
+\draw[edge] (foundry)--(archive);
+\draw[edge] (foundry)--(alchemy);
+\draw[edge] (studio)--(archive);
+\draw[edge] (studio)--(library);
+\draw[edge] (hunters)--(hospital);
+\draw[edge] (hunters)--(alchemy);
+\draw[edge] (archive)--(hospital);
+\draw[edge,bend left=20] (archive) to (library);
+\draw[edge] (hospital)--(alchemy);
+\draw[edge] (library)--(alchemy);
+\draw[edge] (alchemy)--(project);
+\draw[edge,bend right=20] (hospital) to (project);
+\draw[edge,bend left=18] (library) to (project);
+\end{tikzpicture}%
+}
+\end{center}
+
+Le frecce indicano collegamenti disponibili, non un ordine obbligatorio. I PG possono raggiungere il nodo finale quando hanno identificato almeno un accesso fisico e compreso che il Laboratorio Alchemico è un punto di transito. Un'alleanza forte con una fazione può sostituire parte degli indizi materiali.
+
+\medskip
+
+\section{8. Matrice delle rivelazioni}
+
+\small
+\begin{longtable}{p{37mm} p{34mm} p{34mm} p{43mm}}
+\toprule
+\textbf{Rivelazione} & \textbf{Prima fonte} & \textbf{Alternativa} & \textbf{Conferma / limite}\\
+\midrule
+Elias indagava & Casa: H01, H02 & Marta alla Fonderia & Silas ricorda la visita e la confessione\\
+Origine del regolatore & Officina: H03, Silas & Elias al finale & Fonderia prova la presenza, non da sola la paternità\\
+Spedizione occultata & Fonderia: H04 e H05 & Marta e vetturale & Archivio: H06 e H07 documentano il percorso riservato\\
+Ospedale coinvolto & Archivio: H06 & Ospedale: Oren, H09 & Laboratorio: H13 registra consegne dirette\\
+Deposito di transito & Laboratorio: H12, H13 & Tecnici e ascensore & Fonderia indica la destinazione, non il tratto successivo\\
+Accesso al complesso & Laboratorio: H14 & Botola dell'Ospedale & Rifugio: tracce allo scarico; pianta della Biblioteca da verificare\\
+Ricerca clandestina & Archivio: H07, Ilyne & Oren e Aldren & Finale: H16 mostra ciò che Aldren ignorava\\
+Tentativo di contatto & Biblioteca: H11, Miriam & Finale: H15, H16 & Interpretazione prima, conferma nell'apparato\\
+Autocontrollo di Elias & Rifugio: sorvegliante risparmiato & Finale: incontro, H17 & H08 prova lucidità al giorno 19; sabotaggio da solo non basta\\
+\bottomrule
+\end{longtable}
+\normalsize
+
+\nodehead{9. Nodo 0 -- Casa Ward}{Innesco, legame emotivo e primo ventaglio di piste.}{Elias è fuggito, è stato rapito o stava facendo qualcosa di preciso?}
+
+\subsection{Atmosfera}
+Una casa operaia ordinata che sembra trattenere il respiro. La cena dell'ultima sera è stata sparecchiata, ma il posto di Elias è rimasto intatto. Una stanza laterale conserva strumenti troppo raffinati per la vita che conduceva negli ultimi anni.
+
+\textbf{Aspetti di scena:} \aspect{Una casa rimasta in attesa}; \aspect{Ogni oggetto ricorda una vita abbandonata}.
+
+\subsection{PNG presenti}
+Eleanor Ward. Eventualmente Padre Aldren arriva verso la fine della scena, se vuoi presentare subito la Chiesa come aiuto gentile e invasivo.
+
+\begin{cluebox}
+\textbf{Automatico:}
+\begin{itemize}
+\item Elias annotava pesi, turni notturni e numeri di spedizione.
+\item Tutto è cominciato alla Fonderia.
+\item Una mappa segna Fonderia, Archivio Ecclesiastico e Ospedale Vecchio senza un ordine preciso.
+\item I vecchi progetti rimasti sono volutamente incompleti: Elias distrusse le parti decisive.
+\end{itemize}
+\textbf{Con Indagine:} manca il taccuino più recente; nella cenere c'è un frammento con lo schizzo di una valvola.\\
+\textbf{Con Empatia:} Eleanor ammette la crisi violenta. Ricorda che la frase ``Le macchine stanno cercando di ascoltare qualcosa'' risale alla sera in cui Elias incontrò Miriam, il giorno 20; può indicare chi consultare.\\
+\textbf{Con Dottrina o Carisma:} Padre Aldren rivela che la Chiesa ha già aperto una pratica di ricerca, pur sostenendo che Elias sia solo un malato.
+\end{cluebox}
+
+\subsection{Handout}
+
+\textbf{H01 -- Vecchio taccuino di Elias}
+
+\textit{Come si ottiene:}
+Si trova sul tavolo dello studio.
+
+\textit{Consegnalo quando:}
+I PG decidono di esaminare gli appunti di Elias.
+
+\textit{Scopo:}
+Introdurre le anomalie nelle spedizioni e mostrare che Elias stava seguendo un'indagine precisa.
+
+\textit{Rivela:}
+Annotazioni su pesi, turni notturni e numeri di spedizione.
+
+\textit{Non rivela:}
+Le conclusioni di Elias né chi abbia alterato i registri.
+
+\medskip
+
+\textbf{H02 -- Cartina annotata}
+
+\textit{Come si ottiene:}
+Piegata tra le pagine del taccuino.
+
+\textit{Consegnala quando:}
+I PG sfogliano il taccuino o ispezionano accuratamente lo studio.
+
+\textit{Scopo:}
+Aprire fin dall'inizio più piste investigative.
+
+\textit{Rivela:}
+Fonderia, Archivio Ecclesiastico e Ospedale Vecchio sono luoghi collegati alle indagini di Elias.
+
+\textit{Non rivela:}
+Quale sia stato l'ultimo luogo visitato né quale pista sia la più importante.
+
+\medskip
+
+\textbf{Se gli handout vengono mancati}
+
+Eleanor ricorda buona parte delle annotazioni del marito e sa indicare i luoghi segnati sulla cartina. I PG ottengono comunque le piste investigative, ma perdono due prove materiali utili per convincere altri PNG.
+
+\linkto{Fonderia; Studio distrutto; Archivio Ecclesiastico; Ospedale Vecchio; Rifugio dei Cacciatori tramite la notizia dei sintomi.}
+
+\begin{fatebox}
+\textbf{Difficoltà tipiche:} +1 per convincere Eleanor a parlare della crisi; +2 per riconoscere i fogli recenti portati via da Elias. Le tracce mostrano la sua partenza frettolosa: non introdurre una perquisizione precedente senza definirne autore e conseguenze.\\
+\textbf{Compel possibili:} un PG legato a Eleanor non può ignorare la sua sicurezza; un ex fedele riconosce Padre Aldren e gli deve un favore.
+\end{fatebox}
+
+\begin{clockbox}
+La Chiesa mette Eleanor sotto protezione e limita l'accesso alla casa. Gli indizi restano ottenibili, ma richiedono negoziazione, infiltrazione o un favore.
+\end{clockbox}
+
+\nodehead{10. Nodo 1 -- La Fonderia}{Nodo tecnico e sociale; dimostra che Elias seguiva un'anomalia reale.}{Che cosa aveva notato Elias nelle spedizioni?}
+
+\subsection{Atmosfera}
+Calore, fuliggine, rumore ritmico e operai che evitano di guardare le casse sigillate. Il posto di Elias è vuoto, ma gli strumenti sono disposti come se dovesse tornare dopo una pausa.
+
+\textbf{Aspetti di scena:} \aspect{Il ferro non conserva segreti, gli uomini sì}; \aspect{Rumore assordante e occhi indiscreti}.
+
+\subsection{PNG presenti}
+Marta Ghal, caporeparto; alcuni operai; un contabile della Chiesa; eventualmente Nox, giovane cacciatore.
+
+\begin{cluebox}
+\textbf{Automatico:}
+\begin{itemize}
+\item Elias misurava casse che ufficialmente contenevano pezzi industriali ordinari.
+\item Il peso reale della cassa 17 è inferiore al dichiarato: 391 libbre e un quarto invece di 412. La bilancia grande arrotonda a 391.
+\item Alcuni componenti non erano destinati a macchine della Fonderia: venivano soltanto rifiniti e rispediti.
+\item Elias riconobbe la propria firma progettuale in un regolatore di pressione.
+\end{itemize}
+\textbf{Con Indagine:} H05 ricodifica il collo 17 come 17-B; peso e nota del vetturale collegano i due documenti. La ricevuta nomina il Laboratorio Alchemico.\\
+\textbf{Con Carisma o Empatia:} Marta ammette di aver coperto un turno di Elias la notte in cui seguì un carro.\\
+\textbf{Con Tecnica:} giunti sterilizzabili e basse pressioni sono compatibili con un circuito medico. H03 conferma l'uso trasfusionale; il pezzo da solo non rivela un organismo artificiale.
+\end{cluebox}
+
+\subsection{Handout}
+
+\textbf{H04 -- Registro delle spedizioni}
+
+\textit{Come si ottiene:}
+Nell'ufficio di Marta Ghal. Se i PG conquistano la sua fiducia, lo mostra spontaneamente; altrimenti può essere recuperato di nascosto.
+
+\textit{Quando consegnarlo:}
+Appena i PG iniziano a confrontare pesi, registri o spedizioni.
+
+\textit{Scopo:}
+Confermare che Elias aveva individuato un'anomalia reale e che non stava delirando.
+
+\textit{Rivela:}
+Una spedizione presenta un peso incompatibile con il contenuto dichiarato e una numerazione alterata.
+
+\textit{Non rivela:}
+La destinazione finale delle casse né il motivo dell'anomalia.
+
+\medskip
+
+\textbf{H05 -- Ricevuta della cassa}
+
+\textit{Come si ottiene:}
+Tra le copie carbone del magazzino, archiviata dal vetturale sotto il codice 17-B.
+
+\textit{Quando consegnarla:}
+Quando i PG trovano la cassa o decidono di ricostruire il suo percorso.
+
+\textit{Scopo:}
+Dimostrare che la cassa 17 è uscita con un codice diverso da quello del foglio di pesatura.
+
+\textit{Rivela:}
+Numero della cassa, peso, data di spedizione e una sigla compatibile con il Laboratorio Alchemico.
+
+\textit{Non rivela:}
+La destinazione sotterranea e l'identità del titolare del sigillo; il contenuto dichiarato è invece elencato.
+
+\medskip
+
+\textbf{Se gli handout vengono mancati}
+
+Marta può raccontare le discrepanze nei registri e confermare che Elias seguì personalmente uno dei carri durante un turno di notte. L'indagine non si blocca, ma i PG perdono la possibilità di usare i documenti come prova materiale.
+
+\linkto{Archivio Ecclesiastico tramite i registri; Laboratorio Alchemico tramite la marcatura; Studio distrutto e Officina delle Lame tramite il progetto; Rifugio dei Cacciatori se Nox interviene.}
+
+\begin{fatebox}
+\textbf{Creare vantaggi:} \aspect{Gli operai sono dalla nostra parte}; \aspect{Una cassa non ancora registrata}; \aspect{Turno di notte senza sorveglianza}.\\
+\textbf{Complicazioni:} incidente industriale, arrivo della Chiesa, operaio che ripete la notizia dell'aggressione a un sorvegliante. Non è una seconda vittima della Fonderia.
+\end{fatebox}
+
+\begin{clockbox}
+Il contabile confisca i registri e la Fonderia sospende le attività. Marta può però consegnare di nascosto una copia incompleta o indicare il percorso di un carro.
+\end{clockbox}
+
+\nodehead{11. Nodo 2 -- Studio distrutto e Officina delle Lame}{Nodo biografico; collega il passato di Elias al Progetto.}{Perché Elias abbandonò l'ingegneria e chi recuperò le sue invenzioni?}
+
+\subsection{Atmosfera}
+Lo studio è una carcassa annerita tra edifici riconvertiti. L'Officina delle Lame, poco distante, è viva e rumorosa: armi da caccia nate da idee che un tempo avrebbero potuto servire miniere, ospedali e ponti.
+
+\textbf{Aspetti di scena:} \aspect{Il progresso porta ancora cicatrici}; \aspect{Ogni utensile può diventare un'arma}.
+
+\subsection{PNG presenti}
+Silas ``Tre Dita'', ex collega di Elias. È sarcastico, affezionato a Elias e profondamente rassegnato alla trasformazione dell'ingegno in violenza.
+
+\begin{cluebox}
+\textbf{Automatico:}
+\begin{itemize}
+\item Elias bruciò lo studio dopo che una sua pompa chirurgica venne adattata a uno strumento di tortura.
+\item La Chiesa sequestrò ciò che sopravvisse all'incendio.
+\item Silas conserva un prototipo di valvola identico al pezzo visto alla Fonderia.
+\item Un compratore ecclesiastico usava lo stesso sigillo che compare negli ordini alterati.
+\end{itemize}
+\textbf{Con Tecnica:} raccordi aggiuntivi permettono di collegare più regolatori. La nota in H03 è di Silas, scritta dopo una commessa ecclesiastica.\\
+\textbf{Con Carisma:} Silas consegna una chiave di servizio del Laboratorio Alchemico, ottenuta lavorando a una commessa.\\
+\textbf{Con Empatia:} Silas confessa di aver venduto alla Chiesa una copia che Elias credeva distrutta.
+\end{cluebox}
+
+\subsection{Handout}
+
+\textbf{H03 -- Progetto della Valvola}
+
+\textit{Come si ottiene:}
+Silas lo mostra ai PG se dimostrano interesse per il lavoro di Elias o gli mostrano il componente recuperato alla Fonderia.
+
+\textit{Consegnalo quando:}
+La conversazione si sposta dai ricordi di Elias ai suoi progetti.
+
+\textit{Scopo:}
+Collegare il passato di Elias alle anomalie scoperte durante l'indagine.
+
+\textit{Rivela:}
+Il regolatore trovato alla Fonderia deriva dal progetto trasfusionale Serie II, adattato al collegamento di più circuiti.
+
+\textit{Non rivela:}
+A quale macchina sia destinato né chi abbia sviluppato le modifiche.
+
+\medskip
+
+\textbf{Se gli handout vengono mancati}
+
+Silas può comunque descrivere il progetto originale e indicare l'esistenza di un ingresso di servizio al Laboratorio Alchemico. I PG perdono però la possibilità di usare il progetto e la chiave come prove materiali.
+
+\linkto{Fonderia; Archivio tramite il sigillo; Biblioteca perché Silas presentò Elias a Miriam e può fare lo stesso con i PG; Laboratorio tramite la chiave di servizio.}
+
+\begin{fatebox}
+\textbf{Compel:} un PG inventore può essere tentato dal valore tecnico dei progetti; un cacciatore riconosce l'utilità militare e vuole requisire il prototipo.
+\end{fatebox}
+
+\begin{clockbox}
+Silas viene arrestato per traffico di materiali ecclesiastici. Può ancora essere raggiunto alla Caserma o liberato con l'aiuto di una fazione.
+\end{clockbox}
+
+\nodehead{12. Nodo 3 -- Archivio Ecclesiastico}{Nodo politico e documentale; dimostra che gli ordini sono clandestini anche dentro la Chiesa.}{Chi autorizza le spedizioni e perché i registri non coincidono?}
+
+\subsection{Atmosfera}
+Corridoi asciutti, scaffali numerati, copisti che lavorano in silenzio. Alcuni registri sembrano più sorvegliati di reliquie sacre.
+
+\textbf{Aspetti di scena:} \aspect{Ogni errore è una confessione}; \aspect{Il silenzio ha una gerarchia}.
+
+\subsection{PNG presenti}
+Sorella Ilyne, archivista severa; Padre Aldren; due custodi ecclesiastici.
+
+\begin{cluebox}
+\textbf{Automatico, con accesso legittimo o ricerca sensata:}
+\begin{itemize}
+\item le spedizioni sono divise in piccoli ordini apparentemente indipendenti;
+\item i destinatari ufficiali sono Ospedale Vecchio e Laboratorio Alchemico;
+\item un sigillo senza nome autorizza correzioni retroattive;
+\item il numero di casse in ingresso supera quello registrato in uscita.
+\end{itemize}
+\textbf{Con Indagine:} H07 associa le commesse 44-12, 44-14 e 44-15 ai passaggi di servizio; H06 indica l'ala inferiore dell'Ospedale. Ne emerge una destinazione riservata, non una mappa completa.\\
+\textbf{Con Dottrina:} il sigillo appartiene a una cappella interna non elencata nella gerarchia pubblica.\\
+\textbf{Con Empatia:} Ilyne sospetta un ordine parallelo e aiuta i PG se promettono di non accusare indiscriminatamente la Chiesa.\\
+\textbf{Con Inganno o Furtività:} si ottiene una copia di un ordine di trasferimento firmato con il sigillo sconosciuto.
+\end{cluebox}
+
+\subsection{Handout}
+
+\textbf{H06 -- Registro ecclesiastico}
+
+\textit{Come si ottiene:}
+Consultando i registri dell'Archivio con il permesso di Ilyne oppure recuperandone una copia di nascosto.
+
+\textit{Consegnalo quando:}
+I PG iniziano a confrontare ordini di spedizione e registri.
+
+\textit{Scopo:}
+Dimostrare che le anomalie osservate alla Fonderia proseguono all'interno della Chiesa.
+
+\textit{Rivela:}
+Spedizioni alterate, numerazione incoerente e destinazioni riconducibili all'Ospedale Vecchio e al Laboratorio Alchemico.
+
+\textit{Non rivela:}
+Chi abbia autorizzato le modifiche né il vero scopo delle spedizioni.
+
+\medskip
+
+\textbf{H07 -- Ordine interno della chiesa (trasferimento)}
+
+\textit{Come si ottiene:}
+Con Inganno o Furtività, oppure se Ilyne decide di fidarsi dei PG.
+
+\textit{Consegnalo quando:}
+I PG scoprono l'esistenza dell'ordine parallelo.
+
+\textit{Scopo:}
+Far capire che all'interno della Chiesa esiste una struttura segreta che opera al di fuori della gerarchia ufficiale.
+
+\textit{Rivela:}
+Un ordine di trasferimento firmato con un sigillo sconosciuto e destinato al Laboratorio Alchemico.
+
+\textit{Non rivela:}
+Lo scopo dell'esperimento e l'identità della responsabile. H07 nomina Aldren come destinatario della segnalazione su Elias, non come direttore scientifico.
+
+\medskip
+
+\textbf{Se gli handout vengono mancati}
+
+Ilyne può descrivere le discrepanze nei registri e confermare l'esistenza del sigillo sconosciuto, ma i PG non avranno documenti da esibire come prova.
+
+\linkto{Ospedale Vecchio; Laboratorio Alchemico; Biblioteca Proibita per interpretare il sigillo; Padre Aldren e Chiesa.}
+
+\begin{fatebox}
+\textbf{Difficoltà tipiche:} +2 per ottenere accesso limitato; +3 per consultare ordini riservati; +4 per sottrarre un documento senza lasciare tracce. Il fallimento concede comunque l'informazione, ma fa avanzare l'orologio o mette un nome sulla lista della Chiesa.
+\end{fatebox}
+
+\begin{clockbox}
+La pagina principale viene rimossa. Restano il segno netto dello strappo, la numerazione interrotta e la memoria di Ilyne. Padre Aldren offre di ``proteggere'' i PG in cambio degli appunti.
+\end{clockbox}
+
+\nodehead{13. Nodo 4 -- Ospedale Vecchio}{Nodo medico e morale; mostra il costo umano del Progetto.}{Perché le apparecchiature passano da un ospedale e che cosa è stato fatto ai pazienti?}
+
+\subsection{Atmosfera}
+Un edificio ancora rispettabile, ma sovraffollato. L'ala vecchia è chiusa per lavori. Dai tubi arriva un battito irregolare che il personale attribuisce alle pompe dell'acqua.
+
+\textbf{Aspetti di scena:} \aspect{Le guarigioni hanno una porta posteriore}; \aspect{Pazienti senza nome}.
+
+\subsection{PNG presenti}
+Dottor Oren Sile; infermiera Maud Kerren; pazienti; possibile presenza di Padre Aldren.
+
+\begin{cluebox}
+\textbf{Automatico:}
+\begin{itemize}
+\item Elias visitò Oren e mostrava sintomi iniziali di trasformazione, ma conservava piena lucidità;
+\item l'ala chiusa riceve sangue e componenti senza registrare pazienti;
+\item alcuni degenti sono stati ``trasferiti'' senza destinazione;
+\item tubazioni nuove scendono sotto l'edificio invece di servire i reparti.
+\end{itemize}
+\textbf{Con Medicina o Emoterapia:} campioni scartati mostrano tessuti mantenuti vivi fuori dal corpo.\\
+\textbf{Con Empatia:} Oren ammette la denuncia: sperava in un'ispezione e protezione per Elias, ma Aldren gli impose il silenzio. Ha visto l'organismo il giorno 25. Teme incriminazione e rappresaglie; collabora se i PG gli offrono un modo concreto per soccorrere i pazienti.\\
+\textbf{Con Indagine:} una botola tecnica collega l'ala chiusa ai condotti del Laboratorio Alchemico.\\
+\textbf{Con Carisma:} Maud consegna la lista dei pazienti scomparsi.
+\end{cluebox}
+
+\subsection{Handout}
+
+\textbf{H08 -- Referto medico di Elias Ward}
+
+\textit{Come si ottiene:}
+Negli archivi dell'Ospedale oppure tramite il Dottor Oren Sile.
+
+\textit{Consegnalo quando:}
+I PG iniziano a interessarsi alle condizioni di salute di Elias.
+
+\textit{Scopo:}
+Dimostrare che Elias era ancora lucido quando comparvero i primi sintomi e che non era semplicemente "impazzito".
+
+\textit{Rivela:}
+Febbre, aggressività episodica, alterazioni del sangue e raccomandazione di ulteriori accertamenti.
+
+\textit{Non rivela:}
+La natura della trasformazione né il coinvolgimento del Progetto.
+
+\medskip
+
+\textbf{H09 -- Nota privata del dottor Sile}
+
+\textit{Come si ottiene:}
+Tra le carte personali di Oren nell'ufficio del reparto, dove lo conserva senza spedirlo. Maud può consegnarlo soltanto se Oren glielo ha affidato, per esempio prima di una convocazione di Aldren: registra questo passaggio se avviene.
+
+\textit{Consegnalo quando:}
+I PG scoprono che alcuni pazienti sono scomparsi.
+
+\textit{Scopo:}
+Mostrare il costo umano delle prove e la responsabilità di Oren nella denuncia.
+
+\textit{Rivela:}
+Sei pazienti sono stati trasferiti nell'ala inferiore e due rimossi dai registri pubblici; Oren ha visto la vasca e ha avvisato Aldren. La lista dei nomi è un documento separato che Maud può mostrare.
+
+\textit{Non rivela:}
+Dove siano stati portati né perché siano stati scelti.
+
+\medskip
+
+\textbf{Se gli handout vengono mancati}
+
+Oren può descrivere il referto di Elias, mentre Maud ricorda i nomi dei pazienti scomparsi. I PG ottengono comunque le informazioni, ma non hanno prove materiali da confrontare con i registri della Chiesa.
+
+\linkto{Laboratorio Alchemico; Archivio; Rifugio dei Cacciatori tramite i sintomi; Biblioteca Proibita tramite l'organismo. Accesso opzionale diretto al nodo finale, molto sorvegliato.}
+
+\begin{fatebox}
+\textbf{Scena possibile:} un paziente inizia a trasformarsi mentre la Chiesa vuole evacuarlo e i Cacciatori lo dichiarano perduto. La decisione dei PG influenza la fiducia delle fazioni senza essere il centro della campagna.
+\end{fatebox}
+
+\begin{clockbox}
+L'accesso all'ala inferiore viene sigillato e Maud riceve l'ordine di non avvicinarsi ai sei pazienti già trasferiti. Può indicare la botola tecnica o chiedere aiuto ai PG. Non aggiungere nuove vittime senza stabilire chi siano e quando siano state trasferite.
+\end{clockbox}
+
+\nodehead{14. Nodo 5 -- Rifugio dei Cacciatori}{Nodo di pressione e alleanza; offre informazioni recenti e una minaccia concreta.}{Perché i Cacciatori considerano Elias una preda e quanto sono vicini a trovarlo?}
+
+\subsection{Atmosfera}
+Una sala pratica, senza gloria: armi pulite, mappe macchiate, abiti bruciati. Ogni trofeo è in realtà un promemoria di qualcuno arrivato troppo tardi.
+
+\textbf{Aspetti di scena:} \aspect{Nessuno torna innocente dalla Caccia}; \aspect{Decisioni prese prima dell'alba}.
+
+\subsection{PNG presenti}
+Capitana Roland Kreiss; Nox; cacciatori feriti.
+
+\begin{cluebox}
+\textbf{Automatico:}
+\begin{itemize}
+\item Elias ha ferito un uomo durante la fuga, ma ha evitato di ucciderlo;
+\item le sue tracce raggiungono l'area tra Ospedale, Laboratorio Alchemico e fogne;
+\item ha costruito piccole trappole non letali per rallentare chi lo seguiva;
+\item Roland ritiene che la sua intelligenza renda la possibile trasformazione eccezionalmente pericolosa.
+\end{itemize}
+\textbf{Con Carisma:} Roland concorda tempo, luogo di ritrovo e misure di contenimento per un recupero. Un termine scaduto porta a ricerche più strette, non dimostra che Elias sia già una bestia.\\
+\textbf{Con Empatia:} emerge il passato di Roland e il motivo della sua durezza.\\
+\textbf{Con Sopravvivenza:} la mappa delle tracce individua un ingresso alle fogne vicino al Laboratorio Alchemico.\\
+\textbf{Con Medicina:} i rapporti mostrano che Elias non era ancora in fase irreversibile quando è scomparso.
+\end{cluebox}
+
+\subsection{Handout}
+
+\textbf{H10 -- Avviso di caccia}
+
+\textit{Come si ottiene:}
+Esposto sulla bacheca del Rifugio oppure consegnato da Roland.
+
+\textit{Consegnalo quando:}
+I PG chiedono informazioni sulla scomparsa di Elias o consultano gli archivi dei Cacciatori.
+
+\textit{Scopo:}
+Mostrare che i Cacciatori stanno cercando Elias in buona fede, convinti che sia ormai una minaccia.
+
+\textit{Rivela:}
+Elias è ricercato come malato armato; l'ordine è contenerlo se possibile. Il testo teme una futura trasformazione intelligente, non certifica che sia già avvenuta.
+
+\textit{Non rivela:}
+Che Elias conservi ancora il controllo né chi abbia diffuso realmente queste informazioni.
+
+\medskip
+
+
+\textbf{Se gli handout vengono mancati}
+
+Roland racconta personalmente gli ultimi avvistamenti e consegna ai PG una copia approssimativa della mappa delle ricerche. Le informazioni restano ottenibili, ma i PG non dispongono dei rapporti originali.
+
+\linkto{Ospedale Vecchio; Laboratorio Alchemico; Ingresso alle Fogne; Elias e finale.}
+
+\begin{fatebox}
+Un accordo con Roland può fornire scorta e forza, ma nel finale lei pretenderà di decidere il destino di Elias. Un successo con stile può creare l'Aspetto \aspect{Roland ci deve una possibilità}.
+\end{fatebox}
+
+\begin{clockbox}
+Roland intensifica la ricerca e può incaricare Nox di seguire i PG. Per raggiungere il finale deve mantenerne le tracce o ricevere un accesso. Se si allarma davanti ai sintomi, mostra che prepara l'arma e lascia spazio a ordini o interventi: non impone uno scontro fuori dal controllo della scena.
+\end{clockbox}
+
+\nodehead{15. Nodo 6 -- Biblioteca Proibita}{Nodo teorico; fornisce il vocabolario per comprendere senza spiegare interamente il cosmico.}{Che cosa tenta di imitare il Progetto e perché il sigillo parla di ascolto?}
+
+\subsection{Atmosfera}
+Una raccolta segregata di testi copiati male, diagrammi anatomici impossibili e resoconti che cambiano significato a una seconda lettura. Le finestre sono murate per proteggere i libri, o forse i lettori.
+
+\textbf{Aspetti di scena:} \aspect{Le note a margine osservano il lettore}; \aspect{Risposte a domande mai pronunciate}.
+
+\subsection{PNG presenti}
+Dottoressa Miriam Voss; bibliotecario cieco Abel Norn.
+
+\begin{cluebox}
+\textbf{Automatico, discutendo gli indizi con Miriam:} riconosce il lavoro di Elias dal colloquio del giorno 20 e racconta le sue osservazioni all'Ospedale. È questa testimonianza, insieme ai testi, a sostenere l'ipotesi seguente; una valvola da sola non basta.
+\begin{itemize}
+\item il sigillo combina simboli pthumeriani associati a nascita, eco e nutrimento;
+\item antichi resoconti descrivono organi che permettono una ``comunione'' con esseri superiori;
+\item il Progetto non può creare un vero cordone, ma può tentare di imitarne la funzione;
+\item alcune leggende parlano di campane o battiti percepiti senza suono.
+\end{itemize}
+\textbf{Con Occulto:} il rituale cerca una risonanza, non un'evocazione fisica.\\
+\textbf{Con Erudizione:} una pianta antica mostra che i sotterranei dell'Ospedale intersecano catacombe preesistenti.\\
+\textbf{Con Empatia:} Miriam lascerà che il contatto inizi se pensa di poterlo osservare.\\
+\textbf{Con Dottrina:} la cerchia segreta usa linguaggio liturgico diverso dalla Chiesa pubblica.
+\end{cluebox}
+
+\subsection{Handout}
+
+\textbf{H11 -- Marginalia sull'Ascolto}
+
+\textit{Come si ottiene:}
+Miriam permette ai PG di consultare le proprie annotazioni se ritiene che vogliano comprendere il fenomeno e non soltanto sfruttarlo.
+
+\textit{Consegnalo quando:}
+I PG mostrano il sigillo, il progetto o altri indizi raccolti durante l'indagine.
+
+\textit{Scopo:}
+Fornire il linguaggio necessario per interpretare il Progetto senza spiegarne completamente la natura.
+
+\medskip
+
+\textbf{Gli appunti successivi di Elias (H12) si trovano al Laboratorio Alchemico.} Miriam non li possiede: sono stati scritti dopo il loro incontro.
+
+\medskip
+
+\textbf{Se gli handout vengono mancati}
+
+Miriam può interpretare il sigillo e raccontare il colloquio con Elias anche senza consegnare H11. I PG perdono la prova scritta, non l'informazione.
+
+\linkto{Archivio Ecclesiastico; Ospedale Vecchio; Laboratorio Alchemico. La pianta antica indica catacombe sotto l'Ospedale, ma occorre verificare un ingresso attuale.}
+
+\begin{fatebox}
+Non dare ai PG una spiegazione completa dei Grandi Esseri. Fornisci analogie: un organo che ascolta ciò che l'orecchio non percepisce; un battito che cerca un altro battito; una porta costruita senza sapere che cosa esista dall'altra parte.
+\end{fatebox}
+
+\begin{clockbox}
+Miriam cerca un ingresso o propone di accompagnare i PG. Può arrivare al finale solo se riceve una mappa utile, segue i PG senza perderli o ottiene accesso dall'Ospedale. Registra quale condizione si è verificata.
+\end{clockbox}
+
+\nodehead{16. Nodo 7 -- Laboratorio Alchemico}{Nodo di convergenza e ingresso fisico; rivela che il luogo visibile è soltanto uno smistamento.}{Dove finiscono le casse e come si raggiunge il vero laboratorio?}
+
+\subsection{Atmosfera}
+L'edificio sembra quasi vuoto: tavoli puliti, alambicchi freddi, casse appena spostate. Le tracce importanti sono nel pavimento, negli scarichi e nella polvere interrotta.
+
+\textbf{Aspetti di scena:} \aspect{Troppo pulito per essere abbandonato}; \aspect{Tutto scende}.
+
+\subsection{PNG presenti}
+Due tecnici ignari del fine ultimo; un sorvegliante ecclesiastico; eventualmente agenti della fazione più allertata.
+
+\begin{cluebox}
+\textbf{Automatico:}
+\begin{itemize}
+\item qui le casse vengono aperte, rietichettate e trasferite sottoterra;
+\item una piattaforma di carico scende in un condotto non presente nelle mappe pubbliche;
+\item Elias è passato: un attrezzo personale e segni di sabotaggio recente lo dimostrano;
+\item tubi e cavi collegano l'edificio all'Ospedale Vecchio.
+\end{itemize}
+\textbf{Con Indagine:} un contrappeso apre l'ascensore occultato.\\
+\textbf{Con Tecnica:} V-Est è bloccata a bassa intensità, mentre le pompe di sostegno sono attive. H12 spiega che Elias ha scelto quel guasto per proteggere i pazienti.\\
+\textbf{Con Furtività:} i PG entrano senza allertare il Progetto.\\
+\textbf{Con Intimidazione o Carisma:} un tecnico rivela l'orario del prossimo trasferimento.
+\end{cluebox}
+
+\subsection{Handout}
+
+\textbf{H12 -- Appunti sparsi, seconda pagina}
+
+\textit{Come si ottiene:} dietro il pannello di manutenzione sotto il deposito, vicino a H14. Elias lo ha lasciato il giorno 26, prima che l'accesso venisse sorvegliato.
+
+\textit{Consegnalo quando:} i PG esaminano il pannello o seguono i segni del suo passaggio. Mostra la deduzione sul deposito di transito e offre tre accessi; non richiedere che i PG abbiano già risolto la questione.
+
+\medskip
+\textbf{H13 -- Inventario alchemico}
+
+\textit{Come si ottiene:}
+Nel laboratorio di smistamento oppure addosso al sorvegliante ecclesiastico.
+
+\textit{Consegnalo quando:}
+I PG scoprono che il Laboratorio è soltanto una struttura di copertura.
+
+\textit{Scopo:}
+Collegare definitivamente tutti i luoghi visitati durante l'indagine.
+
+\textit{Rivela:}
+Componenti dalla Fonderia scendono al livello inferiore; i tessuti sono registrati come consegna diretta dall'Ospedale. I riferimenti di commessa collegano l'inventario ai documenti dell'Archivio.
+
+\textit{Non rivela:}
+Che cosa stia realmente accadendo nel Progetto.
+
+\medskip
+
+\textbf{H14 -- Schema delle condotte}
+
+\textit{Come si ottiene:}
+Vicino al contrappeso o nella sala macchine.
+
+\textit{Consegnalo quando:}
+I PG consultano la sala macchine o il pannello di manutenzione, anche prima di individuare un accesso.
+
+\textit{Scopo:}
+Confermare l'esistenza del laboratorio sotterraneo e fornire un accesso concreto al finale.
+
+\textit{Rivela:}
+L'ascensore conduce a un livello non presente nelle mappe pubbliche.
+
+\textit{Non rivela:}
+Che cosa si trovi oltre l'ascensore.
+
+\medskip
+
+\textbf{Se gli handout vengono mancati}
+
+Il tecnico o il sorvegliante possono indicare l'ascensore nascosto. L'indagine prosegue comunque, ma i PG non possiedono prove del collegamento fra tutti i siti investigati.
+
+\linkto{Il Progetto attraverso ascensore, fogne o condotti dell'Ospedale. Collegamenti retroattivi a Fonderia, Archivio, Ospedale e Cacciatori.}
+
+\begin{fatebox}
+\textbf{Possibile conflitto:} evitare o superare una squadra della Chiesa, non necessariamente ucciderla. Vantaggi utili: \aspect{Pressione in caduta}; \aspect{Luci spente}; \aspect{Tecnici evacuati}; \aspect{Accesso senza allarme}.
+\end{fatebox}
+
+\begin{clockbox}
+Arriva il regolatore sostitutivo destinato a V-Est. Intercettarlo ritarda la riparazione. Solo se i PG hanno provocato un'ispezione o un assalto Celestine prepara invece il trasferimento descritto nell'orologio.
+\end{clockbox}
+
+\nodehead{17. Nodo finale -- Il Progetto}{Conclusione investigativa e scelta morale.}{Che cosa fare di Elias, dell'organismo e della conoscenza?}
+
+\subsection{Atmosfera}
+Una sala ricavata tra fondamenta ecclesiastiche e pietra pthumeriana. Pompe ritmiche sostengono una sacca traslucida attraversata da vasi e cavi. Il suono dominante non è meccanico: è un battito che talvolta sembra provenire dalla testa di chi ascolta.
+
+\textbf{Aspetti di scena:} \aspect{La macchina ascolta}; \aspect{Un battito fuori tempo}; \aspect{Pressione al limite}; \aspect{Nessuno possiede l'intera verità}.
+
+\subsection{Situazione iniziale}
+Prima dello stadio 5 Elias è nei vani tecnici, lucido ma esausto; V-Est limita l'attivazione e i sei pazienti restano collegati. Allo stadio 4 i tecnici stanno sostituendo il regolatore. Allo stadio 5, se i PG non hanno cambiato gli eventi, Elias è prigioniero, il contatto è già avvenuto e i malati sono peggiorati: la scelta riguarda soccorso, arresto e prove, non più il primo tentativo. Se è iniziato il trasferimento, usa il convoglio con pompe portatili come scena finale. Una fazione arriva solo se ha ottenuto un accesso o seguito qualcuno; nessuna convergenza è automatica.
+
+\subsection{Che cosa rivela Elias}
+\begin{itemize}
+\item riconosce l'apparato come una deformazione dei propri progetti;
+\item può guidare l'arresto, ma occorre prima trasferire i pazienti al circuito ausiliario come descritto nella Verità del master;
+\item teme che i propri appunti permettano di ricostruirlo;
+\item era già malato prima di entrare; le prove aggravano i suoi sintomi, ma non sa quanto gli resti prima di perdere il controllo;
+\item non vuole essere consegnato vivo a chi lo userà come ulteriore esperimento.
+\end{itemize}
+
+\subsection{Posizioni al tavolo}
+\begin{tabularx}{\linewidth}{>{\bfseries}p{31mm} X}
+Elias & Distruggere l'apparato e i progetti; fuggire se possibile. Chiede ai PG di fermarlo se perde il controllo.\\
+Madre Celestine & Attivare almeno una volta e salvare i dati. Promette lucidità duratura sulla base di effetti solo temporanei; non possiede una cura dimostrata.\\
+Roland & Evacuare i presenti e contenere Elias; abbatterlo se un'aggressione incontrollata non è contenibile. Spasmi e aspetto alterato da soli non bastano. Distruggere il prototipo è accettabile.\\
+Miriam & Salvare campioni e osservare il contatto. Può sostenere la distruzione dopo aver ottenuto prove sufficienti.\\
+Padre Aldren & Limitare lo scandalo. Può voltarsi contro Celestine se comprende il costo umano, ma vuole consegnare ogni prova alla Chiesa.\\
+\end{tabularx}
+
+\subsection{Handout}
+
+\textbf{H15 -- Tavola dell'apparato}
+
+\textit{Come si ottiene:}
+Vicino alla macchina principale oppure sul tavolo di lavoro di Madre Celestine.
+
+\textit{Consegnalo quando:}
+I PG comprendono la funzione dell'apparato o iniziano a sabotarlo.
+
+\textit{Scopo:}
+Mostrare come i progetti di Elias siano stati adattati per sostenere il Progetto.
+
+\medskip
+
+\textbf{H16 -- Protocollo sperimentale}
+
+\textit{Come si ottiene:}
+Tra i documenti del laboratorio oppure addosso a Madre Celestine.
+
+\textit{Consegnalo quando:}
+I PG cercano di capire lo scopo dell'esperimento o interrogano Celestine.
+
+\textit{Scopo:}
+Rivelare il vero obiettivo del Progetto e il costo umano sostenuto per portarlo avanti.
+
+\medskip
+
+\textbf{H17 -- Ultimi appunti di Elias}
+
+\textit{Come si ottiene:}
+Nascosti nel vano tecnico da cui Elias sta sabotando l'apparato oppure consegnati direttamente da lui se i PG riescono a raggiungerlo prima del confronto finale.
+
+\textit{Consegnalo quando:}
+Subito prima della decisione finale, prima che Elias esponga la propria posizione.
+
+\textit{Scopo:}
+Chiarire le intenzioni di Elias e lasciare ai giocatori la responsabilità della scelta morale conclusiva.
+
+\medskip
+
+\textbf{Se gli handout vengono mancati}
+
+Le stesse informazioni emergono durante il confronto con Elias e Madre Celestine. Gli handout servono soprattutto a dare ai giocatori prove materiali e il punto di vista personale di Elias prima della scelta finale.
+
+\subsection{Possibili conclusioni}
+\begin{itemize}
+\item \textbf{Distruzione totale}: il Progetto viene annientato. Elias può fuggire, morire, concedersi ai Cacciatori o essere salvato temporaneamente. La ricerca continuerà altrove, ma questo ramo è spezzato.
+\item \textbf{Consegna alla Chiesa}: la crisi viene insabbiata. Eleanor può riavere Elias soltanto sotto custodia, se sopravvive. I PG ottengono protezione e diventano complici di un segreto.
+\item \textbf{Consegna all'Accademia}: il Progetto cambia mani. Miriam promette studio senza sacrifici, ma non può garantire che la promessa sopravviva alla scoperta.
+\item \textbf{Fuga con Elias}: i PG sabotano senza distruggere tutto e attraversano fogne o catacombe. Il Progetto resta recuperabile e le fazioni li considerano responsabili.
+\item \textbf{Attivazione autorizzata dai PG}: prima dello stadio 5 possono accettare la promessa non dimostrata di Celestine. Mostra prima referti, rischi e condizioni dei malati. Il contatto produce visioni e peggioramento, non una cura. Dopo lo stadio 5 un'altra prova è una ripetizione consapevole, non il primo tentativo.
+\item \textbf{Soluzione dei giocatori}: accetta piani coerenti. Il punto non è scegliere da un menu, ma decidere chi controlla la conoscenza e quale costo è ammissibile.
+\end{itemize}
+
+\begin{fatebox}
+Tratta la conclusione come una sfida, una contesa o un conflitto a seconda delle azioni. Creare vantaggi dovrebbe essere decisivo: isolare la camera, convincere Padre Aldren, evacuare i pazienti, spezzare la catena di comando, stabilizzare Elias, arrestare il circuito in sicurezza.
+\end{fatebox}
+
+\begin{bloodbox}
+\textbf{Finale positivo in tono Bloodborne:} il mondo non viene salvato. Una persona viene sottratta alla macchina, alcune vittime vengono riconosciute, un esperimento viene fermato e i PG scelgono di non diventare ciò che Yharnam pretende da loro.
+\end{bloodbox}
+
+\section{18. Scene mobili e deviazioni}
+
+Usa questi eventi quando serve pressione, movimento o un collegamento tra nodi.
+
+\begin{enumerate}
+\item \textbf{Una bestia con un anello}: un operaio trasformato porta il marchio della Fonderia. Marta lo riconosce come un collega curato con sangue dopo un incidente: mostra il rischio corso anche da Elias, non una contaminazione delle casse.
+\item \textbf{Interrogatorio pubblico}: la Guardia trattiene Marta, Silas o Oren. I PG possono intervenire, ignorare o sfruttare la situazione.
+\item \textbf{Offerta di Padre Aldren}: accesso immediato a un nodo in cambio della consegna di copie degli appunti.
+\item \textbf{Ultimatum di Roland}: poche ore per trovare Elias prima che inizi la caccia ufficiale.
+\item \textbf{La proposta di Miriam}: analisi gratuita di un campione in cambio del diritto di conservarne metà.
+\item \textbf{Carro nella notte}: seguire una spedizione conduce al Laboratorio Alchemico o, con successo con stile, a un accesso secondario.
+\item \textbf{Segnale di servizio}: tre colpi, pausa, due colpi annunciano che lo scarico è sgombro. Un tecnico risponde prima di muovere un carico. Seguire il trasferimento conduce verso l'accesso; H12 e H13 spiegano il segnale.
+\item \textbf{Campane senza suono}: a orologio 4 o 5, alcuni PG percepiscono una vibrazione che attiva Aspetti personali, Compel o conseguenze mentali, senza spiegazione cosmologica esplicita.
+\end{enumerate}
+
+\section{19. Riferimento rapido al tavolo}
+
+\begin{tabularx}{\linewidth}{>{\bfseries}p{34mm} X}
+Quando i PG sono bloccati & Fai muovere una fazione, porta una conseguenza a loro o usa una fonte alternativa della matrice.\\
+Quando falliscono & Dai l'indizio con costo: attenzione, tempo, debito, ferita, prova confiscata o PNG compromesso.\\
+Quando ignorano un nodo & Fallo cambiare, non sparire. Le informazioni migrano verso un PNG, una fazione o le tracce della rimozione.\\
+Quando scelgono un'alleanza & Offri un vantaggio reale subito e registra quale pretesa quella fazione avanzerà nel finale.\\
+Quando combattono & Collega il nemico a una persona, una prova o una decisione. Evita scontri casuali privi di conseguenze narrative.\\
+Quando invocano la lore & Conferma ciò che serve alla scena, ma lascia incompleta la cosmologia. La campagna riguarda il Progetto, non la soluzione dell'universo.\\
+\end{tabularx}
+
+\subsection{Checklist prima della sessione}
+\begin{multicols}{2}
+\begin{itemize}[label=\tickbox]
+\item Segna lo stadio dell'orologio.
+\item Scegli la fazione più attiva.
+\item Decidi quale PNG è sotto pressione.
+\item Prepara due scene mobili.
+\item Ricorda le rivelazioni già ottenute.
+\item Aggiorna i collegamenti scoperti.
+\item Individua un Aspetto da compelare per PG.
+\item Decidi che cosa sta facendo Elias ora.
+\end{itemize}
+\end{multicols}
+
+\section{20. Epiloghi rapidi}
+
+\begin{rulebox}
+\textbf{Elias sopravvive e fugge.} Eleanor lo ritrova, ma la trasformazione non è risolta. La loro vittoria è avere tempo e scelta.\\[2pt]
+\textbf{Elias muore distruggendo il Progetto.} La Chiesa lo definisce bestia; i PG possono preservare il suo vero nome e la sua scelta.\\[2pt]
+\textbf{La Chiesa mantiene il controllo.} Yharnam resta ordinata e le guarigioni continuano. Alcune porte non si apriranno mai più ai PG; altre saranno sempre aperte.\\[2pt]
+\textbf{L'Accademia ottiene il materiale.} Il Progetto scompare dalla città. Mesi dopo Miriam scrive: ``Le reazioni si ripetono. Nessuna guarigione dura.'' La nuova custodia non ha risolto il problema morale.\\[2pt]
+\textbf{Il contatto avviene.} Nessuno comprende davvero ciò che è successo. Da quella notte, uno dei PG sogna una sala vuota in cui qualcosa continua ad aspettare una risposta.
+\end{rulebox}
+
+\vfill
+\begin{center}
+\small\itshape
+La trama è conclusa quando i personaggi hanno scelto che cosa proteggere, non quando hanno compreso ogni cosa.
+\end{center}
+
+\end{document}
