@@ -75,7 +75,7 @@ ID & Documento & Nodo / consegna & Funzione investigativa \\
 \midrule
 H01 & Taccuino di Elias I & Casa Ward & Stabilisce che Elias indagava su pesi, turni e registri. \\
 H02 & Cartina annotata & Casa Ward & Offre piste simultanee: Fonderia, Archivio, Ospedale. \\
-H03 & Frammento di progetto & Studio / Officina & Collega i componenti moderni alle vecchie invenzioni di Elias. \\
+H03 & Progetto del regolatore & Officina & Identifica l'invenzione di Elias e il suo impiego originario. \\
 H04 & Registro della Fonderia & Fonderia & Mostra incongruenze tra peso dichiarato e verificato. \\
 H05 & Ricevuta non registrata & Fonderia / magazzino & Prova l'esistenza di una cassa fuori registro diretta al Laboratorio Alchemico. \\
 H06 & Pagina dell'Archivio & Archivio Ecclesiastico & Collega ordini frammentati, Ospedale e Laboratorio; introduce il sigillo interno. \\
@@ -83,13 +83,13 @@ H07 & Ordine interno della Chiesa & Archivio / Padre Aldren & Rivela il trasferi
 H08 & Referto medico di Elias & Ospedale Vecchio & Conferma sintomi iniziali ma lucidità conservata. \\
 H09 & Nota privata del dottor Sile & Ospedale & Mostra paura, denuncia e organismo incompleto. \\
 H10 & Avviso di caccia & Rifugio dei Cacciatori & Spiega perché Elias è considerato preda intelligente e pericolosa. \\
-H11 & Annotazioni di Miriam Voss & Biblioteca Proibita & Fornisce il vocabolario dell'imitazione del cordone e dell'“ascolto”. \\
-H12 & Taccuino di Elias II & Biblioteca / Laboratorio & Dimostra che il Laboratorio Alchemico è un transito e che Elias è sceso sotto terra. \\
+H11 & Note sulla ricerca & Biblioteca Proibita & Distingue l'ipotesi del contatto dai fatti osservati. \\
+H12 & Taccuino di Elias II & Laboratorio & Documenta il transito e gli accessi individuati da Elias. \\
 H13 & Inventario alchemico & Laboratorio Alchemico & Fa emergere materiali assenti, condotte e trasferimenti sotterranei. \\
 H14 & Schema delle condotte & Laboratorio / fogne & Permette ai giocatori di pianificare l'accesso al nodo finale. \\
-H15 & Tavola dell'apparato & Il Progetto & Mostra l'uso distorto dei progetti di Elias nel supporto biologico. \\
-H16 & Protocollo sperimentale & Il Progetto & Rivela finalità, tessuti non consensuali e rischio di attivazione. \\
-H17 & Ultimi appunti di Elias & Finale & Chiarisce il sabotaggio e lascia aperta la decisione morale. \\
+H15 & Schema della macchina & Il Progetto & Distingue organismo, macchina e regolatore. \\
+H16 & Rapporto sul Progetto & Il Progetto & Rivela obiettivo, limiti e prelievi senza consenso. \\
+H17 & Ultimi appunti di Elias & Finale & Riporta le scoperte di Elias, senza stabilirne il piano. \\
 \bottomrule
 \end{longtable}
 \normalsize
@@ -110,8 +110,8 @@ Bilancia piccola: \textbf{391 e un quarto}.
 Non è un errore. Due strumenti non sbagliano nello stesso modo.
 
 \medskip
-Valvola di compensazione, seconda serie. Mia.\\
-O una copia abbastanza buona da esserlo.
+Regolatore di pressione. Mio.\\
+O una copia del mio progetto.
 
 \medskip
 Perché proprio il turno di notte?\\
@@ -159,30 +159,21 @@ Chi decide quali casse non devono arrivare?
 % ----------------------------------------------------------------
 % H03
 % ----------------------------------------------------------------
-\newhandout{H03}{Regolatore di pressione - Serie II}{Frammento recuperato dal vecchio studio di Elias}
+\newhandout{H03}{Progetto del regolatore}{Frammento conservato da Silas, dal vecchio studio di Elias}
 \begin{bluebox}
-\begin{tikzpicture}[x=1cm,y=1cm,font=\footnotesize]
-\draw[ink,line width=.7pt] (-5,0) rectangle (-2,2.2);
-\draw[ink,line width=.7pt] (-2,1.1)--(0,1.1);
-\draw[ink,line width=.7pt] (0,.3) rectangle (2.3,1.9);
-\draw[ink,line width=.7pt] (2.3,1.1)--(4.8,1.1);
-\draw[ink,line width=.7pt] (-3.5,0)--(-3.5,-2.1);
-\draw[ink,line width=.7pt] (-4.4,-1.3) rectangle (-2.6,-2.1);
-\draw[ink,line width=.7pt] (.4,.3)--(.4,-1.7);
-\draw[ink,line width=.7pt] (.4,-1.7)--(3.5,-1.7);
-\draw[ink,line width=.7pt] (3.5,-2.2) rectangle (4.8,-1.2);
-\draw[ink,->] (-5.8,1.1)--(-5,1.1);
-\draw[ink,->] (4.8,1.1)--(5.7,1.1);
-\draw[ink,decorate,decoration={zigzag,segment length=4pt,amplitude=2pt}] (-1.5,.5)--(-.5,1.7);
-\node at (-3.5,1.1) {camera primaria};
-\node at (1.15,1.1) {compensatore};
-\node at (-3.5,-1.65) {scarico};
-\node at (4.15,-1.7) {ritorno};
-\draw[ash,<->] (-5,2.7)--(-2,2.7) node[midway,fill=blueprint] {18 pollici};
-\draw[ash,<->] (0,2.4)--(2.3,2.4) node[midway,fill=blueprint] {11};
-\node[align=left,anchor=west] at (-5,-3) {\textit{Nota originaria:} progettato per mantenere stabile\\la pressione durante trasfusioni prolungate.};
-\node[align=left,anchor=west,text=blood] at (-5,-4) {\textit{Annotazione successiva:} se collegato in serie,\\può sostenere un carico molto più grande di un corpo umano.};
+\centering
+\begin{tikzpicture}[x=1cm,y=1cm,font=\small,>=Latex]
+\node[draw=ink,minimum width=4cm,minimum height=2cm,align=center] (r) at (0,0) {REGOLATORE\\pressione stabile};
+\draw[->,thick] (-5,0)--(r.west) node[midway,above] {sangue in ingresso};
+\draw[->,thick] (r.east)--(5,0) node[midway,above] {sangue in uscita};
 \end{tikzpicture}
+
+\medskip
+\raggedright
+\textbf{Funzione originaria:} mantenere stabile la pressione del sangue durante trasfusioni prolungate, compensando le variazioni del flusso.
+
+\textbf{Nota di progetto:} il regolatore è un componente da inserire nelle attrezzature mediche. Non è una macchina completa.
+
 \vfill
 \small\itshape Firma parziale: E. W---. Il margine destro è annerito dal fuoco.
 \end{bluebox}
@@ -236,13 +227,13 @@ Origine & Fonderia Municipale, cancello orientale \\
 Destinazione dichiarata & Laboratorio Alchemico \\
 Destinazione effettiva & \rule{70mm}{.4pt} \\
 Peso accettato & 391 libbre e un quarto \\
-Contenuto & Camera di compensazione, vetriatura, minuteria d'argento \\
+Contenuto & Regolatore, vetriatura, minuteria \\
 Consegna & Dopo la terza campana; ingresso inferiore \\
-Autorizzazione & Sigillo del \textit{Servizio dell'Ascolto} \\
+Autorizzazione & \churchseal\quad Ufficio riservato \\
 \end{tabularx}
 
 \vspace{8mm}
-\textit{Nota a margine, altra mano:} «Non portare nell'ala pubblica. La pressione deve restare costante durante la discesa.»
+\textit{Nota a margine, altra mano:} «Non portare nell'ala pubblica. Maneggiare con cura il regolatore e la vetriatura.»
 
 \vfill
 \hfill Firma del vetturale: \textit{T. Harrow}
@@ -263,9 +254,9 @@ Rif. & Materiale & Destinatario ufficiale & Sigillo \\
 44-11 & Tubazioni di rame, giunti sterili & Ospedale Vecchio & Cappellania \\
 44-12 & Vetriatura spessa, supporti molleggiati & Laboratorio Alchemico & \churchseal \\
 44-13 & Tessuti di sutura, sali conservanti & Ospedale Vecchio & Infermeria \\
-44-14 & Regolatori di pressione, serie II & Laboratorio Alchemico & \textbf{\churchseal\,\churchseal} \\
+44-14 & Regolatore di pressione & Laboratorio Alchemico & \textbf{\churchseal\,\churchseal} \\
 44-15 & Lastre d'argento e fili sottili & \textit{voce raschiata} & \textbf{\churchseal\,\churchseal} \\
-44-16 & Carbone purificato, campane minute & Torre Astronomica & Accademia \\
+44-16 & Carbone purificato & Laboratorio Alchemico & \churchseal \\
 \bottomrule
 \end{tabularx}
 
@@ -297,7 +288,7 @@ Le sue carte devono essere recuperate integre.
 \textit{La presente disposizione non costituisce ammissione dell'esistenza di alcun programma ulteriore.}
 
 \vfill
-\hfill Per ordine del Servizio dell'Ascolto
+\hfill Per l'ufficio riservato\quad\churchseal
 \end{churchbox}
 
 % ----------------------------------------------------------------
@@ -320,7 +311,7 @@ Segni bestiali & Nessuna alterazione ossea; unghie ispessite; risposta aggressiv
 \end{tabularx}
 
 \vspace{5mm}
-\textbf{Osservazioni:} il paziente comprende pienamente il proprio stato e teme una progressione. Ha rifiutato emoterapia aggiuntiva. Ha chiesto se «una macchina possa trasmettere una febbre senza toccare il malato».
+\textbf{Osservazioni:} il paziente comprende pienamente il proprio stato e teme una progressione. Ha rifiutato emoterapia aggiuntiva. Ha chiesto informazioni sulle apparecchiature ricevute dall'ala riservata.
 
 \textbf{Valutazione:} non classificabile come bestia al momento della visita. Sorveglianza consigliata.
 
@@ -338,7 +329,7 @@ Caro collega,
 
 non so più a chi affidare queste righe. Ward non delirava. Parlava troppo in fretta, ma ogni numero che mi mostrò coincideva con ciò che ho visto nell'ala inferiore.
 
-Tre notti fa mi ordinarono di preparare sei pazienti per un «trasferimento terapeutico». Nessuno di loro aveva dato consenso. Nel vano di servizio vidi una vasca coperta, collegata a pompe industriali. Qualcosa al suo interno si mosse quando le campane della cappella tacquero.
+Tre notti fa mi ordinarono di preparare sei pazienti per un «trasferimento terapeutico». Nessuno di loro aveva dato consenso. Nel vano di servizio vidi una vasca coperta, collegata a pompe industriali. All'interno c'era tessuto vivo; la macchina faceva circolare sangue nella vasca. Non so quale sia lo scopo della coltura.
 
 Ho informato Padre Aldren della visita di Ward. Credevo di proteggerlo. Da allora l'ala è chiusa e due pazienti sono scomparsi dai registri.
 
@@ -378,27 +369,24 @@ Il soggetto conserva intelligenza eccezionale e conoscenza di macchinari, serrat
 % ----------------------------------------------------------------
 % H11
 % ----------------------------------------------------------------
-\newhandout{H11}{Marginalia sull'Ascolto}{Annotazioni attribuite alla dottoressa Miriam Voss}
+\newhandout{H11}{Note sulla ricerca}{Appunti della dottoressa Miriam Voss}
 \begin{documentbox}
 \handfont
-\textbf{Estratto copiato da un testo pthumeriano:}
+\textbf{Dopo il colloquio con Elias Ward}
 
-\begin{quote}\itshape
-Il figlio non chiama con la bocca. Il legame ascolta per lui. Dove il legame è reciso, il sangue ricorda la strada ma non il nome.
-\end{quote}
+Ward ha riconosciuto un componente costruito secondo il proprio progetto. Questo dimostra l'uso del suo lavoro, non lo scopo di chi lo ha riprodotto.
 
-\textbf{Note:}
+Il sigillo richiama simboli pthumeriani legati a nascita e legame. Nei testi il cordone di un Grande Essere viene associato alla possibilità di un rapporto con esseri superiori.
 
-- Il «legame» non sembra un organo nel senso comune. È funzione, passaggio, accordatura.
+\textbf{Ipotesi:} la cerchia potrebbe cercare di coltivare qualcosa capace di svolgere una funzione simile. Non è la stessa cosa che creare un Grande Essere.
 
-- Un cordone autentico non può essere fabbricato. Si potrebbe però imitare temporaneamente la sua funzione con tre elementi: \textit{materia vivente}, \textit{sangue affine}, \textit{ritmo stabile}.
+La funzione del regolatore è mantenere stabile la pressione. Se serve a una coltura biologica, spiega come questa venga sostenuta, non come si possa ottenere un contatto.
 
-- Le pompe della Chiesa possono fornire il ritmo. Le campane minute potrebbero sostituire ciò che i testi chiamano «voce senza suono».
+\medskip
+Non abbiamo visto un contatto né trovato una procedura che lo garantisca. Occorre distinguere lo scopo della ricerca dai risultati.
 
-- L'apparato non creerebbe un essere superiore. Creerebbe qualcosa che tenta di essere udito.
-
-\vspace{6mm}
-\textit{Annotazione verticale nel margine:} «Se Ward ha riconosciuto il ritmo, allora il suo progetto è già parte dell'esperimento.»
+\vfill
+\hfill M. Voss
 \end{documentbox}
 
 % ----------------------------------------------------------------
@@ -424,7 +412,7 @@ Tre accessi possibili:
 3. scarico verso le fogne, ma il livello sale alla quarta campana.
 
 \medskip
-Ho lasciato la valvola orientale instabile. Tre colpi, pausa, due colpi: seguire la vibrazione.
+I componenti passano dal deposito, poi scendono. Il regolatore non viene usato qui. Tre colpi, pausa, due colpi è il segnale del personale per indicare che lo scarico è sgombro.
 
 \vfill
 \hfill\textit{Non portare Eleanor. Non ancora.}
@@ -442,12 +430,11 @@ Ho lasciato la valvola orientale instabile. Tre colpi, pausa, due colpi: seguire
 \toprule
 Voce & Entrata & Presente & Note \\
 \midrule
-Regolatori Serie II & 4 & 0 & trasferiti inferiormente \\
+Regolatore & 1 & 0 & trasferito inferiormente \\
 Vetriature grandi & 6 & 1 & cinque trasferite \\
 Fili d'argento & 18 bobine & 2 & sedici trasferite \\
 Sali conservanti & 12 casse & 3 & nove trasferite \\
 Carbone purificato & 20 sacchi & 18 & consumo ordinario \\
-Campane minute & 24 & 0 & non registrare in uscita \\
 Tessuto biologico sigillato & 7 contenitori & 0 & consegna diretta \\
 \bottomrule
 \end{tabularx}
@@ -456,7 +443,7 @@ Tessuto biologico sigillato & 7 contenitori & 0 & consegna diretta \\
 \textbf{Trasferimento inferiore:} usare l'ascensore soltanto dopo la terza campana. In caso di guasto, aprire lo scarico orientale e attendere il segnale: tre colpi, pausa, due colpi.
 
 \vfill
-\textit{Correzione a matita:} «Valvola orientale sabotata. Chiamare un tecnico che non faccia domande.»
+\textit{Correzione a matita:} «Regolatore consegnato alla macchina nel laboratorio inferiore. Accesso riservato al personale autorizzato.»
 \end{documentbox}
 
 % ----------------------------------------------------------------
@@ -469,8 +456,8 @@ Tessuto biologico sigillato & 7 contenitori & 0 & consegna diretta \\
 \node[draw,align=center,minimum width=3cm,minimum height=1cm] (h) at (0,3.5) {Ospedale Vecchio\\ala inferiore};
 \node[draw,align=center,minimum width=3cm,minimum height=1cm] (a) at (-4,0) {Laboratorio\\Alchemico};
 \node[draw,align=center,minimum width=2.7cm,minimum height=1cm] (s) at (4,0) {Scarico\\fognario};
-\node[draw=blood,align=center,line width=1pt,minimum width=3.2cm,minimum height=1.2cm] (p) at (0,-3.3) {CAMERA INFERIORE\\accesso riservato};
-\node[draw,diamond,aspect=2] (v) at (0,1.3) {V-Est};
+\node[draw=blood,align=center,line width=1pt,minimum width=3.2cm,minimum height=1.2cm] (p) at (0,-3.3) {LABORATORIO\\accesso riservato};
+\node[draw,align=center] (v) at (0,1.3) {passaggio\\di servizio};
 \node[draw,circle] (lift) at (-2,-1.7) {A};
 \node[draw,circle] (gate) at (2,-1.7) {G};
 
@@ -480,69 +467,61 @@ Tessuto biologico sigillato & 7 contenitori & 0 & consegna diretta \\
 \draw[->,line width=1pt] (v)--(p);
 \draw[->,line width=1pt] (a)--(lift)--(p);
 \draw[->,line width=1pt] (gate)--(p);
-\draw[blood,dashed,line width=1pt] (-.8,1.3) arc (180:350:.8);
-\node[text=blood,align=left] at (3.7,2.7) {V-Est instabile\\ritmo 3--2};
 \node[align=left] at (-4,-3.3) {A: ascensore merci\\chiave doppia};
-\node[align=left] at (4,-3.3) {G: grata di scarico\\alta marea alla IV campana};
+\node[align=left] at (4,-3.3) {G: grata di scarico\\lavaggio alla IV campana};
 \end{tikzpicture}
 
 \vfill
-\small\textit{Sul retro, una nota di Elias:} «La camera è sotto l'Ospedale, ma il controllo arriva dal Laboratorio. Tagliare una sola linea non basta.»
+\small\textit{Sul retro, una nota di Elias:} «Il laboratorio è sotto l'Ospedale. Le forniture arrivano dal deposito del Laboratorio Alchemico. Questi sono gli accessi che ho individuato.»
 \end{bluebox}
 
 % ----------------------------------------------------------------
 % H15
 % ----------------------------------------------------------------
-\newhandout{H15}{Apparato di risonanza ematica}{Tavola tecnica affissa nella camera inferiore}
+\newhandout{H15}{Schema della macchina}{Tavola tecnica del laboratorio inferiore}
 \begin{bluebox}
-\begin{tikzpicture}[x=1cm,y=1cm,font=\footnotesize]
-\draw[ink,line width=.8pt] (-1.5,-1.4) ellipse (2.1 and 2.7);
-\draw[ink,line width=.7pt] (-1.5,1.3) ellipse (1.2 and .55);
-\draw[ink,line width=.7pt] (-1.5,-3.5) ellipse (1.5 and .4);
-\draw[ink,line width=1pt] (-4.8,-.2) rectangle (-3,1.7);
-\draw[ink,line width=1pt] (2.2,-.2) rectangle (4,1.7);
-\draw[ink,line width=.7pt] (-3,1)--(-2.7,1)--(-2.7,.3)--(-2.1,.3);
-\draw[ink,line width=.7pt] (2.1,.3)--(2.7,.3)--(2.7,1)--(2.2,1);
-\draw[ink,line width=.7pt] (-3.9,-.2)--(-3.9,-2.5)--(-2.3,-2.5);
-\draw[ink,line width=.7pt] (3.1,-.2)--(3.1,-2.5)--(-.7,-2.5);
-\draw[ink,decorate,decoration={coil,segment length=4pt,amplitude=3pt}] (-.6,.8)--(-.6,-1.7);
-\draw[ink,decorate,decoration={coil,segment length=4pt,amplitude=3pt}] (-2.4,.8)--(-2.4,-1.7);
-\node at (-3.9,.75) {pompa A};
-\node at (3.1,.75) {pompa B};
-\node[align=center] at (-1.5,-.3) {supporto\\biologico};
-\node[align=left,anchor=west] at (4.4,2.1) {1. stabilizzare pressione};
-\node[align=left,anchor=west] at (4.4,1.5) {2. introdurre sangue affine};
-\node[align=left,anchor=west] at (4.4,.9) {3. avviare campane};
-\node[align=left,anchor=west,text=blood] at (4.4,.1) {4. attendere risposta};
-\draw[ash,<->] (-1.5,2.8)--(-1.5,1.85) node[midway,right] {ritmo};
-\draw[ash,<->] (-5.4,-.2)--(-5.4,1.7) node[midway,left] {Serie II};
-\node[align=left,anchor=west] at (-5.2,-4.2) {\textit{Correzione a mano di Elias:} Le pompe non tengono in vita ciò che è nella vasca.\\Tengono aperto qualcosa attraverso di essa.};
+\centering
+\begin{tikzpicture}[x=1cm,y=1cm,font=\small,>=Latex]
+\draw[ink,line width=.8pt] (-5,-1.5) rectangle (5,3);
+\node[anchor=west,font=\bfseries] at (-4.7,2.6) {MACCHINA};
+\node[align=center] (p) at (-3,1) {pompe};
+\node[draw=ink,minimum width=3cm,minimum height=1cm,align=center] (r) at (1,1) {REGOLATORE\\pressione stabile};
+\draw[->,thick] (p)--(r);
+\node[draw=blood,ellipse,minimum width=4cm,minimum height=1.3cm,align=center] (o) at (0,-3.5) {ORGANISMO\\nella vasca};
+\draw[->,thick] (r.south)--(1,-1)--(o.north east);
+\draw[->,thick] (o.north west)--(-3,-1)--(p.south);
 \end{tikzpicture}
+
+\medskip
+\raggedright
+La macchina mantiene vivo l'organismo facendo circolare il sangue.
+Il regolatore mantiene stabile la pressione.
+
+\textit{Nota di Elias:} «Il regolatore riproduce il mio progetto. La macchina è stata costruita attorno a esso per un impiego che non avevo previsto.»
 \end{bluebox}
 
 % ----------------------------------------------------------------
 % H16
 % ----------------------------------------------------------------
-\newhandout{H16}{Protocollo VII - Prima risonanza}{Documento del Servizio dell'Ascolto}
+\newhandout{H16}{Rapporto sul Progetto}{Documento riservato della direzione}
 \begin{churchbox}
 \begin{center}
-\churchseal\quad {\Large\bfseries PROTOCOLLO VII}\quad\churchseal\\[2mm]
-{\small Prima risonanza dell'imitazione ombelicale}
+\churchseal\quad {\Large\bfseries STATO DELLA RICERCA}\quad\churchseal
 \end{center}
-\vspace{4mm}
-\begin{enumerate}[leftmargin=7mm]
-\item Stabilizzare il supporto biologico con due pompe Serie II in opposizione.
-\item Introdurre sangue affine in tre incrementi. Il terzo deve coincidere con la settima sequenza di campane.
-\item Collegare i fili d'argento ai tessuti auricolari e spinali.
-\item Se il supporto reagisce alla presenza di persone non sottoposte a emoterapia, annotare nomi e sintomi.
-\item Non interrompere il ritmo dopo l'inizio della risposta. Una cessazione improvvisa può trasferire lo stress biologico al soggetto affine più vicino.
-\end{enumerate}
 
-\textbf{Materiale biologico autorizzato:} campioni ospedalieri 3, 4 e 6; residui pthumeriani; tessuti neonatali non reclamati.
+\textbf{Organismo:} coltura artificiale ottenuta da tessuti ospedalieri e materiale biologico pthumeriano.
 
-\textbf{Esito atteso:} non nascita, ma apertura temporanea di un canale percettivo.
+\textbf{Macchina:} sostiene la coltura mediante circolazione del sangue e controllo delle condizioni di mantenimento.
 
-\textbf{Esito avverso:} agitazione delle bestie, perdita di coscienza, crescita incontrollata, risposta esterna non identificata.
+\textbf{Regolatore:} componente riprodotto dai disegni di Elias Ward. Mantiene stabile la pressione durante la circolazione.
+
+\textbf{Obiettivo:} sviluppare un organismo capace di consentire un contatto con un'entità ultraterrena, imitando una funzione attribuita al cordone di un Grande Essere.
+
+\textbf{Risultato attuale:} l'organismo viene mantenuto vivo. Nessun contatto è stato verificato; non sono stabiliti né un metodo certo né una data per ottenerlo.
+
+\textbf{Materiale biologico:} sangue e tessuti prelevati ai pazienti dell'Ospedale. Autorizzazione della direzione; consenso individuale non acquisito.
+
+\textbf{Disposizione:} proseguire la ricerca. Mantenere separati dai registri pubblici i documenti relativi ai prelievi e alle sperimentazioni.
 
 \vfill
 Autorizzazione: \textit{Madre Celestine Vey}\hfill Non duplicare
@@ -551,28 +530,21 @@ Autorizzazione: \textit{Madre Celestine Vey}\hfill Non duplicare
 % ----------------------------------------------------------------
 % H17
 % ----------------------------------------------------------------
-\newhandout{H17}{Ultimi appunti di Elias}{Foglio trovato nei vani tecnici del Progetto}
+\newhandout{H17}{Ultimi appunti di Elias}{Foglio trovato tra le carte di Elias nel complesso}
 \begin{documentbox}
 \handfont
 \large
-Le valvole orientali sono aperte al contrario. L'apparato può ancora funzionare, ma non a piena pressione.
+Il regolatore è il mio. Non un oggetto simile: riconosco il progetto.
 
-Ho separato il ritorno dell'Ospedale. Se attivano adesso, perderanno il supporto oppure trasferiranno il carico su chiunque abbia sangue compatibile nelle vicinanze.
+La macchina che hanno costruito lo usa per mantenere vivo ciò che si trova nella vasca. L'organismo non è la macchina, e nessuno dei due è una mia invenzione.
 
-Non so quale delle due cose sia peggiore.
-
-\medskip
-La vasca non contiene un figlio. Contiene un tentativo di chiamarne uno.
-
-Le mie macchine danno il ritmo. Il sangue dà la strada. Qualcosa dall'altra parte deve soltanto decidere se ascoltare.
+Non so se possa davvero permettere il contatto che cercano. So che stanno usando il mio lavoro e materiale preso ai malati senza consenso.
 
 \medskip
-La febbre peggiora. Ho ferito un uomo e ricordo di aver scelto di non ucciderlo. Questo significa che sono ancora io, oppure significa soltanto che la bestia sa aspettare?
+La febbre era cominciata prima che scendessi. Ho ferito un uomo e ricordo di aver scelto di non ucciderlo. Voglio credere che questo conti ancora.
 
 \medskip
-Se Eleanor è qui, ditele che non sono rimasto per la conoscenza.
-
-\textit{Ho continuato a studiare perché non sapevo come distruggerlo senza uccidere tutti quelli collegati.}
+Non confondete ciò che la macchina fa con ciò che Celestine spera di ottenere. Non sono la stessa cosa.
 
 \vfill
 \hfill E.
