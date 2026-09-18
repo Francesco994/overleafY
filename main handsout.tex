@@ -39,7 +39,14 @@
 \newcommand{\gmcode}[1]{\begin{tikzpicture}[remember picture,overlay]\node[anchor=south east,font=\tiny\sffamily,color=ash] at ($(current page.south east)+(-6mm,5mm)$) {#1};\end{tikzpicture}}
 \newcommand{\ornament}{\par\smallskip\begin{center}\begin{tikzpicture}\draw[blood,line width=.7pt] (-2.7,0)--(-.35,0);\draw[blood,line width=.7pt] (.35,0)--(2.7,0);\node[text=blood] at (0,0) {$\diamond$};\end{tikzpicture}\end{center}\smallskip}
 \newcommand{\handtitle}[2]{\begin{center}{\Large\bfseries\textsc{#1}}\\[2mm]{\small\itshape #2}\end{center}\ornament}
-\newcommand{\churchseal}{\begin{tikzpicture}[baseline=-.5ex,scale=.32]\draw[blood,line width=1pt] (0,0) circle (1);\draw[blood,line width=.8pt] (0,-.72)--(0,.75);\draw[blood,line width=.8pt] (-.55,.2)--(.55,.2);\draw[blood,line width=.6pt] (-.38,-.3)--(0,-.68)--(.38,-.3);\end{tikzpicture}}
+\newcommand{\churchseal}{\begin{tikzpicture}[baseline=-.5ex,scale=.32]\draw[blood,line width=1pt] (0,0) circle (1);\draw[blood,->,>=Latex,line width=1pt] (0,.65)--(0,-.65);\end{tikzpicture}}
+% Runa fittizia: quattro uncini, centro vuoto, braccio superiore interrotto.
+\newcommand{\vascrune}{\begin{tikzpicture}[baseline=-.5ex,scale=.42,line width=1.3pt]
+\draw[blood] (.18,.18)--(.18,.65);\draw[blood] (.18,.82)--(.18,1.15)--(1.1,1.15)--(1.1,.65);
+\draw[blood] (.18,-.18)--(1.15,-.18)--(1.15,-1.1)--(.65,-1.1);
+\draw[blood] (-.18,-.18)--(-.18,-1.15)--(-1.1,-1.15)--(-1.1,-.65);
+\draw[blood] (-.18,.18)--(-1.15,.18)--(-1.15,1.1)--(-.65,1.1);
+\end{tikzpicture}}
 \newcommand{\huntermark}{\begin{tikzpicture}[baseline=-.5ex,scale=.32]\draw[ink,line width=1pt] (-.8,.8)--(0,-.8)--(.8,.8);\draw[ink,line width=1pt] (-.55,.25)--(.55,.25);\draw[ink,line width=1pt] (-.35,-.15)--(.35,-.15);\end{tikzpicture}}
 
 \newtcolorbox{gmnote}[1][]{colback=paper,colframe=blood,boxrule=.6pt,arc=0mm,title=#1,fonttitle=\bfseries\sffamily,left=3mm,right=3mm,top=2mm,bottom=2mm}
@@ -78,17 +85,17 @@ H02 & Cartina annotata & Casa Ward & Offre piste simultanee: Fonderia, Archivio,
 H03 & Progetto del regolatore & Officina & Identifica l'invenzione di Elias e il suo impiego originario. \\
 H04 & Registro della Fonderia & Fonderia & Mostra incongruenze tra peso dichiarato e verificato. \\
 H05 & Ricevuta non registrata & Fonderia / magazzino & Prova l'esistenza di una cassa fuori registro diretta al Laboratorio Alchemico. \\
-H06 & Pagina dell'Archivio & Archivio Ecclesiastico & Collega ordini frammentati, Ospedale e Laboratorio; introduce il sigillo interno. \\
+H06 & Pagina dell'Archivio & Archivio Ecclesiastico & Collega ordini frammentati, Ospedale e Laboratorio; distingue marchio amministrativo e runa della vasca. \\
 H07 & Ordine interno della Chiesa & Archivio / Padre Aldren & Rivela il trasferimento riservato senza spiegare il vero Progetto. \\
 H08 & Referto medico di Elias & Ospedale Vecchio & Conferma sintomi iniziali ma lucidità conservata. \\
-H09 & Nota privata del dottor Sile & Ospedale & Mostra paura, denuncia e organismo incompleto. \\
+H09 & Nota privata del dottor Sile & Ospedale & Documenta benefici temporanei e deriva coercitiva. \\
 H10 & Avviso di caccia & Rifugio dei Cacciatori & Spiega perché Elias è considerato preda intelligente e pericolosa. \\
-H11 & Note sulla ricerca & Biblioteca Proibita & Distingue l'ipotesi del contatto dai fatti osservati. \\
+H11 & Note sulla runa & Biblioteca Proibita & Interpreta la sola runa, senza conoscere le prove. \\
 H12 & Taccuino di Elias II & Laboratorio & Documenta il transito e gli accessi individuati da Elias. \\
 H13 & Inventario alchemico & Laboratorio Alchemico & Fa emergere materiali assenti, condotte e trasferimenti sotterranei. \\
 H14 & Schema delle condotte & Laboratorio / fogne & Permette ai giocatori di pianificare l'accesso al nodo finale. \\
 H15 & Schema della macchina & Il Progetto & Distingue organismo, macchina e regolatore. \\
-H16 & Rapporto sul Progetto & Il Progetto & Rivela obiettivo, limiti e prelievi senza consenso. \\
+H16 & Rapporto sul Progetto & Il Progetto & Rivela risultati, escalation e trattamenti imposti. \\
 H17 & Ultimi appunti di Elias & Finale & Riporta le scoperte di Elias, senza stabilirne il piano. \\
 \bottomrule
 \end{longtable}
@@ -173,7 +180,7 @@ Devo controllare nei registri della Fonderia chi ha ordinato la cassa 17 e dove 
 \raggedright
 \textbf{Funzione originaria:} mantenere stabile la pressione del sangue durante trasfusioni prolungate, compensando le variazioni del flusso.
 
-\textbf{Nota di progetto:} il regolatore è un componente da inserire nelle attrezzature mediche. Non è una macchina completa.
+\textbf{Nota di progetto:} il regolatore è un componente da inserire nelle attrezzature mediche. Non è una macchina completa. Stabilizzare la pressione consente di mantenere un flusso regolare anche quando la portata viene aumentata.
 
 \vfill
 \small\itshape Firma parziale: E. W---. Il margine destro è annerito dal fuoco.
@@ -205,7 +212,7 @@ Data & Cassa & Dichiarato & Verificato & Destinazione \\
 \vspace{7mm}
 \textbf{Osservazioni del turno}
 
-Cassa 17 sigillata prima della verifica. Ordine di non aprire. La differenza è stata confermata da due bilance. Il sigillo non appartiene all'amministrazione municipale.
+Cassa 17 sigillata prima della verifica. Ordine di non aprire. La differenza è stata confermata da due bilance. Il marchio di autorizzazione non appartiene all'amministrazione municipale.
 
 \vfill
 \begin{tabularx}{\linewidth}{X X}
@@ -247,34 +254,41 @@ Autorizzazione & \churchseal\quad Ufficio riservato \\
 % ----------------------------------------------------------------
 % H06
 % ----------------------------------------------------------------
-\newhandout{H06}{Archivio Ecclesiastico}{Pagina 44 - commesse straordinarie}
+\newhandout{H06}{Archivio Ecclesiastico}{Pagina 44 -- commesse straordinarie e allegato 44-12}
 \begin{churchbox}
-\begin{center}{\large\bfseries CHIESA DELLA CURA - REGISTRO DELLE COMMESSE}\end{center}
+\begin{center}{\large\bfseries REGISTRO DELLE COMMESSE}\end{center}
 \small
-\renewcommand{\arraystretch}{1.35}
-\begin{tabularx}{\linewidth}{c X X c}
+\begin{tabularx}{\linewidth}{c X X}
 \toprule
-Rif. & Materiale & Destinatario ufficiale & Sigillo \\
+Rif. & Materiale & Destinatario \\
 \midrule
-44-11 & Tubazioni di rame, giunti sterili & Ospedale Vecchio & Cappellania \\
-44-12 & Vetriatura spessa, supporti molleggiati & Laboratorio Alchemico & \churchseal \\
-44-13 & Tessuti di sutura, sali conservanti & Ospedale Vecchio & Infermeria \\
-44-14 & Regolatore di pressione & Laboratorio Alchemico & \textbf{\churchseal\,\churchseal} \\
-44-15 & Lastre d'argento e fili sottili & \textit{voce raschiata} & \textbf{\churchseal\,\churchseal} \\
-44-16 & Carbone purificato & Laboratorio Alchemico & \churchseal \\
+44-11 & Tubazioni e giunti sterili & Ospedale Vecchio \\
+44-12 & Vasca in vetro e supporti & Laboratorio Alchemico \\
+44-13 & Materiali di medicazione & Ospedale Vecchio \\
+44-14 & Regolatore di pressione & Laboratorio Alchemico \\
+44-15 & Lastre e fili d'argento & \textit{voce raschiata} \\
+44-16 & Carbone purificato & Laboratorio Alchemico \\
 \bottomrule
 \end{tabularx}
 
-\vspace{5mm}
-Le voci con doppio sigillo sono sottratte alla consultazione ordinaria. I documenti accessori devono essere trasferiti all'ala inferiore dell'Ospedale e distrutti dopo la verifica.
+\medskip
+\churchseal\quad Autorizzazione dell'ufficio riservato: commesse 44-12, 44-14, 44-15 e 44-16.
 
-\vfill
-\textit{In matita, nel margine:} «Il sigillo non compare nei registri degli ordini. Chi lo riconosce?»
+\textbf{Consultazione riservata:} 44-14 e 44-15. Documenti accessori all'ala inferiore dell'Ospedale; ritiro delle copie dopo verifica.
+
+\medskip
+\textbf{Allegato 44-12 -- indicazione per il vetraio}
+\begin{center}
+\begin{tikzpicture}[x=1cm,y=1cm]
+\draw[ink,thick,rounded corners] (-3,-1) rectangle (3,1);
+\node at (0,0) {\vascrune};
+\end{tikzpicture}
+\end{center}
+Incidere sulla parete della vasca il segno riprodotto nel disegno. Conservare la discontinuità del tratto superiore.
+
+\textit{Annotazione di Elias:} «Ho copiato il segno. Chiedere a Silas chi possa leggerlo.»
 \end{churchbox}
 
-% ----------------------------------------------------------------
-% H07
-% ----------------------------------------------------------------
 \newhandout{H07}{Ordine di servizio interno}{Copia incompleta, contrassegnata “non archiviare”}
 \begin{churchbox}
 \begin{center}
@@ -332,21 +346,20 @@ Medico: \textit{Dott. Oren Sile}\hfill Data: nove giorni fa
 \handfont
 Caro collega,
 
-non so più a chi affidare queste righe. Ward non delirava. Parlava troppo in fretta, ma ogni numero che mi mostrò coincideva con ciò che ho visto nell'ala inferiore.
+all'inizio spiegavamo ai malati che il trattamento era sperimentale. Potevano rifiutare. Ho visto persone tornare a riconoscere i familiari e rispondere con lucidità, ma il beneficio svaniva: ricadevano nello stato precedente.
 
-Tre notti fa mi ordinarono di preparare sei pazienti per un «trasferimento terapeutico». Nessuno di loro aveva dato consenso. Nel vano di servizio vidi una vasca coperta, collegata a pompe industriali. All'interno c'era tessuto vivo; la macchina faceva circolare sangue nella vasca. Non so quale sia lo scopo della coltura.
+Ora le sedute sono più lunghe e ravvicinate. Le proteste vengono ignorate; nei rapporti destinati all'esterno restano i miglioramenti, mentre le ricadute e gli effetti avversi vengono omessi.
 
-Ho informato Padre Aldren della visita di Ward. Credevo di proteggerlo. Da allora l'ala è chiusa e due pazienti sono scomparsi dai registri.
+Il giorno 25 mi ordinarono di preparare sei pazienti per l'ala inferiore. Non avevano acconsentito a proseguire. Due non compaiono più nei registri pubblici. Ho eseguito l'ordine.
 
-Se Ward torna, non consegnarlo senza garanzie. Se non torna, temo di sapere dove sia andato.
+Ho visto la vasca: contiene un reperto vivo. Durante la seduta il sangue passa dal paziente alla macchina, attraversa il sistema della vasca e torna al paziente. Non so da dove provenga il reperto né perché il sollievo duri così poco.
+
+Il 21 avevo informato Padre Aldren della visita di Ward, sperando in una verifica delle prove e nella sua protezione. Non è cambiato nulla. Se Ward torna, non consegnarlo senza garanzie.
 
 \vfill
 \hfill Oren
 \end{documentbox}
 
-% ----------------------------------------------------------------
-% H10
-% ----------------------------------------------------------------
 \newhandout{H10}{Avviso di caccia provvisorio}{Affisso all'interno del Rifugio dei Cacciatori}
 \begin{documentbox}
 \begin{center}
@@ -374,29 +387,24 @@ Il soggetto conserva intelligenza eccezionale e conoscenza di macchinari, serrat
 % ----------------------------------------------------------------
 % H11
 % ----------------------------------------------------------------
-\newhandout{H11}{Note sulla ricerca}{Appunti della dottoressa Miriam Voss}
+\newhandout{H11}{Note sulla runa}{Appunti della dottoressa Miriam Voss}
 \begin{documentbox}
 \handfont
-\textbf{Dopo il colloquio con Elias Ward}
+\textbf{Giorno 20 -- copia mostrata da Elias Ward}
+\begin{center}\vascrune\end{center}
 
-Ward riferisce che Silas ha venduto alla Chiesa una copia dei suoi disegni. Ha seguito fino al Laboratorio Alchemico una cassa la cui ricevuta dichiara un regolatore. Non ha visto il contenuto: teme che sia stato riprodotto il suo progetto, ma non può ancora confermarlo.
+Ward mi ha portato soltanto questo segno, ricopiato da un documento. Non ho visto l'oggetto a cui era destinato.
 
-Il sigillo richiama simboli pthumeriani legati a nascita e legame. Nei testi il cordone di un Grande Essere viene associato alla possibilità di un rapporto con esseri superiori.
+Nei testi pthumeriani la figura accompagna lo sviluppo di una facoltà di percezione. Alcuni traduttori usano «ascolto», ma i passi non descrivono necessariamente un suono.
 
-\textbf{Ipotesi:} la cerchia potrebbe cercare di coltivare qualcosa capace di svolgere una funzione simile. Non è la stessa cosa che creare un Grande Essere.
+La crescita riguarda la capacità di percepire ciò che prima era precluso. Alcuni resoconti associano tale facoltà alla possibilità di un contatto con esseri superiori.
 
-La funzione del regolatore è mantenere stabile la pressione. Se serve a una coltura biologica, spiega come questa venga sostenuta, non come si possa ottenere un contatto.
-
-\medskip
-Non abbiamo visto un contatto né trovato una procedura che lo garantisca. Occorre distinguere lo scopo della ricerca dai risultati.
+Questo non dimostra che incidere il segno produca quell'effetto. Non conosco il contesto in cui viene impiegato oggi, né quale risultato cerchi chi lo ha scelto.
 
 \vfill
 \hfill M. Voss
 \end{documentbox}
 
-% ----------------------------------------------------------------
-% H12
-% ----------------------------------------------------------------
 \newhandout{H12}{Appunti sparsi - seconda pagina}{Carta macchiata d'olio e piegata più volte}
 \begin{documentbox}
 \handfont
@@ -440,7 +448,7 @@ Vetriature grandi & 6 & 1 & cinque trasferite \\
 Fili d'argento & 18 bobine & 2 & sedici trasferite \\
 Sali conservanti & 12 casse & 3 & nove trasferite \\
 Carbone purificato & 20 sacchi & 18 & consumo ordinario \\
-Tessuto biologico sigillato & 7 contenitori & 0 & consegna diretta \\
+Condotte per trattamento & 7 confezioni & 0 & consegna all'ala inferiore \\
 \bottomrule
 \end{tabularx}
 
@@ -483,73 +491,65 @@ Tessuto biologico sigillato & 7 contenitori & 0 & consegna diretta \\
 % ----------------------------------------------------------------
 % H15
 % ----------------------------------------------------------------
-\newhandout{H15}{Schema della macchina}{Tavola tecnica del laboratorio inferiore}
+\newhandout{H15}{Schema della macchina}{Circuito di una seduta -- laboratorio inferiore}
 \begin{bluebox}
 \centering
 \begin{tikzpicture}[x=1cm,y=1cm,font=\small,>=Latex]
-\draw[ink,line width=.8pt] (-5,-1.5) rectangle (5,3);
-\node[anchor=west,font=\bfseries] at (-4.7,2.6) {MACCHINA};
-\node[align=center] (p) at (-3,1) {pompe};
-\node[draw=ink,minimum width=3cm,minimum height=1cm,align=center] (r) at (1,1) {REGOLATORE\\pressione stabile};
-\draw[->,thick] (p)--(r);
-\node[draw=blood,ellipse,minimum width=4cm,minimum height=1.3cm,align=center] (o) at (0,-3.5) {ORGANISMO\\nella vasca};
-\draw[->,thick] (r.south)--(1,-1)--(o.north east);
-\draw[->,thick] (o.north west)--(-3,-1)--(p.south);
+\node[draw,minimum width=3cm,minimum height=1cm] (p) at (-3,2) {PAZIENTE};
+\draw[ash,dashed] (-5,-4) rectangle (5,.8);
+\node[anchor=west] at (-4.8,.5) {MACCHINA};
+\node[draw,align=center,minimum width=3cm] (r) at (-3,-1) {pompe e REGOLATORE\\pressione stabile};
+\node[draw,align=center,minimum width=3cm] (v) at (2,-2.5) {VASCA\\reperto organico\\\vascrune};
+\draw[->,thick] (p)--(r) node[midway,left] {sangue};
+\draw[->,thick] (r.south)|-(v.west);
+\draw[->,thick] (v.east)--(4.5,-2.5)--(4.5,2)--(p.east) node[pos=.85,above] {ritorno};
 \end{tikzpicture}
 
 \medskip
 \raggedright
-La macchina mantiene vivo l'organismo facendo circolare il sangue.
-Il regolatore mantiene stabile la pressione.
+Il sangue attraversa il sistema contenente il reperto e ritorna al paziente.
+Il regolatore aggiunto consente portate maggiori mantenendo stabile la pressione.
 
-\textit{Nota di Elias:} «Il regolatore riproduce il mio progetto. La macchina è stata costruita attorno a esso per un impiego che non avevo previsto.»
+\textit{Nota di Elias:} «Il pezzo riproduce il mio progetto. Fa scorrere più sangue nel circuito. Che questo aumenti un contatto è la spiegazione di Celestine, non una misura dello strumento.»
 \end{bluebox}
 
-% ----------------------------------------------------------------
-% H16
-% ----------------------------------------------------------------
 \newhandout{H16}{Rapporto sul Progetto}{Documento riservato della direzione}
 \begin{churchbox}
-\begin{center}
-\churchseal\quad {\Large\bfseries STATO DELLA RICERCA}\quad\churchseal
-\end{center}
+\small
+\begin{center}\churchseal\quad{\Large\bfseries STATO DELLA RICERCA}\end{center}
 
-\textbf{Organismo:} coltura artificiale ottenuta da tessuti ospedalieri e materiale biologico pthumeriano.
+\textbf{Reperto:} materiale organico recuperato nei sotterranei pthumeriani e conservato nella vasca. Si ipotizza l'appartenenza a un Grande Essere.
 
-\textbf{Macchina:} sostiene la coltura mediante circolazione del sangue e controllo delle condizioni di mantenimento.
+\textbf{Trattamento:} circolazione del sangue del paziente attraverso il sistema contenente il reperto, con ritorno al paziente.
 
-\textbf{Regolatore:} componente riprodotto dai disegni di Elias Ward. Mantiene stabile la pressione durante la circolazione.
+\textbf{Prime prove:} partecipazione volontaria, informazione sui rischi e rispetto della rinuncia. Miglioramenti osservati nel riconoscimento e nella lucidità, seguiti da ritorno allo stato precedente.
 
-\textbf{Obiettivo:} sviluppare un organismo capace di consentire un contatto con un'entità ultraterrena, imitando una funzione attribuita al cordone di un Grande Essere.
+\textbf{Interpretazione della direzione:} il beneficio indica un legame ancora insufficiente con il Grande Essere. L'incisione della runa sulla vasca mira a favorirlo. Non è stata verificata una comunicazione con un'entità.
 
-\textbf{Risultato attuale:} l'organismo viene mantenuto vivo. Nessun contatto è stato verificato; non sono stabiliti né un metodo certo né una data per ottenerlo.
+\textbf{Potenziamento:} il regolatore costruito dai disegni di Elias Ward è stato aggiunto alla macchina. Stabilizza la pressione a portate maggiori. Aumentare durata e frequenza delle sedute per ricercare un effetto duraturo.
 
-\textbf{Materiale biologico:} sangue e tessuti prelevati ai pazienti dell'Ospedale. Autorizzazione della direzione; consenso individuale non acquisito.
+\textbf{Risultato attuale:} nessun recupero stabile documentato. Le ricadute persistono.
 
-\textbf{Disposizione:} proseguire la ricerca. Mantenere separati dai registri pubblici i documenti relativi ai prelievi e alle sperimentazioni.
+\textbf{Disposizione interna:} mantenere i sei pazienti nel reparto riservato e proseguire anche in caso di rifiuto. Conservare separatamente proteste, ricadute ed effetti avversi; nei rapporti esterni riportare i miglioramenti osservati.
 
 \vfill
-Autorizzazione: \textit{Madre Celestine Vey}\hfill Non duplicare
+Autorizzazione: \textit{Madre Celestine Vey}
 \end{churchbox}
 
-% ----------------------------------------------------------------
-% H17
-% ----------------------------------------------------------------
 \newhandout{H17}{Ultimi appunti di Elias}{Foglio trovato tra le carte di Elias nel complesso}
 \begin{documentbox}
 \handfont
 \large
-Il regolatore è il mio. Non un oggetto simile: riconosco il progetto.
+Ora l'ho visto. Il regolatore riproduce il mio progetto.
 
-La macchina che hanno costruito lo usa per mantenere vivo ciò che si trova nella vasca. L'organismo non è la macchina, e nessuno dei due è una mia invenzione.
+È stato aggiunto a una macchina che tratta il sangue dei malati attraverso una vasca con un reperto vivo. Stabilizza la pressione e permette di aumentare il flusso.
 
-Non so se possa davvero permettere il contatto che cercano. So che stanno usando il mio lavoro e materiale preso ai malati senza consenso.
+Nei rapporti i pazienti migliorano e poi ricadono. La risposta di Celestine è sempre un'altra seduta, più lunga o più intensa. Le richieste di smettere non vengono rispettate.
+
+Non so se esista il contatto che cerca. So a che cosa serve il mio pezzo e che cosa stanno imponendo ai malati.
 
 \medskip
 La febbre era cominciata prima che scendessi. Ho ferito un uomo e ricordo di aver scelto di non ucciderlo. Voglio credere che questo conti ancora.
-
-\medskip
-Non confondete ciò che la macchina fa con ciò che Celestine spera di ottenere. Non sono la stessa cosa.
 
 \vfill
 \hfill E.
