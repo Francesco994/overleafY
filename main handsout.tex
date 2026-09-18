@@ -93,7 +93,7 @@ H10 & Avviso di caccia & Rifugio dei Cacciatori & Spiega perché Elias è consid
 H11 & Note sulla runa & Biblioteca Proibita & Interpreta la sola runa, senza conoscere le prove. \\
 H12 & Taccuino di Elias II & Laboratorio & Documenta il transito e gli accessi individuati da Elias. \\
 H13 & Inventario alchemico & Laboratorio Alchemico & Fa emergere materiali assenti, condotte e trasferimenti sotterranei. \\
-H14 & Schema delle condotte & Laboratorio / fogne & Permette ai giocatori di pianificare l'accesso al nodo finale. \\
+H14 & Schema degli accessi & Laboratorio / fogne & Permette ai giocatori di pianificare l'accesso al nodo finale. \\
 H15 & Schema della macchina & Il Progetto & Distingue organismo, macchina e regolatore. \\
 H16 & Rapporto sul Progetto & Il Progetto & Rivela risultati, escalation e trattamenti imposti. \\
 H17 & Ultimi appunti di Elias & Finale & Riporta le scoperte di Elias, senza stabilirne il piano. \\
@@ -147,7 +147,7 @@ Devo controllare nei registri della Fonderia chi ha ordinato la cassa 17 e dove 
 \node[draw=ink,fill=paper,inner sep=2pt] (f) at (-4.6,-1.8) {Fonderia};
 \node[draw=ink,fill=paper,inner sep=2pt] (a) at (1.2,2.9) {Archivio};
 \node[draw=ink,fill=paper,inner sep=2pt] (o) at (3.9,.1) {Ospedale};
-\node[draw=ink,fill=paper,inner sep=2pt] (l) at (1.8,-2.8) {Lab. Alchemico};
+\node[draw=ink,fill=paper,inner sep=2pt] (l) at (3.9,-1.5) {Lab. Alchemico};
 \node[draw=ash,fill=paper,inner sep=2pt] at (-1.5,1.0) {Mercato};
 \node[draw=ash,fill=paper,inner sep=2pt] at (-.7,-3.5) {Fogne};
 \node[draw=ash,fill=paper,inner sep=2pt] at (4.2,3.7) {Cattedrale};
@@ -156,10 +156,11 @@ Devo controllare nei registri della Fonderia chi ha ordinato la cassa 17 e dove 
 \draw[blood,line width=1.1pt] (a) circle (.85);
 \draw[blood,line width=1.1pt] (o) circle (.85);
 \draw[blood,dashed,line width=.8pt,->] (f)--(l);
-\draw[blood,dashed,line width=.8pt,->] (l)--(o);
+\draw[blood,dotted,line width=.8pt,->] (l)--(o);
+\node[text=ash,font=\scriptsize] at (4,-2.1) {edificio adiacente all'Ospedale};
 \draw[blood,dotted,line width=.8pt] (o)--(a);
 \node[rotate=-8,text=blood,font=\itshape] at (-2.8,-3.3) {non segue la strada};
-\node[rotate=6,text=blood,font=\itshape] at (3.5,-1.5) {sotto?};
+\node[rotate=6,text=blood,font=\itshape] at (5.5,-.7) {sotto?};
 \node[rotate=-5,text=ink,font=\itshape] at (-2.2,3.5) {registro ricopiato qui};
 \end{tikzpicture}
 \end{bluebox}
@@ -240,12 +241,12 @@ Peso accettato & 391 libbre e un quarto \\
 Contenuto & Regolatore, vetriatura, minuteria \\
 Data di uscita & Giorno 16 del mese corrente \\
 Vetturale & T. Harrow \\
-Consegna & Dopo la terza campana; ingresso inferiore \\
+Consegna & Dopo la terza campana; ingresso di servizio del deposito del Laboratorio Alchemico \\
 Autorizzazione & \churchseal\quad Ufficio riservato \\
 \end{tabularx}
 
 \vspace{8mm}
-\textit{Nota a margine, altra mano:} «Non portare nell'ala pubblica. Maneggiare con cura il regolatore e la vetriatura.»
+\textit{Nota a margine, altra mano:} «Consegnare al deposito. Maneggiare con cura il regolatore e la vetriatura.»
 
 \vfill
 \hfill Firma del vetturale: \textit{T. Harrow}
@@ -350,9 +351,9 @@ all'inizio spiegavamo ai malati che il trattamento era sperimentale. Potevano ri
 
 Ora le sedute sono più lunghe e ravvicinate. Le proteste vengono ignorate; nei rapporti destinati all'esterno restano i miglioramenti, mentre le ricadute e gli effetti avversi vengono omessi.
 
-Il giorno 25 mi ordinarono di preparare sei pazienti per l'ala inferiore. Non avevano acconsentito a proseguire. Due non compaiono più nei registri pubblici. Ho eseguito l'ordine.
+Il giorno 25 mi ordinarono di accompagnare sei pazienti lungo la scala interna, oltre la porta sorvegliata, fino alle stanze dell'ala inferiore riservata nei sotterranei dell'Ospedale. Non avevano acconsentito a proseguire. Due non compaiono più nei registri pubblici. Ho eseguito l'ordine.
 
-Ho visto la vasca: contiene un reperto vivo. Durante la seduta il sangue passa dal paziente alla macchina, attraversa il sistema della vasca e torna al paziente. Non so da dove provenga il reperto né perché il sollievo duri così poco.
+Dal corridoio dell'ala inferiore sono entrato nella sala del Progetto e ho visto la vasca: contiene un reperto vivo. Durante la seduta il sangue passa dal paziente alla macchina, attraversa il sistema della vasca e torna al paziente. Non so da dove provenga il reperto né perché il sollievo duri così poco.
 
 Il 21 avevo informato Padre Aldren della visita di Ward, sperando in una verifica delle prove e nella sua protezione. Non è cambiato nulla. Se Ward torna, non consegnarlo senza garanzie.
 
@@ -408,32 +409,28 @@ Questo non dimostra che incidere il segno produca quell'effetto. Non conosco il 
 \newhandout{H12}{Appunti sparsi - seconda pagina}{Carta macchiata d'olio e piegata più volte}
 \begin{documentbox}
 \handfont
-\large
-Il Laboratorio Alchemico non consuma abbastanza carbone per tutte le macchine che riceve.
+Il Laboratorio Alchemico è il deposito. È accanto all'Ospedale; le casse scendono con l'ascensore e attraversano una breve galleria fino all'ala inferiore.
 
-Non produce abbastanza scarico.\\
-Non conserva abbastanza personale.\\
-Non è il laboratorio.
+Il giorno 26 sono passato durante un trasferimento. Non avevo la chiave dell'ascensore: la custodisce l'addetto.
 
 \medskip
-Le pompe lavorano a valle. Si sente il ritorno nei tubi quando l'edificio è fermo.
+Tre accessi:
 
-Tre accessi possibili:
+1. La scala interna dell'Ospedale conduce alle stanze dei pazienti. La porta è sorvegliata; il corridoio porta alla sala del Progetto.
 
-1. condotto dell'Ospedale;\\
-2. ascensore merci sotto il deposito;\\
-3. scarico verso le fogne, ma il livello sale alla quarta campana.
+2. L'ascensore nell'area riservata del deposito scende alla galleria delle forniture. L'ingresso del deposito e l'ascensore hanno chiavi distinte.
+
+3. Lo scarico delle fogne arriva al vano di manutenzione accanto alla sala del Progetto. Una grata chiusa interrompe il passaggio.
 
 \medskip
-I componenti passano dal deposito, poi scendono. Il regolatore non viene usato qui. Tre colpi, pausa, due colpi è il segnale del personale per indicare che lo scarico è sgombro.
+Ho percorso la galleria. Gli altri collegamenti sono riportati nello schema di servizio qui accanto.
+
+Ho osservato il lavaggio dello scarico: comincia alla quarta campana notturna e impedisce il passaggio per circa un'ora. Tre colpi, pausa, due colpi confermano che lo scarico è sgombro prima del lavaggio.
 
 \vfill
 \hfill\textit{Non portare Eleanor. Non ancora.}
 \end{documentbox}
 
-% ----------------------------------------------------------------
-% H13
-% ----------------------------------------------------------------
 \newhandout{H13}{Laboratorio Alchemico}{Inventario di reparto - beni in transito}
 \begin{documentbox}
 \sffamily
@@ -453,45 +450,48 @@ Condotte per trattamento & 7 confezioni & 0 & consegna all'ala inferiore \\
 \end{tabularx}
 
 \vspace{7mm}
-\textbf{Trasferimento inferiore:} usare l'ascensore soltanto dopo la terza campana. In caso di guasto, aprire lo scarico orientale e attendere il segnale: tre colpi, pausa, due colpi.
+\textbf{Trasferimento delle forniture:} dopo la terza campana, rivolgersi all'addetto che custodisce la chiave dell'ascensore. Dal piano inferiore, seguire la breve galleria fino al corridoio dell'ala inferiore riservata dell'Ospedale. Lo scarico serve a lavaggio e manutenzione, non al trasporto delle casse.
 
 \vfill
-\textit{Correzione a matita:} «Regolatore consegnato alla macchina nel laboratorio inferiore. Accesso riservato al personale autorizzato.»
+\textit{Correzione a matita:} «Regolatore consegnato alla macchina nella sala del Progetto. Accesso riservato al personale autorizzato.»
 \end{documentbox}
 
 % ----------------------------------------------------------------
 % H14
 % ----------------------------------------------------------------
-\newhandout{H14}{Schema delle condotte inferiori}{Copia tecnica non aggiornata}
+\newhandout{H14}{Schema degli accessi}{Copia di servizio -- ala inferiore riservata}
 \begin{bluebox}
 \centering
 \begin{tikzpicture}[x=1cm,y=1cm,font=\footnotesize,>=Latex]
-\node[draw,align=center,minimum width=3cm,minimum height=1cm] (h) at (0,3.5) {Ospedale Vecchio\\ala inferiore};
-\node[draw,align=center,minimum width=3cm,minimum height=1cm] (a) at (-4,0) {Laboratorio\\Alchemico};
-\node[draw,align=center,minimum width=2.7cm,minimum height=1cm] (s) at (4,0) {Scarico\\fognario};
-\node[draw=blood,align=center,line width=1pt,minimum width=3.2cm,minimum height=1.2cm] (p) at (0,-3.3) {LABORATORIO\\accesso riservato};
-\node[draw,align=center] (v) at (0,1.3) {passaggio\\di servizio};
-\node[draw,circle] (lift) at (-2,-1.7) {A};
-\node[draw,circle] (gate) at (2,-1.7) {G};
-
-\draw[->,line width=1pt] (h)--(v);
-\draw[->,line width=1pt] (a)--(v);
-\draw[->,line width=1pt] (s)--(gate);
-\draw[->,line width=1pt] (v)--(p);
-\draw[->,line width=1pt] (a)--(lift)--(p);
-\draw[->,line width=1pt] (gate)--(p);
-\node[align=left] at (-4,-3.3) {A: ascensore merci\\chiave doppia};
-\node[align=left] at (4,-3.3) {G: grata di scarico\\lavaggio alla IV campana};
+\node[draw,align=center,minimum width=3.4cm] (h) at (2,5) {OSPEDALE VECCHIO\\reparti pubblici};
+\node[draw,align=center,minimum width=3.4cm] (d) at (-3,5) {LABORATORIO ALCHEMICO\\deposito adiacente};
+\node[draw,align=center] (a) at (-3,2.7) {Ascensore merci\\chiave all'addetto};
+\node[draw,align=center] (p) at (2,2.7) {Stanze dei pazienti};
+\node[draw,align=center] (c) at (2,.8) {Corridoio di servizio};
+\node[draw=blood,align=center,minimum width=3.5cm] (s) at (2,-1) {SALA DEL PROGETTO\\macchina e vasca};
+\node[draw,align=center] (m) at (2,-3) {Vano di manutenzione};
+\node[draw,align=center] (f) at (-3,-3) {Fogne};
+\draw[ash,dashed] (-.3,-4) rectangle (4.6,3.5);
+\node[align=center,text=ash] at (2,3.95) {Ala inferiore riservata\\nei sotterranei dell'Ospedale};
+\draw[<->] (h)--(p) node[midway,right,align=left] {scala interna\\porta sorvegliata};
+\draw[<->] (d)--(a);
+\draw[<->] (a.south)|-(c.west) node[pos=.7,below] {galleria delle forniture};
+\draw[<->] (p)--(c);
+\draw[<->] (c)--(s);
+\draw[<->] (s)--(m);
+\draw[<->] (f)--(m) node[midway,above] {scarico con grata};
 \end{tikzpicture}
 
-\vfill
-\small\textit{Sul retro, una nota di Elias:} «Il laboratorio è sotto l'Ospedale. Le forniture arrivano dal deposito del Laboratorio Alchemico. Questi sono gli accessi che ho individuato.»
+\medskip
+\raggedright
+La scala ospedaliera serve personale e pazienti assistiti. L'ascensore e la galleria servono le forniture.
+
+Lo scarico è un passaggio di manutenzione: lavaggio alla quarta campana notturna, impraticabile per circa un'ora.
+
+\textit{Nota di Elias:} «La sala del Progetto è dentro l'ala inferiore, sullo stesso livello delle stanze dei pazienti.»
 \end{bluebox}
 
-% ----------------------------------------------------------------
-% H15
-% ----------------------------------------------------------------
-\newhandout{H15}{Schema della macchina}{Circuito di una seduta -- laboratorio inferiore}
+\newhandout{H15}{Schema della macchina}{Circuito di una seduta -- sala del Progetto}
 \begin{bluebox}
 \centering
 \begin{tikzpicture}[x=1cm,y=1cm,font=\small,>=Latex]
