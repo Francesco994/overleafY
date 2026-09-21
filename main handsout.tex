@@ -85,7 +85,9 @@ H02 & Cartina annotata & Casa Ward & Offre piste simultanee: Fonderia, Archivio,
 H03 & Progetto del regolatore & Officina & Identifica l'invenzione di Elias e il suo impiego originario. \\
 H04 & Registro della Fonderia & Fonderia & Mostra incongruenze tra peso dichiarato e verificato. \\
 H05 & Ricevuta non registrata & Fonderia / magazzino & Prova l'esistenza di una cassa fuori registro diretta al Laboratorio Alchemico. \\
-H06 & Registro e allegato tecnico & Archivio Ecclesiastico & Collega ordini frammentati, Ospedale e Laboratorio; distingue marchio amministrativo e runa della vasca. \\
+H06 & Registro delle commesse & Archivio & Mostra materiali, destinatari e autorizzazioni comuni. \\
+H06a & Scheda 44-14 & Archivio & Collega peso, cassa 17/17-B e destinazione; recupera la pista di H05. \\
+H06b & Disegno 44-12 & Archivio & Mostra la vasca e la runa da incidere. \\
 H07 & Disposizione interna riservata & Ilyne / Padre Aldren & Collega forniture riservate e disposizioni su Elias. \\
 H08 & Referto medico di Elias & Ospedale Vecchio & Conferma sintomi iniziali ma lucidità conservata. \\
 H09 & Nota privata del dottor Sile & Ospedale & Documenta benefici temporanei e deriva coercitiva. \\
@@ -255,39 +257,59 @@ Autorizzazione & \churchseal\quad Ufficio riservato \\
 % ----------------------------------------------------------------
 % H06
 % ----------------------------------------------------------------
-\newhandout{H06}{Archivio Ecclesiastico}{Registro riepilogativo, pagina 44 -- allegato tecnico 44-12}
+\newhandout{H06}{Registro delle commesse}{Chiesa della Cura -- pagina 44}
 \begin{churchbox}
-\begin{center}{\large\bfseries REGISTRO DELLE COMMESSE}\end{center}
-\small
 \begin{tabularx}{\linewidth}{c X X}
 \toprule
-Rif. & Materiale & Destinatario \\
+N. commessa & Materiale ordinato & Destinazione \\
 \midrule
 44-11 & Tubazioni e giunti sterili & Ospedale Vecchio \\
 44-12 & Vasca in vetro e supporti & Laboratorio Alchemico \\
 44-13 & Materiali di medicazione & Ospedale Vecchio \\
 44-14 & Regolatore di pressione & Laboratorio Alchemico \\
-44-15 & Lastre e fili d'argento & \textit{voce raschiata} \\
+44-15 & Lastre e fili d'argento & \begin{tikzpicture}[baseline=-.5ex]\foreach \y in {0,.04,.08,.12,.16}{\draw[ink,line width=.5pt] (0,\y)--(2.1,\y+.03);}\end{tikzpicture} \\
 44-16 & Carbone purificato & Laboratorio Alchemico \\
 \bottomrule
 \end{tabularx}
 
 \medskip
-\churchseal\quad Autorizzazione dell'ufficio riservato: commesse 44-12, 44-14, 44-15 e 44-16.
-
-\textbf{Consultazione:} verifica delle voci riepilogative e dell'allegato tecnico 44-12 presso l'archivista. Fascicoli di dettaglio 44-14 e 44-15 riservati, su autorizzazione.
-
-\textbf{Disposizione sulle copie:} documenti accessori dei fascicoli riservati all'ala inferiore dell'Ospedale; ritiro delle copie dopo verifica.
+\textbf{Commesse autorizzate dall'ufficio riservato:}\\
+44-12, 44-14, 44-15 e 44-16.
 
 \medskip
-\textbf{Allegato 44-12 -- indicazione per il vetraio}
+\churchseal
+\end{churchbox}
+
+\newhandout{H06a}{Commessa 44-14}{Registrazione della spedizione}
+\begin{churchbox}
+\begin{tabularx}{\linewidth}{>{\bfseries}p{42mm}X}
+Materiale & Regolatore di pressione, vetriatura e minuteria \\
+Provenienza & Fonderia Municipale \\
+Collo & 17-B, già registrato come cassa 17 \\
+Peso verificato del collo & 391 libbre e un quarto \\
+Destinazione & Deposito del Laboratorio Alchemico \\
+Data di uscita & Giorno 16 del mese corrente \\
+Trasporto & T. Harrow \\
+Consegna & Dopo la terza campana, ingresso di servizio del deposito \\
+Autorizzazione & Ufficio riservato \quad\churchseal \\
+\end{tabularx}
+\end{churchbox}
+
+\newhandout{H06b}{Commessa 44-12}{Disegno allegato -- istruzioni per il vetraio}
+\begin{churchbox}
+\textbf{Oggetto:} vasca in vetro con supporti.\\
+\textbf{Destinazione:} Laboratorio Alchemico.
+
 \begin{center}
 \begin{tikzpicture}[x=1cm,y=1cm]
 \draw[ink,thick,rounded corners] (-3,-1) rectangle (3,1);
 \node at (0,0) {\vascrune};
 \end{tikzpicture}
 \end{center}
-Incidere sulla parete della vasca il segno riprodotto nel disegno. Conservare la discontinuità del tratto superiore.
+
+Incidere il segno sulla parete della vasca nella posizione indicata.
+
+Riprodurre esattamente il disegno: \textbf{il tratto superiore deve rimanere interrotto.}
 \end{churchbox}
 
 \newhandout{H07}{Disposizione interna riservata}{Copia per il responsabile dell'Archivio}
