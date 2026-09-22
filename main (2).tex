@@ -51,6 +51,7 @@
 \setlength{\parskip}{4pt}
 
 \newtcolorbox{rulebox}[1][]{enhanced,breakable,colback=mist,colframe=iron,boxrule=0.5pt,arc=0mm,left=3mm,right=3mm,top=2mm,bottom=2mm,#1}
+\newtcolorbox{readaloud}[1][]{enhanced,breakable,colback=mist,colframe=blood!75!black,colbacktitle=blood!75!black,coltitle=white,boxrule=0.6pt,arc=0mm,left=3mm,right=3mm,top=2mm,bottom=2mm,title={Da leggere ad alta voce},fonttitle=\sffamily\small\bfseries,#1}
 \newtcolorbox{bloodbox}[1][]{enhanced,breakable,colback=ash!50,colframe=blood,boxrule=0.8pt,arc=0mm,left=3mm,right=3mm,top=2mm,bottom=2mm,#1}
 \newtcolorbox{gmbox}[1][]{enhanced,breakable,colback=pale,colframe=ash!60!iron,boxrule=0.4pt,arc=1mm,left=3mm,right=3mm,top=2mm,bottom=2mm,title={\textbf{Promemoria del GM}},fonttitle=\sffamily,#1}
 \newtcolorbox{cluebox}[1][]{enhanced,breakable,colback=white,colframe=blood!65!black,boxrule=0.45pt,arc=0mm,left=3mm,right=3mm,top=2mm,bottom=2mm,title={\textbf{Informazioni e indizi}},fonttitle=\sffamily,#1}
@@ -125,6 +126,13 @@ La sala del Progetto non è un obiettivo annunciato. È la risposta alla scompar
 \end{gmbox}
 
 \section{2. Principi di conduzione}
+
+\subsection{Come consultare i nodi}
+Ogni nodo segue lo stesso ordine: \textbf{A colpo d'occhio}, \textbf{Arrivo e ambienti}, \textbf{Interazioni e ostacoli}, \textbf{Handout}, \textbf{Evoluzione della scena}, \textbf{Collegamenti}. I blocchi interni seguono le esigenze del luogo; l'ordine di consultazione non impone una sequenza ai giocatori.
+
+I riquadri \textbf{Da leggere ad alta voce} contengono descrizioni e battute da leggere o parafrasare quando si verifica la situazione indicata. Adattali a ingresso, presenze e informazioni già note ai PG. Le indicazioni esterne ai riquadri sono riservate al GM. Aspetti, azioni in Fate e compel accompagnano gli ambienti o le interazioni pertinenti.
+
+La voce \textbf{Handout} nel quadro iniziale è un indice rapido. Le schede complete si trovano sempre nella sezione omonima, dopo le interazioni: \textbf{Dove}, \textbf{Quando consegnarlo}, \textbf{Che cosa rivela}, \textbf{Limiti}. I rimandi durante la scena aiutano a ritrovarle; la posizione nel capitolo non ritarda la consegna ai giocatori.
 
 \subsection{Gli indizi fondamentali non richiedono un tiro}
 Quando i PG cercano nel posto giusto o fanno una domanda sensata, ottengono l'informazione necessaria. I tiri stabiliscono rapidità, discrezione, precisione, vantaggi creati e complicazioni.
@@ -646,30 +654,39 @@ Autocontrollo di Elias & Rifugio: sorvegliante risparmiato & Finale: incontro co
 
 \nodehead{9. Nodo 0 -- Casa Ward}{Innesco, legame emotivo e primo ventaglio di piste.}{Elias è fuggito, è stato rapito o stava facendo qualcosa di preciso?}
 
-\subsection{Situazione reale e obiettivo della scena}
+\subsection{A colpo d'occhio}
+\begin{tabularx}{\linewidth}{>{\bfseries}p{32mm} X}
+Presenti & Eleanor; Aldren soltanto per un arrivo motivato.\\
+Accesso & Eleanor riceve i PG in casa e mette a disposizione le carte rimaste.\\
+Handout & H01 e H02 sul tavolino dello studio domestico.\\
+Da ricordare & Elias è partito volontariamente il giorno 21. Eleanor non conosce il suo nascondiglio.\\
+\end{tabularx}
+
+\subsubsection{Situazione iniziale}
 Elias è uscito volontariamente il giorno 21, sette giorni prima dell'arrivo dei PG. Aveva visto incaricati ecclesiastici cercarlo e, durante una crisi, aveva stretto il braccio di Eleanor. Spaventato da sé stesso, ha preso attrezzi, pistola, provviste e il taccuino recente. Gli appunti precedenti sono rimasti in casa. Nessuno lo ha rapito qui e non c'è stata una perquisizione segreta.
 
 Eleanor ha continuato a vivere nella casa e a cercare notizie. Dopo i tentativi con Guardia e Chiesa ha scritto ai PG il giorno 25. Oggi ha raccolto sul tavolino le carte rimaste, perché possano esaminarle. La scena deve dare un motivo umano alla ricerca e più piste praticabili.
 
-\subsection{Ingresso: da leggere o parafrasare}
-\begin{rulebox}
+\subsection{Arrivo e ambienti}
+\subsubsection{Ingresso}
+\begin{readaloud}
 Eleanor apre e vi fa entrare senza trattenervi sulla soglia. Nella stanza c'è odore di carbone e di minestra. Il tavolo è pulito; sopra una sedia è piegato un cappotto da lavoro pesante.
 
 Attraverso una porta aperta vedete un tavolino coperto di fogli, un astuccio di strumenti e una cartina ripiegata. Eleanor sposta una tazza per farvi posto. Quando tira indietro la sedia si aggiusta la manica sul polso.
 
 ``Queste sono le carte che ha lasciato. Ho chiesto alla Guardia, poi alla Chiesa. Nessuno mi ha detto di averlo trovato. Da dove volete cominciare?''
-\end{rulebox}
+\end{readaloud}
 
-\textbf{Per il master:} la casa è stata abitata e riordinata durante la settimana. Minestra e tazza appartengono alla giornata corrente. Il cappotto è un ricambio, non una prova di ritorno. La manica copre il livido della crisi. L'ordine domestico mostra lo sforzo di Eleanor di continuare; non nasconde un enigma.
+\textbf{Per il GM:} la casa è stata abitata e riordinata durante la settimana. Minestra e tazza appartengono alla giornata corrente. Il cappotto è un ricambio, non una prova di ritorno. La manica copre il livido della crisi. L'ordine domestico mostra lo sforzo di Eleanor di continuare; non nasconde un enigma.
 
 \textbf{Aspetti di scena:} \aspect{Una casa rimasta in attesa}; \aspect{Ogni oggetto ricorda una vita abbandonata}.
 
-\subsection{Spazi ed elementi esaminabili}
+\subsubsection{Spazi ed elementi esaminabili}
 La stanza principale comunica con un piccolo studio domestico. Questo studio non è il laboratorio incendiato due anni fa, che si visita con l'Officina delle Lame. La camera da letto e la dispensa contengono oggetti ordinari: Eleanor può spiegare che cosa Elias abbia portato via senza richiedere una perquisizione completa.
 
 \begin{description}[leftmargin=5mm,style=nextline]
 \item[Carte sul tavolino: H01 e H02.]
-Eleanor le ha raccolte dai fogli di lavoro lasciati da Elias. H01 è un foglio di appunti, non il taccuino che lui porta con sé; H02 è ripiegato accanto al foglio. Esaminarle o chiedere che cosa stesse studiando basta a ricevere entrambi. Non sono nascoste dietro un tiro.
+Eleanor le ha raccolte dai fogli di lavoro lasciati da Elias; H02 è ripiegato accanto a H01. Le schede nella sezione Handout riportano consegna e interpretazione.
 \item[Strumenti e vecchi disegni.]
 Restano compassi, strumenti di misura e schizzi di pezzi isolati. Eleanor spiega che Elias li conservava dal lavoro d'ingegnere, mentre portò via gli attrezzi da intervento. I disegni non contengono una macchina completa e non permettono di ricostruire il Progetto. Per identificarne l'origine si può consultare Silas; qui non si trova H03.
 \item[Il materiale che manca.]
@@ -678,7 +695,8 @@ Eleanor ha visto Elias prendere borsa, pistola, cibo e taccuino. È una testimon
 Se i PG lo notano, descrivi un livido in via di guarigione. Lei si copre quando la conversazione riguarda l'aggressività di Elias. Il segno sostiene il suo racconto della crisi; non stabilisce una diagnosi. Se non viene notato, la domanda sulle condizioni di Elias può comunque portare alla confessione.
 \end{description}
 
-\subsection{Parlare con Eleanor}
+\subsection{Interazioni e ostacoli}
+\subsubsection{Parlare con Eleanor}
 La scheda di Eleanor nella sezione 6 ne descrive paure e limiti. Qui è presente da sola, salvo un arrivo motivato di Aldren. Non conosce i sei pazienti, l'organismo o il nascondiglio di Elias.
 
 \textbf{Racconta senza pressione:} l'assenza dura dal giorno 21; Elias lavorava alla Fonderia, controllava pesi e commesse e aveva ripreso a parlare dei vecchi progetti. Aveva ricevuto sangue per la mano e nelle ultime settimane dormiva male. Dice quali oggetti portò con sé e mostra le carte.
@@ -698,42 +716,14 @@ Ricorda Silas e il medico Oren Sile, vecchi contatti del marito. Il giorno 20 El
 Acconsente, chiedendo che le vengano restituite o copiate. Non condiziona le piste a un favore. Se si parla di consegnarle alla Chiesa, vuole sapere chi le custodirà e se i PG conserveranno una copia.
 \end{description}
 
-\subsection{H01 e H02: prove e limiti}
-\begin{cluebox}
-\textbf{H01 -- Appunti sparsi.} Consegnalo quando i PG guardano le carte o chiedono dell'indagine. Il peso dichiarato è 412 libbre; quello rilevato è 391 sulla bilancia grande e 391 e un quarto sulla piccola. L'arrotondamento è compatibile con due strumenti di diversa precisione. Il peso inferiore è un'anomalia da verificare, non la prova immediata di un furto.
-
-H01 distingue il sospetto dalla scoperta: Elias non ha visto il contenuto della cassa. La richiesta rifiutata e il committente comune spiegano perché abbia controllato la spedizione; il peso diverso lo spinge a verificare ordine e destinazione nei registri della Fonderia. H05 dichiara un regolatore, ma la paternità del progetto richiede ancora il confronto con Silas e H03. ``Non parlarne con Marta'' precede il favore sul turno del giorno 16 e non dimostra che Marta sia complice.
-
-\textbf{H02 -- Cartina annotata.} Consegnala insieme al foglio, appena viene aperta. Fonderia, Archivio e Ospedale sono cerchiati; è indicato anche il Laboratorio Alchemico, collegato da frecce. Tutti sono visitabili: i PG non devono scegliere per forza la Fonderia.
-
-Le frecce sono collegamenti studiati da Elias, non l'ordine obbligatorio delle visite. ``Sotto?'' è una domanda, non la posizione di un ingresso. ``Non segue la strada'' esprime il sospetto che il tragitto visibile non spieghi la destinazione finale; la mappa non disegna un passaggio percorribile. L'appunto sull'Archivio indica dove verificare le registrazioni, non identifica l'autore materiale delle falsificazioni.
-\end{cluebox}
-
-\textbf{Se i PG non esaminano le carte:} Eleanor offre di mostrarle prima della partenza, senza insistere su una destinazione. Se rifiutano, può comunque raccontare l'anomalia e indicare Fonderia, Silas e Oren. Non ricorda ogni numero o annotazione: le prove rimangono in casa finché qualcuno le sposta. Se i PG scelgono una pista diversa, la scena ha comunque funzionato.
-
-\subsection{Piste in uscita}
-\begin{longtable}{p{34mm} p{60mm} p{54mm}}
-\toprule
-\textbf{Destinazione} & \textbf{Che cosa la suggerisce} & \textbf{Domanda da verificare}\\
-\midrule
-Fonderia & H01, mestiere di Elias e nome di Marta. & Il peso è confermato dai registri? Che cosa è partito?\\
-Officina delle Lame & Vecchi disegni e ricordo di Silas. & Chi può riconoscere il regolatore e ricostruirne la storia?\\
-Archivio & Annotazioni di H01 e H02. & Quali commesse e destinatari corrispondono alle spedizioni?\\
-Ospedale Vecchio & H02, cure di Elias e nome di Oren. & Che cosa osservò il medico e perché Elias andò da lui?\\
-Laboratorio Alchemico & Nome e frecce in H02. & È davvero la destinazione dei componenti?\\
-Biblioteca, tramite Silas & Racconto del colloquio con Miriam. & Che cosa significava il segno copiato da Elias?\\
-Rifugio dei Cacciatori & Decisione dei PG di consultare chi tratta le trasformazioni. & Esiste già una segnalazione su Elias? Eleanor non conosce H10.\\
-\bottomrule
-\end{longtable}
-
-\subsection{Intervento eventuale di Padre Aldren}
+\subsubsection{Intervento eventuale di Padre Aldren}
 Fallo arrivare solo se Eleanor lo ha contattato, i PG hanno chiesto un incontro, oppure sta eseguendo l'offerta di aiuto prevista allo stadio 1 dell'orologio. In quest'ultimo caso conosce l'indirizzo dalla pratica su Elias: viene a verificare se sia tornato e a chiedere le carte rimaste, non perché sappia automaticamente che i PG le stanno leggendo.
 
 Bussa, si presenta e chiede di parlare. Offre di controllare la pratica o facilitare una visita al reparto pubblico. Domanda quali documenti siano stati trovati e propone di prenderli in custodia. Non conosce il contenuto di fogli che non ha visto. Non rivela il Progetto né ordina un arresto per la sola presenza dei PG.
 
 Se i PG accettano, registra esattamente che cosa gli consegnano o raccontano e quale accesso promette in cambio. Se rifiutano, può lasciare un recapito e riferire il rifiuto.
 
-\subsection{Azioni, conseguenze e uso in Fate}
+\subsubsection{Azioni e complicazioni}
 \begin{fatebox}
 \textbf{Nessun tiro per:} ricevere H01/H02, leggere i pesi, vedere i luoghi segnati o conoscere le visite che Eleanor ricorda. Una domanda pertinente basta.
 
@@ -746,6 +736,29 @@ Se i PG accettano, registra esattamente che cosa gli consegnano o raccontano e q
 Usa eventuali Compel soltanto su legami e Aspetti stabiliti con i giocatori. Non inventare un debito con Aldren o un vincolo familiare per imporre la collaborazione.
 \end{fatebox}
 
+\subsection{Handout}
+\label{nodo-0-handout}
+\subsubsection{H01 -- Appunti sparsi}
+\textbf{Dove:} Sul tavolino dello studio domestico, raccolti da Eleanor. È un foglio lasciato da Elias, distinto dal taccuino che porta con sé.
+
+\textbf{Quando consegnarlo:} Quando i PG guardano le carte o chiedono dell'indagine; nessun tiro.
+
+\textbf{Che cosa rivela:} Il peso dichiarato è 412 libbre; quello rilevato è 391 sulla bilancia grande e 391 e un quarto sulla piccola. L'arrotondamento è compatibile con due strumenti di diversa precisione. La richiesta rifiutata e il committente comune spiegano perché Elias abbia controllato la spedizione; il peso diverso lo spinge a verificare ordine e destinazione nei registri della Fonderia.
+
+\textbf{Limiti:} Elias non ha visto il contenuto della cassa. Il peso inferiore è un'anomalia da verificare, non la prova immediata di un furto. H05 dichiara un regolatore, ma la paternità del progetto richiede ancora il confronto con Silas e H03. ``Non parlarne con Marta'' precede il favore sul turno del giorno 16 e non dimostra che Marta sia complice.
+
+\subsubsection{H02 -- Cartina annotata}
+\textbf{Dove:} Ripiegata sullo stesso tavolino, accanto a H01.
+
+\textbf{Quando consegnarlo:} Insieme a H01, appena viene aperta; nessun tiro.
+
+\textbf{Che cosa rivela:} Fonderia, Archivio e Ospedale sono cerchiati; è indicato anche il Laboratorio Alchemico, collegato da frecce. Tutti sono visitabili: i PG non devono scegliere per forza la Fonderia.
+
+\textbf{Limiti:} Le frecce sono collegamenti studiati da Elias, non l'ordine obbligatorio delle visite. ``Sotto?'' è una domanda, non la posizione di un ingresso. ``Non segue la strada'' esprime il sospetto che il tragitto visibile non spieghi la destinazione finale; la mappa non disegna un passaggio percorribile. L'appunto sull'Archivio indica dove verificare le registrazioni, non identifica l'autore materiale delle falsificazioni.
+
+\textbf{Se i PG non esaminano le carte:} Eleanor offre di mostrarle prima della partenza, senza insistere su una destinazione. Se rifiutano, può comunque raccontare l'anomalia e indicare Fonderia, Silas e Oren. Non ricorda ogni numero o annotazione: le prove rimangono in casa finché qualcuno le sposta. Se i PG scelgono una pista diversa, la scena ha comunque funzionato.
+
+\subsection{Evoluzione della scena}
 \begin{description}[leftmargin=5mm,style=nextline]
 \item[Collaborano e danno notizie.]
 Eleanor rimane un contatto affidabile, conserva quanto le affidano e può riconoscere la grafia in prove successive. Un piano di protezione concordato riduce la necessità di rivolgersi alla Chiesa.
@@ -763,25 +776,50 @@ Una conversazione sensata non fa avanzare da sola l'orologio. Se passa una fase 
 
 \textbf{Prima di chiudere la scena:} annota quali carte sono state prese o copiate, che cosa è stato detto ad Aldren, se Eleanor ha raccontato la crisi e quale pista i PG intendono seguire. Per partire è sufficiente una domanda verificabile su Elias; la verità dell'esperimento emergerà altrove.
 
+\subsection{Collegamenti}
+\begin{longtable}{p{34mm} p{60mm} p{54mm}}
+\toprule
+\textbf{Destinazione} & \textbf{Che cosa la suggerisce} & \textbf{Domanda da verificare}\\
+\midrule
+Fonderia & H01, mestiere di Elias e nome di Marta. & Il peso è confermato dai registri? Che cosa è partito?\\
+Officina delle Lame & Vecchi disegni e ricordo di Silas. & Chi può riconoscere il regolatore e ricostruirne la storia?\\
+Archivio & Annotazioni di H01 e H02. & Quali commesse e destinatari corrispondono alle spedizioni?\\
+Ospedale Vecchio & H02, cure di Elias e nome di Oren. & Che cosa osservò il medico e perché Elias andò da lui?\\
+Laboratorio Alchemico & Nome e frecce in H02. & È davvero la destinazione dei componenti?\\
+Biblioteca, tramite Silas & Racconto del colloquio con Miriam. & Che cosa significava il segno copiato da Elias?\\
+Rifugio dei Cacciatori & Decisione dei PG di consultare chi tratta le trasformazioni. & Esiste già una segnalazione su Elias? Eleanor non conosce H10.\\
+\bottomrule
+\end{longtable}
+
 \nodehead{10. Nodo 1 -- La Fonderia}{Nodo tecnico e sociale; verifica i sospetti di Elias e ricostruisce una spedizione.}{Che cosa è partito, per conto di chi e verso quale destinazione?}
 
-\subsection{Situazione reale}
+\subsection{A colpo d'occhio}
+\begin{tabularx}{\linewidth}{>{\bfseries}p{32mm} X}
+Presenti & Marta, operai e contabile della Chiesa; Harrow e Nox secondo le condizioni descritte nelle interazioni.\\
+Accesso & Marta riceve le domande in ufficio; chiede di consultare gli originali sul posto.\\
+Handout & H04 nell'ufficio di Marta; H05 fra le copie carbone del magazzino.\\
+Da ricordare & La cassa 17 è partita il giorno 16 come 17-B. Alla Fonderia restano documenti e testimoni.\\
+\end{tabularx}
+
+\subsubsection{Situazione iniziale}
 La Fonderia rifinisce componenti fabbricati altrove e prepara le spedizioni. La cassa 17, pesata il giorno 13, è rimasta alla Fonderia fino al giorno 16, quando è partita come collo 17-B sul carro di T. Harrow. È il carro seguito da Elias: trasportava il regolatore, vetriatura e minuteria elencati in H05. Qui restano il registro di pesatura H04, la ricevuta H05 e le persone che hanno seguito le operazioni.
 
 Elias aveva rifiutato la richiesta di un intermediario della Chiesa di costruire il regolatore. Una spedizione dello stesso committente aveva attirato la sua attenzione; la differenza fra peso dichiarato e misurato lo aveva spinto a indagare. Non aveva aperto la cassa né riconosciuto il pezzo al suo interno. H01 riporta quel sospetto iniziale. La ricevuta H05 dichiara un regolatore, ma da sola non dimostra che riproduca il suo progetto.
 
-\subsection{Ingresso: da leggere o parafrasare}
-\begin{rulebox}
+\subsection{Arrivo e ambienti}
+\subsubsection{Ingresso}
+\begin{readaloud}
 I martelli coprono le voci. Accanto al cancello, una squadra spinge una cassa sulla piattaforma della bilancia; un addetto aspetta che l'indice si fermi prima di annotare il peso. Oltre il banco delle consegne, una porta a vetri dà sull'ufficio del caporeparto.
 
 Marta vi chiede di lasciare libero il passaggio dei carrelli. Quando nominate Elias, si toglie un guanto e vi accompagna in ufficio. «Ditemi che cosa cercate.»
-\end{rulebox}
+\end{readaloud}
 
-\textbf{Per il master:} la cassa in lavorazione è una spedizione ordinaria, non la 17. Il rumore rende difficile parlare nel reparto; l'ufficio consente di leggere e conversare. Gli operai stanno lavorando e non conoscono automaticamente il segreto della commessa.
+\textbf{Per il GM:} la cassa in lavorazione è una spedizione ordinaria, non la 17. Il rumore rende difficile parlare nel reparto; l'ufficio consente di leggere e conversare. Gli operai stanno lavorando e non conoscono automaticamente il segreto della commessa.
 
 \textbf{Aspetti di scena:} \aspect{Il rumore copre le voci}; \aspect{Carrelli in movimento}; \aspect{Il lavoro degli operai dipende dalle commesse}.
 
-\subsection{Persone e informazioni}
+\subsection{Interazioni e ostacoli}
+\subsubsection{Parlare con i presenti}
 \begin{description}[leftmargin=5mm,style=nextline]
 \item[Marta Ghal.]
 Conosce le pesature, conserva H04 e sa dove trovare H05. A una domanda su Elias o sulla cassa mostra i documenti in ufficio. Vuole proteggere il lavoro degli operai: chiede di consultare gli originali sul posto e di non accusarla pubblicamente. Non conosce la richiesta dell'intermediario, salvo che i PG le mostrino H01 o gliela raccontino.
@@ -795,7 +833,7 @@ Gli addetti possono indicare Marta e il magazzino delle ricevute. T. Harrow, se 
 Inseriscilo se Roland lo ha mandato a verificare il posto di lavoro di Elias o a seguire i PG. Chiede quando Elias sia stato visto e riferisce ciò che apprende. Il suo arrivo deve dipendere dalle ricerche dei Cacciatori, non dalla fine della scena.
 \end{description}
 
-\subsection{Documenti e deduzioni}
+\subsubsection{Confrontare pesature e spedizione}
 \begin{cluebox}
 Con domande pertinenti e consultazione dei documenti, senza tiro, i PG possono stabilire:
 \begin{itemize}
@@ -806,19 +844,7 @@ Con domande pertinenti e consultazione dei documenti, senza tiro, i PG possono s
 \end{itemize}
 \end{cluebox}
 
-\textbf{H04 -- Registro di pesatura.}
-Marta lo conserva in ufficio. Consegnalo quando i PG chiedono dei controlli di Elias o confrontano i pesi. Conferma l'anomalia e l'ordine di non aprire la cassa. Non contiene da solo la ricodifica o la destinazione della cassa 17.
-
-\medskip
-\textbf{H05 -- Ricevuta di trasferimento.}
-È fra le copie carbone del magazzino, sotto il codice 17-B. Marta sa recuperarla quando i PG chiedono che cosa sia uscito dopo la pesatura. Consegnala durante la ricostruzione della spedizione, senza richiedere di trovare la cassa già partita. Rivela provenienza, peso, contenuto dichiarato, destinazione e riferimento alla commessa. Non indica la sala del Progetto o la responsabile della ricerca.
-
-\medskip
-\textbf{Se i PG non prendono i documenti:} possono leggerli e annotare i riferimenti. Marta può indicare Laboratorio Alchemico e commessa 44-14 consultando la ricevuta; se questa è stata rimossa, il vetturale conosce almeno la destinazione. Le copie costituiscono prove da mostrare, non l'unico modo di conoscere le piste.
-
-\linkto{Laboratorio Alchemico: destinazione in H05. Archivio Ecclesiastico: originale della commessa 44-14 citato in H05, da confrontare con la scheda H06a. Officina delle Lame: Silas e i vecchi disegni indicati in H01, per verificare l'eventuale uso del progetto di Elias. Rifugio dei Cacciatori: attraverso Nox, se presente.}
-
-\subsection{Azioni e complicazioni in Fate}
+\subsubsection{Azioni e complicazioni}
 \begin{fatebox}
 \textbf{Indagine:} mettere in ordine ricevute e pesature può creare \aspect{Copie e riferimenti pronti al confronto}, utile per contestare la versione del contabile. Leggere il numero di commessa non richiede un tiro.
 
@@ -834,23 +860,58 @@ Marta lo conserva in ufficio. Consegnalo quando i PG chiedono dei controlli di E
 \item \textbf{Farsi sentire nel reparto.} Se i PG discutono una scoperta sensibile fra i macchinari, il rumore li costringe ad alzare la voce: un'informazione precisa arriva al contabile presente nelle vicinanze. Stabilisci quale, senza attribuirgli l'intera conversazione.
 \end{itemize}
 
+\subsection{Handout}
+\label{nodo-1-handout}
+\subsubsection{H04 -- Registro di pesatura}
+\textbf{Dove:} Marta lo conserva nell'ufficio della Fonderia.
+
+\textbf{Quando consegnarlo:} Quando i PG chiedono dei controlli di Elias o confrontano i pesi; nessun tiro.
+
+\textbf{Che cosa rivela:} Conferma l'anomalia e l'ordine di non aprire la cassa: 412 libbre dichiarate e 391 misurate.
+
+\textbf{Limiti:} Non contiene da solo la ricodifica o la destinazione della cassa 17.
+
+\subsubsection{H05 -- Ricevuta di trasferimento}
+\textbf{Dove:} Fra le copie carbone del magazzino, sotto il codice 17-B; Marta sa recuperarla.
+
+\textbf{Quando consegnarlo:} Quando i PG chiedono che cosa sia uscito dopo la pesatura e ricostruiscono la spedizione; non occorre trovare la cassa, già partita.
+
+\textbf{Che cosa rivela:} Provenienza, peso, contenuto dichiarato, destinazione e riferimento alla commessa. Il collo 17-B è la cassa 17; il peso accettato è 391 libbre e un quarto.
+
+\textbf{Limiti:} Non indica la sala del Progetto o la responsabile della ricerca e non dimostra da sola la paternità del regolatore.
+
+\textbf{Se i PG non prendono i documenti:} possono leggerli e annotare i riferimenti. Marta può indicare Laboratorio Alchemico e commessa 44-14 consultando la ricevuta; se questa è stata rimossa, il vetturale conosce almeno la destinazione. Le copie costituiscono prove da mostrare, non l'unico modo di conoscere le piste.
+
+\subsection{Evoluzione della scena}
 \begin{clockbox}
 Una consultazione discreta non provoca automaticamente una confisca. Se il contabile sente accuse o vede sottrarre documenti, può chiedere un intervento dell'autorità ecclesiastica. Mostra la segnalazione e l'arrivo degli incaricati, lasciando tempo per copiare le carte, trattare o andarsene. Marta salva una copia soltanto se può farlo concretamente. L'eventuale sequestro riguarda i documenti cercati: la Fonderia non interrompe tutta la produzione senza un motivo ulteriore.
 \end{clockbox}
 
+\subsection{Collegamenti}
+\linkto{Laboratorio Alchemico: destinazione in H05. Archivio Ecclesiastico: originale della commessa 44-14 citato in H05, da confrontare con la scheda H06a. Officina delle Lame: Silas e i vecchi disegni indicati in H01, per verificare l'eventuale uso del progetto di Elias. Rifugio dei Cacciatori: attraverso Nox, se presente.}
+
 \nodehead{11. Nodo 2 -- Studio distrutto e Officina delle Lame}{Nodo biografico; chiarisce la vendita dei disegni e la responsabilità di Silas.}{Come è arrivato il progetto di Elias nelle mani della Chiesa?}
 
-\subsection{Situazione reale e funzione dei due luoghi}
+\subsection{A colpo d'occhio}
+\begin{tabularx}{\linewidth}{>{\bfseries}p{32mm} X}
+Presenti & Silas all'Officina delle Lame.\\
+Accesso & Studio e officina sono luoghi distinti, poco distanti; si può andare direttamente da Silas.\\
+Handout & H03 conservato da Silas, insieme al vecchio esemplare del regolatore.\\
+Da ricordare & Silas vendette i disegni sette mesi fa; non fabbricò il pezzo spedito dalla Fonderia.\\
+\end{tabularx}
+
+\subsubsection{Situazione iniziale}
 Lo studio incendiato due anni fa e l'Officina delle Lame sono due luoghi distinti, poco distanti. Lo studio mostra le conseguenze della scelta di Elias; l'officina ospita Silas, il frammento H03 e il vecchio esemplare del regolatore. I PG possono recarsi direttamente da Silas: visitare lo studio non è un requisito.
 
 Elias incendiò lo studio dopo aver scoperto che il suo regolatore era stato incorporato in strumenti di tortura. La Chiesa sequestrò frammenti e prototipi, insufficienti a ricostruirlo. Silas aveva conservato una copia di lavoro e la vendette sette mesi fa per pagare debiti, accettando la giustificazione di un impiego ospedaliero. Il giorno 14 confessò la vendita a Elias. Non ha costruito il pezzo spedito dalla Fonderia.
 
-\subsection{Lo studio bruciato: da leggere o parafrasare}
-\begin{rulebox}
+\subsection{Arrivo e ambienti}
+\subsubsection{Lo studio bruciato}
+\begin{readaloud}
 Le pareti dello studio sono annerite, soprattutto attorno alle aperture. Entrando trovate resti di legno bruciato lungo i muri e spazio vuoto dove stavano gli arredi. Non ci sono più attrezzi o disegni da lavoro. Sotto i piedi scricchiolano polvere e piccoli frammenti.
-\end{rulebox}
+\end{readaloud}
 
-\textbf{Per il master:} sono i resti del vecchio incendio, non di un attacco recente. Il materiale recuperabile fu sequestrato dalla Chiesa. Qui non sono previsti nuovi indizi o fogli nascosti; H03 è conservato da Silas. Se i PG cercano, descrivi ciò che resta e chiarisci che la ricerca del progetto deve proseguire attraverso i testimoni.
+\textbf{Per il GM:} sono i resti del vecchio incendio, non di un attacco recente. Il materiale recuperabile fu sequestrato dalla Chiesa. Qui non sono previsti nuovi indizi o fogli nascosti; H03 è conservato da Silas. Se i PG cercano, descrivi ciò che resta e chiarisci che la ricerca del progetto deve proseguire attraverso i testimoni.
 
 \textbf{Aspetti di scena:}
 \begin{itemize}
@@ -859,12 +920,12 @@ Le pareti dello studio sono annerite, soprattutto attorno alle aperture. Entrand
 \end{itemize}
 Usali quando posizione o discrezione contano davvero. La visita non richiede un tiro o una complicazione obbligatoria.
 
-\subsection{L'Officina delle Lame: da leggere o parafrasare}
-\begin{rulebox}
+\subsubsection{L'Officina delle Lame}
+\begin{readaloud}
 Poco distante, dall'officina arrivano colpi di martello e il rumore di una lima. Sul banco ci sono utensili, una morsa e una lama in lavorazione. Silas alza gli occhi, vi indica uno spazio libero accanto al banco e continua a lavorare mentre gli spiegate perché siete venuti.
-\end{rulebox}
+\end{readaloud}
 
-\textbf{Per il master:} quando si nomina l'incendio, Silas depone l'utensile. Quando la conversazione riguarda l'invenzione, può mostrare il vecchio regolatore e H03. Non lasciarli descritti come oggetti misteriosi da individuare con un tiro.
+\textbf{Per il GM:} quando si nomina l'incendio, Silas depone l'utensile. Quando la conversazione riguarda l'invenzione, può mostrare il vecchio regolatore e H03. Non lasciarli descritti come oggetti misteriosi da individuare con un tiro.
 
 \textbf{Aspetti di scena:}
 \begin{itemize}
@@ -872,7 +933,8 @@ Poco distante, dall'officina arrivano colpi di martello e il rumore di una lima.
 \item \aspect{Il lavoro copre le voci}: martello e lima ostacolano una conversazione a distanza, ma possono coprire uno scambio a bassa voce vicino al banco. Silas può fermarsi per discutere con chiarezza.
 \end{itemize}
 
-\subsection{Parlare con Silas}
+\subsection{Interazioni e ostacoli}
+\subsubsection{Parlare con Silas}
 La sua scheda descrive paure e limiti. Qui vuole aiutare Elias senza esporsi subito al giudizio dei PG. Non conosce il reperto, il trattamento o il ruolo di Celestine.
 
 \begin{description}[leftmargin=5mm,style=nextline]
@@ -888,23 +950,7 @@ H03 documenta il vecchio progetto. Silas può indirizzare i PG a Miriam, a cui p
 
 \textbf{Tre oggetti distinti:} la copia di lavoro fu venduta; H03 è un frammento originale rimasto a Silas, non un altro progetto completo; il vecchio regolatore serve a illustrarne il funzionamento. La ricevuta H05 nomina un regolatore, ma non basta a dimostrare che il pezzo spedito riproduca quello di Elias.
 
-\subsection{Handout}
-\textbf{H03 -- Progetto del regolatore}
-
-\textit{Come si ottiene e quando consegnarlo:}
-Silas lo mostra quando i PG chiedono dell'invenzione, discutono H01 o portano H05. Non devono avere recuperato un componente alla Fonderia: la cassa è già partita.
-
-\textit{Rivela:}
-L'origine trasfusionale e la funzione del regolatore di Elias. La confessione di Silas spiega separatamente come la Chiesa abbia ottenuto i disegni. Il confronto con il pezzo attuale avverrà nella sala del Progetto.
-
-\textit{Non rivela:}
-La macchina costruita dalla cerchia, il trattamento o lo scopo di Celestine.
-
-\textbf{Se H03 non viene preso:} Silas può spiegare il progetto e raccontare la vendita. I PG rinunciano alla prova materiale da confrontare in seguito, non alle informazioni. La consegna della chiave è una decisione distinta e non dipende dal possesso di H03.
-
-\linkto{Fonderia per confrontare le spedizioni; Archivio tramite il marchio delle commesse; Biblioteca tramite la presentazione a Miriam; Laboratorio Alchemico tramite l'ingresso di servizio e la relativa chiave.}
-
-\subsection{Azioni e complicazioni in Fate}
+\subsubsection{Azioni e complicazioni}
 \begin{fatebox}
 \textbf{Tecnica:} il banco, H03 e il vecchio esemplare permettono di creare \aspect{Funzionamento del regolatore compreso}, utile per un successivo confronto. La funzione di base può essere spiegata da Silas senza tiro.
 
@@ -919,49 +965,56 @@ La macchina costruita dalla cerchia, il trattamento o lo scopo di Celestine.
 \item \textbf{Conservare la prova a ogni costo.} Un PG convinto che i documenti finiscano sempre nelle mani sbagliate decide di trattenere H03 senza l'accordo di Silas. Silas se ne accorge, interrompe il colloquio e chiede la restituzione. Conservare il frammento compromette la sua fiducia e l'aiuto volontario; restituirlo permette di tentare una riconciliazione.
 \end{itemize}
 
+\subsection{Handout}
+\label{nodo-2-handout}
+\subsubsection{H03 -- Progetto del regolatore}
+\textbf{Dove:} Il frammento originale è conservato da Silas all'Officina delle Lame.
+
+\textbf{Quando consegnarlo:} Silas lo mostra quando i PG chiedono dell'invenzione, discutono H01 o portano H05. Non devono avere recuperato un componente alla Fonderia: la cassa è già partita.
+
+\textbf{Che cosa rivela:} L'origine trasfusionale e la funzione del regolatore di Elias. La confessione di Silas spiega separatamente come la Chiesa abbia ottenuto i disegni. Il confronto con il pezzo attuale avverrà nella sala del Progetto.
+
+\textbf{Limiti:} Non descrive la macchina costruita dalla cerchia, il trattamento o lo scopo di Celestine.
+
+\textbf{Se H03 non viene preso:} Silas può spiegare il progetto e raccontare la vendita. I PG rinunciano alla prova materiale da confrontare in seguito, non alle informazioni. La consegna della chiave è una decisione distinta e non dipende dal possesso di H03.
+
+\subsection{Evoluzione della scena}
 \begin{clockbox}
 L'arresto di Silas non scatta alla fine della scena. Può diventare una reazione della Chiesa solo se questa viene a conoscenza della sua collaborazione o delle indagini sulla copia venduta. Stabilisci chi ha riferito che cosa e mostra l'intervento, lasciando ai PG possibilità di agire. Se avviene l'arresto, testimoni possono indicare la Caserma; Silas resta raggiungibile. Una visita discreta non provoca automaticamente conseguenze.
 \end{clockbox}
+
+\subsection{Collegamenti}
+\linkto{Fonderia per confrontare le spedizioni; Archivio tramite il marchio delle commesse; Biblioteca tramite la presentazione a Miriam; Laboratorio Alchemico tramite l'ingresso di servizio e la relativa chiave.}
 
 \nodehead{12. Nodo 3 -- Archivio Ecclesiastico}{Consultazioni, commesse e disposizioni su Elias.}{Che cosa chiedono i PG, e fin dove Ilyne è disposta ad aiutarli?}
 
 \subsection{A colpo d'occhio}
 \begin{tabularx}{\linewidth}{>{\bfseries}p{32mm} X}
-Funzione & Conservare e verificare le commesse delle strutture della Chiesa.\\
 Presenti & Ilyne, copisti, visitatori e due custodi. Aldren solo se contattato o avvisato.\\
-Accesso ordinario & Richiesta circostanziata: H05 oppure dati di cassa, data e pesi da H01/H04. Consultazione al tavolo, originali custoditi.\\
-Documenti ordinari & H06: riepilogo. H06a: spedizione 44-14. H06b: disegno 44-12, su domanda pertinente.\\
-Accesso riservato & Contenuto di H07: autorizzazione di Aldren, collaborazione di Ilyne o accesso clandestino concreto.\\
-Richiamo a H07 & Automatico quando i PG dichiarano di cercare Elias. Non serve ottenere H07 per proseguire.\\
+Accesso & Richiesta circostanziata: H05 oppure dati di cassa, data e pesi da H01/H04. Consultazione al tavolo, originali custoditi. Il contenuto di H07 richiede autorizzazione di Aldren, collaborazione di Ilyne o accesso clandestino concreto.\\
+Handout & H06: riepilogo; H06a: spedizione 44-14; H06b: disegno 44-12, su domanda pertinente; H07: disposizione riservata.\\
+Da ricordare & L'Archivio conserva e verifica le commesse delle strutture della Chiesa. Ilyne segnala automaticamente l'esistenza di H07 quando i PG dichiarano di cercare Elias; ottenerlo non è necessario per proseguire.\\
 \end{tabularx}
 
 \textbf{Uso al tavolo:} passa alla situazione corrispondente a ciò che fanno i PG; i blocchi non sono fasi obbligatorie. Gli aspetti descrivono opportunità e limiti visibili. Proponi i compel soltanto quando pertinenti, concordando la complicazione: non sono eventi automatici né condizioni per ricevere gli indizi ordinari.
 
-\subsection{Ingresso: da leggere o parafrasare}
-\begin{rulebox}
+\subsection{Arrivo e ambienti}
+\subsubsection{Ingresso}
+\begin{readaloud}
 Davanti al banco aspettano alcuni visitatori con ricevute ripiegate in mano. Ilyne controlla un riferimento, lo ripete al copista e indica il tavolo dove attendere. Le voci rimangono basse, interrotte dal rumore delle pagine e delle sedie spostate.
 
 Dietro il banco, una porta conduce agli scaffali. Quando Ilyne va a recuperare un registro, il custode lascia passare lei e ferma con un gesto il visitatore che prova a seguirla. Dal banco sentite le richieste di chi vi precede. Quando arriva il vostro turno, Ilyne posa la penna: «Quale pratica volete verificare?»
-\end{rulebox}
+\end{readaloud}
 
 \textbf{Spazi visibili:} il banco riceve le richieste; al tavolo si leggono i documenti sotto supervisione; oltre la porta c'è il deposito riservato al personale. Ilyne vi conserva H07 fra le disposizioni interne separate dai registri ordinari. I custodi controllano il passaggio e impediscono di portare via originali.
 
 \textbf{Al banco:} \aspect{Richieste udibili da chi aspetta}. I PG possono ascoltare uno scambio o rendere pubblica una contestazione; anche le loro parole possono essere sentite. Ascoltare una frase pronunciata accanto a loro non richiede un tiro.
 
-\subsection{I PG chiedono delle forniture}
+\subsection{Interazioni e ostacoli}
+\subsubsection{Verificare le forniture}
 \textbf{Ilyne risponde:} chiede il riferimento della spedizione. H05 indica 44-14; se manca, Fonderia, cassa 17, data e pesi di H01/H04 bastano a rintracciarla. Non occorre fingersi funzionari o superare una prova di Carisma. Con il solo nome di Elias chiede quale fornitura intendano verificare; passa anche al blocco successivo.
 
-\textbf{Consegna al tavolo:}
-\begin{description}[leftmargin=5mm,style=nextline]
-\item[H06 -- Registro delle commesse.]
-Quando viene avviata la verifica. Mostra materiali, destinatari e autorizzazione comune. Il marchio dell'ufficio riservato non vieta la consultazione della fornitura.
-\item[H06a -- Spedizione 44-14.]
-Quando chiedono della commessa, del contenuto della cassa o del percorso. Mostra 17/17-B, peso reale di 391 libbre e un quarto, contenuto, vetturale, data e consegna al deposito del Laboratorio Alchemico. Il peso riguarda l'intero collo. Recupera la pista di H05 se la ricevuta manca e la conferma se è disponibile.
-\item[H06b -- Disegno 44-12.]
-Quando chiedono della vasca, degli allegati o di ciò che consultò Elias. È un foglio separato: non darlo automaticamente insieme al registro. Ilyne ricorda che Elias copiò la runa, ma non la interpreta.
-\end{description}
-
-\textbf{Limiti:} i PG possono leggere e prendere appunti; chiedono a Ilyne per copiare i fogli. Gli originali restano all'Archivio. Le tre carte possono emergere nella stessa visita, senza tre prove successive. Non rivelano Celestine, il trattamento o la destinazione sotterranea del regolatore.
+\textbf{Rimando agli handout:} H06 per il riepilogo, H06a per la spedizione, H06b per il disegno della vasca. Le schede nella sezione Handout distinguono le richieste che li rendono consultabili.
 
 \begin{fatebox}
 \textbf{Aspetto al tavolo:} \aspect{Consultazione sotto gli occhi di Ilyne}. La sua presenza rende difficile sottrarre o alterare fogli, ma permette di ottenere una conferma autorevole.
@@ -969,13 +1022,13 @@ Quando chiedono della vasca, degli allegati o di ciò che consultò Elias. È un
 \textbf{Azione possibile:} confrontando H04 e H06a con Ilyne, i PG possono creare con Indagine \aspect{Discrepanza verificata dall'archivista}, utile per sostenere una richiesta ad Aldren. La conferma riguarda i pesi scritti, non la prova di un furto o della colpa di Celestine. Leggere i numeri resta gratuito e automatico; se il confronto non crea un vantaggio, le informazioni già lette restano note.
 \end{fatebox}
 
-\subsection{I PG nominano Elias}
+\subsubsection{Chiedere di Elias}
 \textbf{Ilyne sa:} il giorno 18 Elias si presentò come verificatore delle pesature della Fonderia, ruolo riportato in H04. Consultò le commesse e il disegno della vasca, poi copiò il segno nei suoi appunti.
 
 \textbf{Quando dichiarano di cercarlo, dice automaticamente:}
-\begin{rulebox}
+\begin{readaloud}
 «Ward è venuto qui a verificare queste commesse. Dopo la sua visita abbiamo ricevuto una disposizione che lo riguarda. Posso mostrarvi i documenti delle forniture; per quell'ordine occorre l'autorizzazione di Padre Aldren.»
-\end{rulebox}
+\end{readaloud}
 
 \textbf{Che cosa ottengono:} l'esistenza di H07, il fatto che sia successivo alla visita e il nome a cui chiedere accesso. Ilyne non rivela ancora l'ordine di trattenere Elias e recuperare le sue carte. Se chiedono soltanto delle merci, non introduce spontaneamente H07. L'ordine riguarda Elias, non impone di fermare chiunque lo cerchi.
 
@@ -983,16 +1036,15 @@ Quando chiedono della vasca, degli allegati o di ciò che consultò Elias. È un
 \textbf{Compel al banco:} se discutono apertamente della ricerca, \aspect{Richieste udibili da chi aspetta} può far perdere discrezione. Proponi che un visitatore senta una frase precisa e la riferisca ad Aldren; concorda quale informazione viene divulgata e quando può raggiungerlo. Non conosce il resto dell'indagine. Se i PG hanno ottenuto un colloquio privato, questo appiglio non si applica.
 \end{fatebox}
 
-\subsection{I PG vogliono leggere H07}
-
-\subsubsection{Chiedono l'autorizzazione di Aldren}
+\subsubsection{Ottenere accesso all'ordine riservato}
+\paragraph{Chiedono l'autorizzazione di Aldren}
 \textbf{Risposta:} Aldren vuole controllare l'indagine e può chiedere aggiornamenti o copie delle loro carte in cambio. Non è già presente senza motivo: i PG devono contattarlo oppure attendere che venga avvisato.
 
 \textbf{Esito:} Ilyne mostra H07 se il permesso riguarda le disposizioni su Elias. Un'autorizzazione a verificare una spedizione non basta.
 
 \textbf{Prova eventuale:} Carisma per negoziare condizioni precise quando Aldren oppone una resistenza. Un rifiuto lascia aperte le altre piste; non sottrae ai PG documenti mai consegnati a lui.
 
-\subsubsection{Chiedono a Ilyne di aiutarli}
+\paragraph{Chiedono a Ilyne di aiutarli}
 \textbf{Risposta:} cercare uno scomparso e voler sapere se sia stato trattenuto è una motivazione pertinente. Ilyne chiede come useranno l'ordine e come eviteranno di esporla. Non pretende che abbiano già dimostrato l'esperimento.
 
 \textbf{Esito:} se sceglie di collaborare, mostra H07 in privato e può permetterne una copia. Una promessa generica di rispettare la Chiesa non è sufficiente.
@@ -1003,7 +1055,7 @@ Quando chiedono della vasca, degli allegati o di ciò che consultò Elias. È un
 \textbf{Compel sulla riservatezza:} con un aspetto pertinente di lealtà o protezione, un PG può impegnarsi a non esporre Ilyne come fonte. La complicazione è che esibire pubblicamente H07 potrebbe rivelare il suo aiuto: concorda che cosa comporta la promessa. Non rendere il compel l'unico modo di ottenere la sua collaborazione.
 \end{fatebox}
 
-\subsubsection{Tentano di raggiungere l'ordine senza permesso}
+\paragraph{Tentano di raggiungere l'ordine senza permesso}
 \textbf{Che cosa vedono:} \aspect{Originali oltre la porta controllata}. Ilyne porta e riporta i fogli dal deposito; una distrazione al banco non elimina il custode della porta.
 
 \textbf{Prima del tiro:} devono individuare dove sono conservate le disposizioni e quale controllo eludere. Conoscere l'esistenza di H07 non ne rivela il posto esatto. Se osservano un movimento effettivo di documenti, stabilisci che cosa possono seguirne; non far comparire l'ordine solo per offrire un'occasione.
@@ -1012,10 +1064,47 @@ Quando chiedono della vasca, degli allegati o di ciò che consultò Elias. È un
 
 \textbf{Se scoperti:} Ilyne sospende la consultazione e i custodi fermano il passaggio o la sottrazione. Un'informazione mai letta non viene concessa automaticamente; le copie già ottenute restano un fatto della scena.
 
-\subsubsection{Quando H07 viene letto}
-\textbf{Consegna H07} soltanto quando mostrato o effettivamente raggiunto. Dispone di trattenere Elias con cortesia, avvisare Aldren e recuperare le sue carte; richiama trasferimenti attraverso passaggi di servizio. Non identifica Celestine né dimostra che Aldren diriga il Progetto.
+\subsection{Handout}
+\label{nodo-3-handout}
+\subsubsection{H06 -- Registro delle commesse}
+\textbf{Dove:} Nei registri custoditi dall'Archivio; Ilyne lo porta al tavolo di consultazione.
 
-\subsection{La situazione cambia}
+\textbf{Quando consegnarlo:} Quando viene avviata una verifica con un riferimento circostanziato, come descritto in Interazioni e ostacoli.
+
+\textbf{Che cosa rivela:} Materiali, destinatari e autorizzazione comune delle commesse.
+
+\textbf{Limiti:} Il marchio dell'ufficio riservato non vieta la consultazione della fornitura.
+
+\subsubsection{H06a -- Spedizione 44-14}
+\textbf{Dove:} Nella documentazione della commessa conservata all'Archivio.
+
+\textbf{Quando consegnarlo:} Quando i PG chiedono della commessa, del contenuto della cassa o del percorso.
+
+\textbf{Che cosa rivela:} Il collegamento 17/17-B, peso reale di 391 libbre e un quarto, contenuto, vetturale, data e consegna al deposito del Laboratorio Alchemico. Recupera la pista di H05 se la ricevuta manca e la conferma se è disponibile.
+
+\textbf{Limiti:} Il peso riguarda l'intero collo.
+
+\subsubsection{H06b -- Disegno 44-12}
+\textbf{Dove:} Come foglio separato allegato alla commessa della vasca.
+
+\textbf{Quando consegnarlo:} Quando i PG chiedono della vasca, degli allegati o di ciò che consultò Elias. Non darlo automaticamente insieme al registro.
+
+\textbf{Che cosa rivela:} La vasca e la runa da incidere. Ilyne ricorda che Elias copiò la runa.
+
+\textbf{Limiti:} Ilyne non interpreta il segno.
+
+\textbf{Consultazione dei tre documenti ordinari:} i PG possono leggere e prendere appunti; chiedono a Ilyne per copiare i fogli. Gli originali restano all'Archivio. Le tre carte possono emergere nella stessa visita, senza tre prove successive. Non rivelano Celestine, il trattamento o la destinazione sotterranea del regolatore.
+
+\subsubsection{H07 -- Disposizione interna riservata}
+\textbf{Dove:} Fra le disposizioni interne nel deposito riservato al personale, separatamente dai registri ordinari.
+
+\textbf{Quando consegnarlo:} Soltanto quando Ilyne lo mostra su autorizzazione pertinente di Aldren, sceglie di collaborare in privato, oppure i PG raggiungono effettivamente il documento. Le condizioni sono descritte in Interazioni e ostacoli. Ilyne può permetterne una copia se collabora.
+
+\textbf{Che cosa rivela:} L'ordine di trattenere Elias con cortesia, avvisare Aldren e recuperare le sue carte; richiama trasferimenti attraverso passaggi di servizio.
+
+\textbf{Limiti:} La sola notizia dell'esistenza dell'ordine non ne rivela il contenuto. Non identifica Celestine né dimostra che Aldren diriga il Progetto. H07 non è necessario per proseguire.
+
+\subsection{Evoluzione della scena}
 \begin{description}[leftmargin=5mm,style=nextline]
 \item[I PG contestano pubblicamente una restrizione.]
 Ilyne spiega il limite della consultazione. Se insistono fino a interrompere il lavoro, può sospenderla e chiedere l'intervento di Aldren. \textbf{Compel possibile:} un aspetto di orgoglio o insofferenza verso l'autorità spinge il PG a rendere pubblica la contestazione, con quella conseguenza concordata. Non scatta un arresto automatico.
@@ -1027,6 +1116,7 @@ Deve essere stato contattato o informato. Sa soltanto ciò che gli è stato rife
 H06a, come H05, conduce al Laboratorio Alchemico; H06b offre la runa da confrontare con Miriam. H07 aggiunge informazioni sulle azioni contro Elias, non è una tappa obbligatoria. Se manca una richiesta verificabile, possono tornare con i riferimenti della Fonderia.
 \end{description}
 
+\subsection{Collegamenti}
 \linkto{Laboratorio Alchemico tramite H06a o H05; Ospedale Vecchio tramite il registro; Biblioteca Proibita tramite H06b; Padre Aldren per le disposizioni su Elias.}
 
 \nodehead{13. Nodo 4 -- Ospedale Vecchio}{Visita di Elias, testimonianze sui trattamenti e accesso all'ala inferiore.}{Che cosa è successo ai pazienti e chi può aiutare i PG a verificarlo?}
@@ -1034,34 +1124,36 @@ H06a, come H05, conduce al Laboratorio Alchemico; H06b offre la runa da confront
 \subsection{A colpo d'occhio}
 \begin{tabularx}{\linewidth}{>{\bfseries}p{32mm} X}
 Presenti & Oren Sile, Maud Kerren, personale e pazienti. Aldren solo se la sua presenza deriva dagli eventi di gioco.\\
-Elias & Oren lo ha visitato il giorno 19: era malato ma lucido. H08 non certifica le sue condizioni attuali.\\
-Trattamenti & Benefici temporanei, ricadute, sedute più lunghe e frequenti; dal consenso iniziale si è passati alle imposizioni.\\
-Sei pazienti & Trasferiti nell'ala inferiore il giorno 25 contro la loro volontà. Due nomi sono stati cancellati dai registri pubblici.\\
-Documenti & H08 presso Oren; lista dei nomi presso Maud; H09 fra le carte personali di Oren nel suo ufficio.\\
-Accesso inferiore & Scala interna oltre una porta sorvegliata. Oren e Maud conoscono l'ingresso, ma non possono autorizzare estranei.\\
+Accesso & Reparto pubblico e colloqui con il personale; la scala interna per l'ala inferiore è oltre una porta sorvegliata. Oren e Maud conoscono l'ingresso, ma non possono autorizzare estranei.\\
+Handout & H08 presso Oren; H09 fra le sue carte personali nell'ufficio. Maud conserva separatamente la lista dei nomi.\\
+Da ricordare & Oren visitò Elias il giorno 19: era malato ma lucido; H08 non certifica le condizioni attuali. I trattamenti danno benefici temporanei e ricadute; sedute più lunghe e frequenti hanno portato dal consenso alle imposizioni. Sei pazienti sono stati trasferiti contro la loro volontà il giorno 25; due nomi sono cancellati dai registri pubblici.\\
 \end{tabularx}
 
 \textbf{Uso al tavolo:} scegli il blocco corrispondente alle domande e alle azioni dei PG; non sono passaggi obbligatori. Le informazioni emergono dalle persone e dai documenti indicati, non automaticamente entrando nell'edificio. Proponi i compel soltanto quando pertinenti a un aspetto, concordando la complicazione.
 
-\subsection{Il reparto pubblico: da leggere o parafrasare}
-\begin{rulebox}
+\subsection{Arrivo e ambienti}
+\subsubsection{Il reparto pubblico}
+\begin{readaloud}
 Il reparto è affollato e continua a funzionare. Fra i letti il personale visita i malati e porta avanti le cure; per parlare con qualcuno bisogna prima attirarne l'attenzione e lasciargli finire ciò che sta facendo. Oren lavora qui, fra il reparto e il suo ufficio. Maud chiama i pazienti per nome.
-\end{rulebox}
+\end{readaloud}
 
 \textbf{Come iniziare:} chi cerca Oren può chiederne al personale, spiegando di cercare Elias Ward. Maud può indicare dove trovarlo. Questo permette un colloquio, non autorizza a consultare cartelle altrui o a entrare nell'ufficio senza essere ricevuti.
 
 \textbf{Aspetto:} \aspect{Reparto sovraffollato}. Il movimento fra i letti può aiutare a passare inosservati, ma rende difficile una conversazione riservata. Per ottenere privacy i PG devono scegliere dove e quando parlare: l'ufficio di Oren è un'opzione se lui li riceve. Nessun tiro è necessario per chiederglielo.
 
-\subsection{I PG chiedono della visita di Elias}
+\subsection{Interazioni e ostacoli}
+\subsubsection{Chiedere della visita di Elias}
 \textbf{Oren risponde:} conosce Elias da precedenti collaborazioni mediche e lo ha visitato il giorno 19. Descrive insonnia, irritabilità, sensibilità agli odori e primi segni bestiali, insieme a linguaggio coerente e memoria integra. Elias comprendeva il proprio stato, temeva un peggioramento e aveva rifiutato altra emoterapia. Chiese anche delle apparecchiature ricevute dall'ala riservata.
 
-\textbf{H08 -- Referto di visita non protocollato:} Oren lo conserva e lo mostra a chi sta cercando Elias. Consegnalo quando il colloquio affronta la visita; non richiede di superare una prova di Carisma o di trovare un archivio medico. Non contiene analisi del sangue né istruzioni sul Progetto.
+
+
+\textbf{Rimando agli handout:} H08 documenta la visita; consegna e limiti sono raccolti nella sezione Handout.
 
 \textbf{Per il GM:} la malattia di Elias precede il suo ingresso nei sotterranei. H08 documenta la lucidità al giorno 19, non esclude un peggioramento successivo e non dimostra da solo la verità dei suoi sospetti. Oren non sa dove si trovi ora.
 
 \textbf{Medicina o Emoterapia:} possono servire per interpretare i sintomi e discutere la valutazione con Oren. La data, le osservazioni scritte e il fatto che il paziente fosse lucido sono leggibili senza tiro. Un eventuale vantaggio riguarda la valutazione documentata, non una diagnosi a distanza delle condizioni attuali.
 
-\subsection{I PG chiedono dei pazienti trasferiti}
+\subsubsection{Chiedere dei pazienti trasferiti}
 \textbf{Maud risponde:} conosce i sei pazienti e li assisteva prima del trasferimento. Il giorno 25 furono accompagnati nell'ala inferiore malgrado avessero rifiutato altre sedute. Confrontando i registri, ha scoperto che due dei loro nomi non compaiono più. Non sono sei persone di cui nessuno conosce la destinazione: è la documentazione pubblica a nascondere parte di ciò che è accaduto.
 
 \textbf{La lista di Maud:} ha conservato una copia dei nomi invece di distruggerla come le era stato ordinato. La mostra a chi cerca i malati e spiega come intende usare l'informazione. Non occorre convincerla a desiderare il loro soccorso; teme di perdere il posto e di non poterli più aiutare. La lista è distinta da H09 e non prova che i due cancellati siano morti.
@@ -1072,28 +1164,26 @@ Il reparto è affollato e continua a funzionare. Fra i letti il personale visita
 \textbf{Compel possibile:} se un aspetto del PG esprime insofferenza per gli abusi, proponi che contesti ad alta voce il trasferimento. La complicazione è rendere udibile agli altri la conversazione che Maud voleva mantenere privata. Non implica automaticamente una denuncia o l'arrivo di Aldren.
 \end{fatebox}
 
-\subsection{I PG chiedono che cosa fanno i trattamenti}
+\subsubsection{Capire gli effetti dei trattamenti}
 \textbf{Fatti osservati:} Oren e Maud hanno visto ritorni di lucidità seguiti da ricadute nello stato precedente. Inizialmente i pazienti erano informati e potevano rifiutare. Le sedute sono poi diventate più lunghe e ravvicinate; le proteste sono state ignorate. Maud può riferire ciò che ha visto e sentito dai malati, senza spiegare il funzionamento della macchina.
 
 \textbf{Limite delle conoscenze di Oren:} ha seguito gli effetti clinici fin dalla fase volontaria, ma ha visto la vasca nella sala del Progetto soltanto il giorno 25. Può descrivere il sangue che passa dal paziente alla macchina e al sistema della vasca, per poi tornare al paziente, e la presenza del reperto vivo. Non sa da dove provenga il reperto, non conosce la finalità ultraterrena e non sa spiegare perché il beneficio svanisca. Vedere l'impianto non lo rende capace di manovrarlo o di indicare un'interruzione sicura della seduta.
 
 \textbf{Documentazione clinica:} Oren può confrontare i referti con i PG. Leggere le date e riconoscere sedute sempre più frequenti non richiede Medicina; la competenza serve a interpretare le osservazioni cliniche. I referti e le testimonianze documentano effetti temporanei e coercizione, non dimostrano il contatto con un'entità. La ragione per cui Celestine insiste va ricostruita dalle altre fonti.
 
-\subsection{I PG chiedono delle responsabilità di Oren}
+\subsubsection{Affrontare le responsabilità di Oren}
 \textbf{Cosa nasconde:} il giorno 21 informò Aldren della visita di Elias, sperando in una verifica delle prove e nella sua protezione. Il giorno 25 eseguì l'ordine di accompagnare i sei pazienti nell'ala inferiore contro la loro volontà. Teme incriminazione, rappresaglie e il disprezzo di Eleanor.
 
 \textbf{Come parlarne:} inizialmente presenta la denuncia come una richiesta di consulto. H07, se disponibile, permette di contestarne le conseguenze. Una conversazione privata e una proposta concreta per aiutare i pazienti senza abbandonare i testimoni possono indurlo ad assumersi la responsabilità. H07 non è un requisito obbligatorio e i PG non devono assolverlo.
 
 \textbf{Empatia:} può aiutare a cogliere il timore quando si nomina Aldren o l'esitazione sul trasferimento. Non rivela automaticamente fatti nascosti e non obbliga Oren a confessare; l'eventuale confronto si gioca sulla base di ciò che viene detto e mostrato.
 
-\textbf{H09 -- Nota mai spedita:} Oren la conserva fra le carte personali nell'ufficio perché non sa a chi affidarla senza esporsi o esporre altri. Può mostrarla quando decide di raccontare la propria responsabilità e di cercare aiuto. Se i PG tentano di prenderla senza di lui, occorre stabilire come entrano nell'ufficio e raggiungono le carte; non basta dichiarare una ricerca nell'Ospedale. Maud può consegnarla soltanto se Oren gliel'ha affidata, per esempio prima di una convocazione di Aldren: registra il passaggio se avviene.
+\textbf{Rimando agli handout:} H09 può sostenere la confessione di Oren; la scheda precisa custodia e condizioni di consultazione.
 
-\textbf{Cosa prova H09:} testimonia benefici e ricadute, sedute imposte, denuncia del giorno 21 e trasferimento del 25. Indica l'ala inferiore e descrive il collegamento fra il corridoio e la sala del Progetto. Non spiega l'origine del reperto, il criterio di scelta dei pazienti o l'ipotesi di Celestine sul contatto.
-
-\subsection{I PG vogliono scendere}
-\begin{rulebox}
+\subsubsection{Scendere nell'ala inferiore}
+\begin{readaloud}
 La porta che conduce alla scala dell'ala inferiore è chiusa e sorvegliata. Alla richiesta di passare, viene risposto che il settore è chiuso per lavori. Le tubazioni nuove proseguono verso quella parte dell'edificio. Da qui non si vedono né le stanze dei pazienti trasferiti né la sala del Progetto.
-\end{rulebox}
+\end{readaloud}
 
 \textbf{Percorso noto:} Oren e Maud possono indicare la porta senza una prova di Indagine. La scala conduce alle stanze dei pazienti nell'ala inferiore; sullo stesso livello, il corridoio porta alla sala del Progetto. Non c'è un ulteriore laboratorio nascosto a un piano ancora più basso. Le tubazioni sono osservabili, ma da sole non provano un abuso.
 
@@ -1105,13 +1195,36 @@ La porta che conduce alla scala dell'ala inferiore è chiusa e sorvegliata. Alla
 \textbf{Creare un vantaggio:} osservare il controllo può preparare un tentativo successivo. Stabilisci ciò che i PG possono effettivamente vedere: un successo non crea una chiave, un passaggio segreto o una pausa delle guardie.
 \end{fatebox}
 
-\subsection{Se i PG rimandano o non ottengono i documenti}
+\subsection{Handout}
+\label{nodo-4-handout}
+\subsubsection{H08 -- Referto di visita non protocollato}
+\textbf{Dove:} Oren conserva il referto della visita del giorno 19.
+
+\textbf{Quando consegnarlo:} Quando il colloquio affronta la visita di Elias. Oren lo mostra a chi lo sta cercando; non richiede una prova di Carisma o la ricerca di un archivio medico.
+
+\textbf{Che cosa rivela:} Sintomi e lucidità di Elias al giorno 19, prima dell'ingresso nei sotterranei.
+
+\textbf{Limiti:} Non certifica le condizioni attuali di Elias, non dimostra da solo la verità dei suoi sospetti e non contiene analisi del sangue o istruzioni sul Progetto.
+
+\subsubsection{H09 -- Nota mai spedita}
+\textbf{Dove:} Fra le carte personali nell'ufficio di Oren. La conserva perché non sa a chi affidarla senza esporsi o esporre altri.
+
+\textbf{Quando consegnarlo:} Quando Oren decide di raccontare la propria responsabilità e cercare aiuto. Per prenderla senza di lui occorre stabilire come i PG entrano nell'ufficio e raggiungono le carte; non basta dichiarare una ricerca nell'Ospedale. Maud può consegnarla soltanto se Oren gliel'ha affidata, per esempio prima di una convocazione di Aldren: registra il passaggio se avviene.
+
+\textbf{Che cosa rivela:} Benefici e ricadute, sedute imposte, denuncia del giorno 21 e trasferimento del 25. Indica l'ala inferiore e descrive il collegamento fra il corridoio e la sala del Progetto.
+
+\textbf{Limiti:} Non spiega l'origine del reperto, il criterio di scelta dei pazienti o l'ipotesi di Celestine sul contatto.
+
+\textbf{Altro documento:} la lista conservata da Maud resta distinta da H09; uso e condizioni sono descritti nel colloquio sui pazienti trasferiti.
+
 \textbf{Informazioni senza handout:} Oren può raccontare la visita senza consegnare H08 e ammettere i fatti di H09 senza cedere la lettera. Maud può riferire nomi e trasferimento. Mancano le prove scritte da mostrare ad altri, non necessariamente le informazioni. Le confidenze di Oren richiedono comunque le condizioni descritte sopra.
 
+\subsection{Evoluzione della scena}
 \begin{clockbox}
 Non far scattare una nuova chiusura solo perché i PG arrivano: la porta è già chiusa e sorvegliata. Se dagli eventi nasce un ordine che impedisce a Maud di avvicinarsi ai sei pazienti, rendi chiaro chi lo impartisce e perché; lei può cercare aiuto e indicare l'ingresso. Se Oren prepara la fuga, Maud può segnalarlo. Non introdurre altri trasferimenti o una trasformazione improvvisa per obbligare i PG a intervenire.
 \end{clockbox}
 
+\subsection{Collegamenti}
 \linkto{Laboratorio Alchemico per le forniture e l'accesso dal deposito; Archivio Ecclesiastico per confrontare le prove con le commesse e H07; Rifugio dei Cacciatori per discutere la valutazione di Elias; Biblioteca Proibita per confrontare quanto osservato con la lettura della runa. L'accesso interno all'ala inferiore può condurre direttamente al nodo finale se i PG superano il controllo.}
 
 \nodehead{14. Nodo 5 -- Rifugio dei Cacciatori}{Ricerca di Elias e accordi per un recupero sorvegliato.}{Che cosa sanno i Cacciatori e quali garanzie chiedono per aiutare i PG?}
@@ -1119,41 +1232,44 @@ Non far scattare una nuova chiusura solo perché i PG arrivano: la porta è già
 \subsection{A colpo d'occhio}
 \begin{tabularx}{\linewidth}{>{\bfseries}p{32mm} X}
 Presenti & Roland, Nox e cacciatori feriti, salvo incarichi o spostamenti già avvenuti in gioco.\\
-Ricerca & Avviata il giorno 27 dopo una segnalazione ospedaliera relativa all'intrusione del giorno 26.\\
-Fatto verificato & Il sorvegliante riferisce che Elias lo ha colpito al braccio per liberarsi e lo ha risparmiato.\\
-Limiti & Non conoscono gli esperimenti, la sala del Progetto o il nascondiglio di Elias.\\
-Documento & H10, avviso sulla bacheca o mostrato da Roland. Non è una diagnosi né un ordine di esecuzione preventiva.\\
+Accesso & Colloquio con Roland e consultazione dell'avviso sulla bacheca. Un eventuale recupero richiede un accordo su tempi, aiuto e garanzie.\\
+Handout & H10 sulla bacheca o mostrato da Roland; non è una diagnosi né un ordine di esecuzione preventiva.\\
+Da ricordare & La ricerca è iniziata il giorno 27 dopo la segnalazione ospedaliera sull'intrusione del 26. Il sorvegliante riferisce che Elias lo ha colpito al braccio per liberarsi e lo ha risparmiato. I Cacciatori non conoscono esperimenti, sala del Progetto o nascondiglio.\\
 Aiuto possibile & Tempo concordato, scorta, contenimento e protezione delle vie di evacuazione.\\
 \end{tabularx}
 
 \textbf{Uso al tavolo:} passa al blocco corrispondente alle domande dei PG. Le informazioni ordinarie non richiedono una sequenza di prove. Un tiro risolve un disaccordo o un'azione concreta; i compel sono proposte legate agli aspetti, non eventi obbligatori.
 
-\subsection{Arrivo: da leggere o parafrasare}
-\begin{rulebox}
+\subsection{Arrivo e ambienti}
+\subsubsection{Ingresso}
+\begin{readaloud}
 Nella sala alcuni Cacciatori puliscono le armi; altri, feriti, riposano sulle sedute. Sulla bacheca è affisso un avviso con il nome di Elias Ward. Una mappa è aperta sul tavolo dove Roland esamina le informazioni sulla ricerca. Nox guarda verso di lei prima di intervenire.
 
 Quando indicate l'avviso o chiedete del ricercato, Roland posa le carte: «Che cosa sapete di Elias Ward?»
-\end{rulebox}
+\end{readaloud}
 
 \textbf{Mappa sul tavolo:} è uno strumento delle pattuglie, non un indizio da decifrare o un handout. Non indica una pista di Elias nelle fogne, l'ingresso dello scarico o un percorso verso il Progetto. Non occorre superare una prova per ottenere da Roland le informazioni descritte sotto.
 
 \textbf{Aspetto:} \aspect{Una ricerca già in corso}. I PG possono proporre di coordinarsi con le pattuglie, ma devono concordare che cosa condividere e chi farà che cosa. I Cacciatori conoscono soltanto luoghi e accessi effettivamente individuati; non presidiano automaticamente ogni uscita.
 
-\subsection{I PG chiedono perché cercano Elias}
+\subsection{Interazioni e ostacoli}
+\subsubsection{Chiedere perché cercano Elias}
 \textbf{Roland risponde:} il giorno 27 l'Ospedale ha segnalato un intruso malato e armato. L'episodio era avvenuto il 26 nel settore del deposito interno al Laboratorio Alchemico. Il sorvegliante ferito le ha raccontato che Elias lo colpì al braccio per liberarsi e fuggì senza finirlo, pur avendone la possibilità. Roland non ha visto Elias e non dichiara che sia già una bestia; teme il rischio di una trasformazione.
 
 \textbf{Per il GM:} Celestine ha organizzato la segnalazione omettendo la ricerca. Roland conosce la provenienza ospedaliera, non questa regia. Non può indicare Celestine come responsabile o spiegare gli esperimenti senza ricevere nuove prove.
 
-\textbf{H10 -- Avviso di caccia:} consegnalo quando i PG leggono la bacheca o chiedono a Roland dell'ordine. Indica Elias, i sintomi riferiti, il luogo dell'intrusione e l'obiettivo di contenerlo. La competenza tecnica motiva una cautela, non certifica la trasformazione. Non richiede accesso a un archivio o una prova di Carisma.
+
 
 \textbf{Il sorvegliante:} è la guardia ferita al deposito, non uno dei Cacciatori feriti nella sala. I PG possono chiederne notizie a Roland e rintracciarlo al posto di cura dell'Ospedale. La sua testimonianza conferma il gesto con cui Elias lo ha risparmiato; non garantisce il comportamento futuro. Perse di vista Elias dopo lo scontro e non lo vide prendere l'ascensore.
 
-\subsection{I PG chiedono dove cercarlo}
+\textbf{Rimando agli handout:} H10 riporta l'ordine; la scheda nella sezione Handout ne precisa la consegna.
+
+\subsubsection{Chiedere dove cercarlo}
 \textbf{Informazione disponibile:} il punto certo è l'intrusione al deposito del Laboratorio Alchemico il giorno 26. Roland può riferire il luogo dell'episodio e indirizzare al testimone; non conosce il successivo percorso sotterraneo di Elias. Un'indagine sul deposito rimanda al nodo 7, senza consegnare qui un accesso alla sala del Progetto.
 
 \textbf{Limite della pista:} non attribuire alle pattuglie ritrovamenti di trappole, ostacoli o tracce nelle fogne. Se durante il gioco ottengono una nuova pista, registra chi l'ha trovata e come l'ha comunicata. La ricerca dei Cacciatori non risolve fuori scena gli accessi descritti in H14.
 
-\subsection{I PG contestano la pericolosità di Elias}
+\subsubsection{Discutere la pericolosità di Elias}
 \textbf{Distinguere le prove:} H08 documenta lucidità al giorno 19. Il racconto del sorvegliante riguarda un gesto di autocontrollo il giorno 26. Sono ragioni per tentare un recupero e ascoltare Elias, non garanzie sulle sue condizioni attuali. Roland può riconoscerne il valore senza rinunciare alle precauzioni.
 
 \textbf{Medicina o Emoterapia:} aiutano a interpretare sintomi e referti, ma non producono una diagnosi attuale senza esaminare Elias. La capacità di usare strumenti dimostra competenza, non basta a provare autocontrollo. Un incontro nel quale risponde, si ferma a richiesta e coopera offre elementi nuovi.
@@ -1166,7 +1282,7 @@ Quando indicate l'avviso o chiedete del ricercato, Roland posa le carte: «Che c
 \textbf{Creare un vantaggio:} confrontare H08 e la testimonianza con Roland può sostenere \aspect{Prove di autocontrollo da verificare sul posto}. Il vantaggio aiuta a negoziare un tentativo di recupero; non stabilisce in anticipo come reagirà Elias.
 \end{fatebox}
 
-\subsection{I PG propongono un recupero}
+\subsubsection{Concordare un recupero}
 \textbf{Le domande di Roland:}
 \begin{itemize}
 \item Quanto tempo chiedete, e dove ci ritroviamo per un aggiornamento?
@@ -1186,60 +1302,74 @@ Quando indicate l'avviso o chiedete del ricercato, Roland posa le carte: «Che c
 \textbf{Appiglio per Nox:} i PG possono richiamarlo al compito concordato e all'ordine di contenere. Se si allarma, mostra che porta la mano all'arma e avverte; un ordine o un intervento dei PG può cambiare la situazione. Non usarlo per imporre uno scontro fuori dal loro controllo.
 \end{fatebox}
 
-\subsection{Se i PG rimandano, mentono o non prendono H10}
+\subsection{Handout}
+\label{nodo-5-handout}
+\subsubsection{H10 -- Avviso di caccia}
+\textbf{Dove:} Affisso sulla bacheca del Rifugio o mostrato da Roland.
+
+\textbf{Quando consegnarlo:} Quando i PG leggono la bacheca o chiedono a Roland dell'ordine; non richiede accesso a un archivio o una prova di Carisma.
+
+\textbf{Che cosa rivela:} Elias, i sintomi riferiti, il luogo dell'intrusione e l'obiettivo di contenerlo.
+
+\textbf{Limiti:} La competenza tecnica motiva una cautela, non certifica la trasformazione. L'avviso non è una diagnosi né un ordine di esecuzione preventiva.
+
 \textbf{Senza documento:} Roland può spiegare l'ordine e riferire la testimonianza anche se i PG non prendono H10. Non consegna una mappa sostitutiva né nuovi avvistamenti non stabiliti.
 
+\subsection{Evoluzione della scena}
 \begin{clockbox}
 La ricerca è già iniziata. Alla scadenza di un termine concordato senza notizie, Roland può intensificarla e chiedere conto ai PG; la scadenza non dimostra che Elias sia diventato una bestia. Una menzogna scoperta riduce la fiducia e apre un confronto, non provoca un'esecuzione.
 
 Nox segue i PG soltanto per un incarico o una pista concreta e può perderli. Per arrivare alla sala del Progetto, i Cacciatori devono ricevere un accesso o seguire qualcuno senza perderne le tracce. Registra come ottengono il percorso. Nuove prove possono cambiare la valutazione di Roland.
 \end{clockbox}
 
+\subsection{Collegamenti}
 \linkto{Ospedale Vecchio per H08 e il sorvegliante ferito; Laboratorio Alchemico per il luogo dell'intrusione; Elias e finale attraverso un percorso scoperto e un eventuale accordo con i PG. Il Rifugio non fornisce un ingresso dalle fogne.}
 
 \nodehead{15. Nodo 6 -- Biblioteca Proibita}{Il colloquio con Elias, la runa e la lettura di un testo antico.}{Che cosa aveva compreso Elias, e che cosa suggeriscono davvero le fonti?}
 
 \subsection{A colpo d'occhio}
 \begin{tabularx}{\linewidth}{>{\bfseries}p{32mm} X}
-Il luogo & Biblioteca indipendente, legata all'Accademia dalla frequentazione degli studiosi e dalle collaborazioni di ricerca. «Proibita» è un nome tradizionale, non un divieto d'ingresso.\\
 Presenti & Abel Norn riceve le richieste; Miriam Voss studia e confronta i testi.\\
-Visita di Elias & Giorno 20, su presentazione di Silas. Miriam vide soltanto la copia della runa.\\
-H11 & Annotazioni di Miriam sul colloquio e sul significato del segno.\\
-H11b & Preghiera pthumeriana tradotta e commentata da Maestro Willem: una delle fonti consultate, non una sintesi della sua ricerca.\\
-Limite & Nessuno qui conosce vasca, reperto, trattamento o Celestine senza nuove informazioni portate dai PG.\\
+Accesso & Biblioteca indipendente, legata all'Accademia dalla frequentazione degli studiosi e dalle collaborazioni di ricerca. «Proibita» è un nome tradizionale, non un divieto d'ingresso. Abel accompagna chi chiede di Miriam.\\
+Handout & H11: annotazioni di Miriam sul colloquio e sul segno. H11b: preghiera pthumeriana tradotta e commentata da Maestro Willem, una delle fonti consultate.\\
+Da ricordare & Miriam ricevette Elias il giorno 20 su presentazione di Silas e vide soltanto la copia della runa. Nessuno qui conosce vasca, reperto, trattamento o Celestine senza nuove informazioni portate dai PG. H11b non è una sintesi della ricerca di Willem.\\
 \end{tabularx}
 
 \textbf{Uso al tavolo:} segui ciò che i PG raccontano, mostrano o chiedono. I blocchi indicano intenzioni e occasioni di intervento, non una sequenza obbligatoria di domande. La lettura amplia la prospettiva sull'indagine; non è una condizione per ottenere le informazioni sulla visita di Elias.
 
-\subsection{Ingresso nella sala: da leggere o parafrasare}
-\begin{rulebox}
+\subsection{Arrivo e ambienti}
+\subsubsection{Ingresso nella sala}
+\begin{readaloud}
 Fra la porta e gli scaffali rimane uno spazio libero, occupato soltanto da un tavolo dove appoggiare i volumi restituiti. Più avanti, le sedute sono raccolte intorno a tavoli larghi: un libro aperto lascia ancora posto ai fogli di chi lo consulta. Sui bordi degli scaffali sono fissati contrassegni; alcune cartelle sporgono quanto basta per leggerne il dorso.
 
 Abel vi sente entrare, interrompe ciò che sta facendo e vi chiede chi cercate. Non vi invita a rovistare fra i libri. Quando nominate Miriam, indica il tavolo al quale lavora e vi accompagna.
 
 La studiosa ha un volume aperto e un foglio di appunti accanto alla mano. Finisce la parola che sta scrivendo prima di alzare gli occhi. Al nome di Elias Ward posa la penna.
-\end{rulebox}
+\end{readaloud}
 
 \textbf{Accesso e Abel:} i PG possono chiedere di Miriam; il nome di Silas spiega il contatto, ma non è un lasciapassare obbligatorio. Essere ricevuti non permette di prelevare liberamente i volumi. Abel conserva l'ordine della raccolta e tutela la riservatezza dei lettori. Se spiegano la scomparsa, può confermare di avere udito la presentazione di Elias il giorno 20; non vide il disegno e non conosce i suoi appunti privati. La cecità non gli conferisce percezioni particolari.
 
 \textbf{Descrizione in movimento:} usa i dettagli quando servono. Abel recupera un volume grazie ai contrassegni e alla conoscenza della raccolta; Miriam sposta i propri appunti per fare posto ai documenti dei PG. I rumori delle pagine, le sedie avvicinate e le pause per cercare un passo accompagnano azioni concrete. Non introdurre scritte mutevoli, sussurri o altri fenomeni soprannaturali.
 
-\subsection{Miriam ascolta la notizia di Elias}
+\subsection{Interazioni e ostacoli}
+\subsubsection{Parlare della visita di Elias}
 \textbf{Vuole capire:} che cosa gli sia accaduto dopo il loro incontro. Se apprende della scomparsa, domanda quando sia stato visto l'ultima volta e ascolta il racconto prima di parlare della runa. Non conosce automaticamente le scoperte compiute negli altri nodi.
 
 \textbf{Vuole comunicare:} il giorno 20 ricevette Elias su presentazione di Silas. Lui mostrò un segno copiato da un documento; lei lo confrontò con testi pthumeriani e annotò associazioni a percezione, crescita di una facoltà e possibilità di contatto. Non vide il disegno completo della vasca, il reperto o la macchina. Non conosce le azioni successive di Elias.
 
-\textbf{H11 -- Note sulla runa:} Miriam recupera le proprie annotazioni quando i PG chiedono del colloquio, mostrano il segno o vogliono sapere che cosa avesse spiegato a Elias. Consegnale senza una prova di buone intenzioni. H11 resta il resoconto della sua lettura al giorno 20: non aggiornarne il contenuto con informazioni apprese oggi.
+
 
 \textbf{Come interpretarla:} distingue ciò che ricorda dalla visita da ciò che sta apprendendo. Non attribuisce a Elias intenzioni mai dichiarate. La notizia della malattia o della ricerca dei Cacciatori le dà motivo di ascoltare, non una conoscenza improvvisa della situazione.
 
-\subsection{I documenti trovano posto sul tavolo}
+\textbf{Rimando agli handout:} H11 raccoglie le annotazioni del colloquio; la relativa scheda riporta le condizioni di consegna.
+
+\subsubsection{Confrontare i documenti}
 Se i PG mostrano H06b, usa questa descrizione:
-\begin{rulebox}
+\begin{readaloud}
 Miriam accosta il foglio alle proprie annotazioni. Riconosce la stessa runa, poi guarda il disegno che la circonda: segue la parete della vasca e legge l'indicazione destinata al vetraio. Ruota il foglio perché possiate vederlo tutti.
 
 «Ward mi aveva mostrato soltanto il segno. Questo disegno non l'avevo visto.»
-\end{rulebox}
+\end{readaloud}
 
 \textbf{Vuole chiarire:} il significato attribuito alla runa nei testi è distinto dall'uso che ne fa chi l'ha fatta incidere. H06b le rivela il supporto previsto, non il contenuto della vasca. Chiede da dove venga il documento e che cosa i PG sappiano della destinazione; non anticipa domande su esperimenti di cui nessuno le ha parlato.
 
@@ -1249,18 +1379,18 @@ Miriam accosta il foglio alle proprie annotazioni. Riconosce la stessa runa, poi
 \textbf{Aspetto di scena:} \aspect{Documenti a confronto sul tavolo}, quando i fogli vengono effettivamente accostati. I PG possono confrontare dettagli, sostenere un'interpretazione o creare un vantaggio con Occulto o Erudizione. Un tiro riguarda un approfondimento specifico; non serve per leggere il disegno o ascoltare ciò che Miriam sa già spiegare. Un successo non dimostra l'efficacia della runa.
 \end{fatebox}
 
-\subsection{La fonte: H11b, traduzione e commenti di Willem}
+\subsubsection{Leggere la fonte di Willem}
 \textbf{Quando proporla:} Miriam dà prima una spiegazione breve, legata alla crescita della percezione. Quando i PG chiedono di precisare o mostrano interesse per ciò che il segno potrebbe significare, propone di leggere il passo su cui si basa. Non richiede una prova di fiducia e non interrompe una domanda urgente su Elias con una lezione.
 
-\begin{rulebox}
+\begin{readaloud}
 Miriam chiede ad Abel il volume consultato con Ward. Quando lo posa sul tavolo, sposta i fogli invece di sovrapporli alle pagine. Cerca il passo, torna indietro di qualche carta e tiene aperto il volume.
 
 Il segno non è una figura isolata. Compare accanto alle ultime righe di una preghiera. La traduzione porta il nome di Maestro Willem; sotto, due annotazioni sono separate da uno spazio. La seconda riprende e mette in dubbio una parola della prima.
 
 Miriam vi indica l'inizio della traduzione, poi ritira la mano e vi lascia leggere.
-\end{rulebox}
+\end{readaloud}
 
-\textbf{Consegna H11b:} il foglio riproduce il passo tradotto e i commenti presenti nel volume consultabile. Non è un documento proveniente dal Progetto e non contiene appunti di Elias. Il segno accanto all'ultima invocazione è la stessa runa di H11 e H06b, non il marchio amministrativo.
+
 
 \textbf{Durante la lettura:} lascia spazio alle reazioni prima di spiegare. La radice che non conosce chi la calpesta, la richiesta di far crescere una facoltà e la nota sugli occhi offrono motivi diversi per fare domande. Non richiedere che i giocatori scelgano un'interpretazione prestabilita.
 
@@ -1274,9 +1404,7 @@ Miriam vi indica l'inizio della traduzione, poi ritira la mano e vi lascia legge
 
 \textbf{Come dirlo:} Miriam indica la riga su cui si fonda ogni osservazione e distingue la voce della preghiera da quella del traduttore. Non introduce una classificazione degli esseri o un riassunto della cosmologia. Il brano è una delle fonti della raccolta, non la risposta definitiva al mistero.
 
-\textbf{Nota per il GM:} H11b è un testo originale della campagna attribuito a Willem nella finzione. Non è una citazione del gioco. Non introduce una procedura rituale, una cura, un'entità identificata o un effetto soprannaturale verificato.
-
-\subsection{Se i PG condividono altre scoperte}
+\subsubsection{Condividere altre scoperte}
 \textbf{Aggiorna soltanto ciò che apprendono insieme:}
 \begin{description}[leftmargin=5mm,style=nextline]
 \item[H06b.] Miriam conosce l'incisione prevista sulla vasca; ignora che cosa contenga.
@@ -1294,7 +1422,29 @@ Miriam vi indica l'inizio della traduzione, poi ritira la mano e vi lascia legge
 \textbf{Compel possibile:} se un aspetto del PG esprime curiosità ostinata o ambizione di studioso, proponi che prolunghi il confronto oltre il previsto, mettendo in difficoltà un appuntamento o un termine già concordato. Specifica quale impegno rischia prima dell'accettazione; non inventare una scadenza o una punizione soprannaturale.
 \end{fatebox}
 
-\subsection{Se Miriam manca o i PG non approfondiscono}
+\subsection{Handout}
+\label{nodo-6-handout}
+\subsubsection{H11 -- Note sulla runa}
+\textbf{Dove:} Le annotazioni di Miriam sul colloquio del giorno 20.
+
+\textbf{Quando consegnarlo:} Quando i PG chiedono del colloquio, mostrano il segno o vogliono sapere che cosa Miriam avesse spiegato a Elias. Non richiede una prova di buone intenzioni.
+
+\textbf{Che cosa rivela:} Il resoconto della lettura della runa al giorno 20: associazioni a percezione, crescita di una facoltà e possibilità di contatto.
+
+\textbf{Limiti:} Miriam vide soltanto la copia del segno. Non aggiornare H11 con informazioni apprese oggi; la lettura non dimostra un contatto.
+
+\subsubsection{H11b -- Preghiera tradotta e commentata da Willem}
+\textbf{Dove:} Il passo si trova nel volume consultabile della Biblioteca; Abel sa recuperarlo.
+
+\textbf{Quando consegnarlo:} Durante la lettura proposta da Miriam, quando i PG chiedono di precisare il significato del segno o mostrano interesse. Se Miriam manca, Abel può far consultare il volume già tradotto, senza sostituirla nell'interpretazione.
+
+\textbf{Che cosa rivela:} Una preghiera tradotta e commentata da Maestro Willem. La runa accanto all'ultima invocazione è la stessa di H11 e H06b, distinta dal marchio amministrativo. Il foglio riproduce il passo e i commenti presenti nel volume.
+
+\textbf{Limiti:} È una delle fonti della raccolta, non un documento proveniente dal Progetto o contenente appunti di Elias. Gli originali restano soggetti alle condizioni di consultazione della Biblioteca.
+
+\textbf{Nota per il GM:} H11b è un testo originale della campagna attribuito a Willem nella finzione. Non è una citazione del gioco. Non introduce una procedura rituale, una cura, un'entità identificata o un effetto soprannaturale verificato.
+
+\subsection{Evoluzione della scena}
 Abel può confermare la visita e far consultare il volume con H11b, già tradotto; non occorre tradurre dal pthumeriano per leggerlo. Sa ritrovarlo, non sostituire Miriam nell'interpretazione. Per confronti ulteriori serve una competenza pertinente o un nuovo colloquio con lei.
 
 Se i PG vogliono soltanto ricostruire la visita, Miriam racconta il colloquio e mostra H11 senza imporre la lettura di H11b. Se non prendono gli handout, possono comunque leggere e discutere i testi. Non perdono un accesso fisico al finale: la Biblioteca non custodisce una pianta delle catacombe o un nuovo percorso verso il Progetto.
@@ -1305,72 +1455,76 @@ Con la sola runa, Miriam non sa quale luogo cercare. Se i PG le rivelano reperto
 Un eventuale interesse per campioni riguarda materiale già disponibile e informazioni effettivamente ricevute; non è un incarico obbligatorio o un pedaggio per spiegare la runa.
 \end{clockbox}
 
+\subsection{Collegamenti}
 \linkto{Archivio Ecclesiastico per il documento da cui Elias copiò la runa; Ospedale e Laboratorio Alchemico soltanto attraverso destinazioni e informazioni emerse dai documenti o dai racconti dei PG. La Biblioteca offre interpretazioni e collaborazione, non un accesso sotterraneo.}
 
 \nodehead{16. Nodo 7 -- Laboratorio Alchemico}{Verifica delle consegne e scelta di un accesso all'ala inferiore.}{Dove è stato trasferito il regolatore e come possono seguirne il percorso?}
 
 \subsection{A colpo d'occhio}
 \begin{tabularx}{\linewidth}{>{\bfseries}p{32mm} X}
-Attività ordinaria & Preparazioni alchemiche per l'Ospedale. Il deposito riceve anche le forniture del Progetto.\\
-Scoperta utile & H13 collega la commessa 44-14 del regolatore al trasferimento nell'ala inferiore riservata.\\
-Controlli & Porta esterna di servizio sul fianco dell'edificio, direttamente nel deposito; porta sorvegliata sul fondo verso l'ascensore. La chiave di Silas apre soltanto l'ingresso di servizio.\\
-Personale & Addetto all'ascensore e sorvegliante. Il tecnico della macchina è presente se impegnato su forniture o manutenzione; il personale ordinario non conosce automaticamente gli esperimenti.\\
-Documenti & H13 aperto sul piano di registrazione vicino alla porta esterna di servizio; H14 affisso nel settore controllato dell'ascensore, al piano del deposito.\\
-H12 & Rimane con Elias. Non è un indizio da trovare qui né un requisito per raggiungerlo.\\
-Tre vie & Scala dell'Ospedale, ascensore e galleria, scarico dalle fogne. H14 ne mostra i collegamenti, non tutta la rete fognaria cittadina.\\
+Presenti & Addetto all'ascensore e sorvegliante. Il tecnico della macchina è presente se impegnato su forniture o manutenzione; il personale ordinario non conosce automaticamente gli esperimenti.\\
+Accesso & Ingresso principale sulla sala di lavoro; porta esterna sul fianco direttamente nel deposito, aperta dalla chiave di Silas. La porta sorvegliata sul fondo e l'ascensore restano controlli distinti.\\
+Handout & H13 aperto sul piano di registrazione vicino alla porta di servizio; H14 affisso nel settore controllato dell'ascensore, al piano del deposito.\\
+Da ricordare & Il Laboratorio svolge preparazioni alchemiche per l'Ospedale; il deposito riceve anche le forniture del Progetto. H13 collega la commessa 44-14 all'ala inferiore. H12 rimane con Elias: non si trova qui e non serve a raggiungerlo.\\
+Vie da valutare & Scala dell'Ospedale, ascensore e galleria, scarico dalle fogne. H14 ne mostra i collegamenti, non tutta la rete fognaria cittadina.\\
 \end{tabularx}
 
 \textbf{Uso al tavolo:} scegli il blocco corrispondente alle azioni dei PG. Una normale consegna ospedaliera non prova un abuso: il nodo serve a rintracciare il regolatore e verificare il tratto successivo del suo viaggio. Nessuna prova unica risolve ingresso, documenti e discesa.
 
-\subsection{Disposizione e ritmo del luogo}
+\subsection{Arrivo e ambienti}
+\subsubsection{Disposizione e ritmo del luogo}
 L'ingresso principale sulla strada apre sulla sala di lavoro. Il passaggio sul fondo conduce al deposito: entrando dalla sala, gli scaffali sono a sinistra e la porta esterna di servizio a destra. Questa porta dà sul passaggio lungo il fianco dell'edificio ed è quella aperta dalla chiave di Silas. Il piano di registrazione è vicino alla porta di servizio. Sul fondo del deposito, oltre la corsia dei carrelli, la porta sorvegliata conduce al pianerottolo dell'ascensore.
 
 \textbf{Per descrivere la scena:} adatta attività e presenze all'ora della visita. Durante un carico, mostra gli addetti che controllano, registrano e spostano le casse. Durante una pausa, indica dove si trovano persone e materiali. Una consegna parte quando è prevista nella scena, non automaticamente all'arrivo dei PG. Recipienti, imballaggi e rumori sono dettagli del luogo: diventano rilevanti se i giocatori decidono di usarli. Richiedi una prova soltanto per un'azione incerta con un ostacolo concreto.
 
-\subsection{Dalla strada}
-\begin{rulebox}
+\subsubsection{Dalla strada}
+\begin{readaloud}
 Il Laboratorio occupa l'edificio accanto all'Ospedale. L'ingresso principale si apre sulla strada; attraverso le finestre si distinguono persone chine sui tavoli di lavoro. Sul fianco dell'edificio corre un passaggio di servizio. Una porta larga, con la soglia consumata e il legno segnato all'altezza delle casse, dà accesso al deposito.
 
 Dall'interno arrivano il tintinnio dei recipienti e il rumore intermittente di qualcosa trascinato sul pavimento.
-\end{rulebox}
+\end{readaloud}
 
 \textbf{Orientamento:} i PG possono avvicinarsi all'ingresso principale, osservare dalle finestre o percorrere il fianco fino alla porta di servizio. La serratura esterna è quella per cui Silas possiede la chiave. Indica che cosa è effettivamente visibile dalla posizione scelta; il deposito può essere occupato anche quando la porta esterna è chiusa.
 
-\subsection{Nella sala di lavoro}
-\begin{rulebox}
+\subsubsection{Sala di lavoro}
+\begin{readaloud}
 Due tavoli lunghi occupano il centro della sala, lasciando un corridoio fra l'ingresso e il passaggio sul fondo. Sui piani sono disposti mortai, bilance, recipienti di vetro e piccoli vassoi di strumenti. Gli scaffali lungo le pareti raccolgono bottiglie e contenitori chiusi; accanto a una vasca di lavaggio, panni umidi sono stesi sul bordo.
 
 Un lavorante versa una preparazione attraverso un imbuto mentre un altro pesa il contenuto di un recipiente. Chi termina un'operazione libera una porzione del tavolo e vi dispone gli strumenti per la successiva. Dal passaggio sul fondo si vedono scaffalature più basse e il fianco di una cassa.
 
 Quando entrate, il lavorante più vicino alza gli occhi e vi chiede di chi avete bisogno.
-\end{rulebox}
+\end{readaloud}
 
+\subsubsection{Deposito}
+\begin{readaloud}
+Entrando dalla sala di lavoro, avete gli scaffali sulla sinistra e la porta esterna di servizio sulla destra. Le casse più ingombranti sono appoggiate a terra lungo le pareti. Fra loro rimane una corsia abbastanza larga da far passare un carrello carico. Spago tagliato, listelli e materiale d'imballaggio sono raccolti vicino alla porta esterna.
+
+Un piano di registrazione sostiene un inventario aperto, una penna e alcune ricevute tenute ferme da un peso. Le colonne dell'inventario distinguono materiale ricevuto, quantità presenti e trasferimenti. Accanto, un carrello attende con il carico sistemato sulle assi. Sul fondo della corsia si trova la porta del settore merci. Il sorvegliante occupa una sedia accanto allo stipite, dalla quale può vedere il passaggio interno e la porta di servizio.
+\end{readaloud}
+
+\textbf{Da un altro ingresso:} se i PG entrano dalla porta di servizio, descrivi il piano vicino a loro, le scaffalature di fronte e i due passaggi interni: quello verso la sala di lavoro e quello controllato verso l'ascensore. La visuale della guardia dipende dalla posizione effettiva e dagli eventuali carichi in movimento; non trattare le casse come un nascondiglio garantito.
+
+\subsubsection{Pianerottolo dell'ascensore}
+\begin{readaloud}
+Oltre la porta, il pavimento continua fino alla soglia dell'ascensore. Davanti alla cabina rimane uno spazio di manovra segnato dalle ruote dei carrelli. Il comando è fissato alla parete, vicino alla posizione dell'addetto; poco più in là è appeso lo schema di servizio. Nel disegno si distinguono la scala dell'Ospedale, la galleria delle forniture e lo scarico verso le fogne. Sotto sono riportate le avvertenze per il lavaggio.
+\end{readaloud}
+
+\textbf{Quando l'ascensore si muove:} il rumore del meccanismo riempie il pianerottolo e si sente anche dal deposito. L'addetto segue il movimento della cabina, poi torna al carico in attesa. Usa questa descrizione durante un trasferimento effettivo: il rumore segue il funzionamento del mezzo.
+
+\subsection{Interazioni e ostacoli}
+\subsubsection{Chiedere di una consegna}
 \textbf{Richieste ordinarie:} i PG possono chiedere di verificare una consegna, citando H05, H06a o la commessa 44-14. Il personale può indirizzarli a chi gestisce i carichi; una richiesta non autorizza a circolare nel deposito o scendere all'ala inferiore. Non serve fingere che tutto l'edificio sia segreto.
 
 \textbf{Aspetto:} \aspect{Laboratorio in attività}. Il lavoro offre occasioni per parlare con gli addetti o osservare i movimenti; una distrazione deve coinvolgere persone e operazioni presenti nella scena. Non introdurre incidenti alchemici o conoscenze degli esperimenti solo per generare un indizio.
 
-\subsection{Il deposito e la verifica della consegna}
-\begin{rulebox}
-Entrando dalla sala di lavoro, avete gli scaffali sulla sinistra e la porta esterna di servizio sulla destra. Le casse più ingombranti sono appoggiate a terra lungo le pareti. Fra loro rimane una corsia abbastanza larga da far passare un carrello carico. Spago tagliato, listelli e materiale d'imballaggio sono raccolti vicino alla porta esterna.
-
-Un piano di registrazione sostiene un inventario aperto, una penna e alcune ricevute tenute ferme da un peso. Le colonne dell'inventario distinguono materiale ricevuto, quantità presenti e trasferimenti. Accanto, un carrello attende con il carico sistemato sulle assi. Sul fondo della corsia si trova la porta del settore merci. Il sorvegliante occupa una sedia accanto allo stipite, dalla quale può vedere il passaggio interno e la porta di servizio.
-\end{rulebox}
-
-\textbf{Da un altro ingresso:} se i PG entrano dalla porta di servizio, descrivi il piano vicino a loro, le scaffalature di fronte e i due passaggi interni: quello verso la sala di lavoro e quello controllato verso l'ascensore. La visuale della guardia dipende dalla posizione effettiva e dagli eventuali carichi in movimento; non trattare le casse come un nascondiglio garantito.
-
-\textbf{H13 -- Inventario del deposito:} è il documento aperto sul piano di registrazione vicino alla porta esterna. Nominalo come inventario nella descrizione; il codice H13 serve soltanto al GM. Da lontano si riconosce la funzione delle colonne, mentre per leggere le singole voci occorre avvicinarsi.
+\subsubsection{Verificare la consegna nel deposito}
+\textbf{Documento visibile:} nomina l'inventario aperto sul piano; il codice H13 serve soltanto al GM. Da lontano si riconosce la funzione delle colonne, mentre per leggere le singole voci occorre avvicinarsi.
 
 \textbf{Mostrare l'uso durante una consegna:} l'addetto legge il riferimento sul collo, torna al piano e scorre l'inventario con un dito. Annota qualcosa, poi indica dove sistemare la cassa. Questo gesto rende visibile il legame fra merci e registrazione. Se il lavoro è fermo, basta descrivere il documento e le sue colonne: non introdurre un carico soltanto per attirare l'attenzione.
 
 \textbf{Consultazione:} se i PG chiedono della commessa 44-14 o del regolatore, l'addetto consulta H13 e può mostrare la voce pertinente come normale verifica della consegna. La richiesta non richiede automaticamente Carisma. Se preferiscono leggere di nascosto, chiarisci come raggiungono il piano, chi li vede e quanto possono soffermarsi; un'eventuale prova riguarda quell'azione.
 
-\textbf{Consegna al tavolo:} dai H13 quando i PG riescono a consultarlo, tramite l'addetto o raggiungendo le carte. L'esistenza del documento è visibile: non occorre una prova di Indagine per scoprirla. L'ingresso nel deposito, da solo, non equivale ad averne letto il contenuto.
-
-\textbf{Cosa permette di verificare:} il regolatore della commessa 44-14 è stato trasferito all'ala inferiore riservata. Il numero collega H13 ai documenti della Fonderia e dell'Archivio; non indica il peso del solo regolatore. Le altre voci mostrano forniture in transito e consumo ordinario. Il rimando a H14 segnala uno schema dei collegamenti consultabile presso l'ascensore.
-
-\textbf{Limite:} inviare materiali all'Ospedale è normale. L'inventario non dimostra da solo coercizione, finalità ultraterrene o complicità di tutti gli addetti. Tubi e strumenti generici non permettono di dedurre con Tecnica il funzionamento della macchina nascosta.
-
-\subsection{La porta controllata e il personale}
+\subsubsection{Superare la porta controllata}
 \textbf{Addetto all'ascensore:} conosce carichi, inventario, galleria e destinazione delle forniture. Custodisce la chiave che abilita l'ascensore. Può indicare le operazioni previste in quel momento; non esiste un orario universale di trasferimento ricavabile da H13.
 
 \textbf{Sorvegliante:} è diverso dall'uomo ferito da Elias. Controlla permessi e passaggi riservati, sa dell'intrusione e deve riferire altri accessi non autorizzati. Una richiesta di verifica delle consegne non autorizza a scendere. Un ordine di Aldren vale per ciò che autorizza espressamente; per l'accesso alla sala del Progetto occorre la conferma già prevista dalla sua scheda.
@@ -1385,29 +1539,21 @@ Un piano di registrazione sostiene un inventario aperto, una penna e alcune rice
 \textbf{Compel possibile:} un aspetto pertinente alla protezione di Elias o all'insofferenza per l'autorità può portare un PG a contestare apertamente la guardia, rendendo riconoscibile l'interesse del gruppo per l'intruso. Concorda la complicazione; non far arrivare rinforzi senza una comunicazione concreta.
 \end{fatebox}
 
-\subsection{Presso l'ascensore: H14}
-\begin{rulebox}
-Oltre la porta, il pavimento continua fino alla soglia dell'ascensore. Davanti alla cabina rimane uno spazio di manovra segnato dalle ruote dei carrelli. Il comando è fissato alla parete, vicino alla posizione dell'addetto; poco più in là è appeso lo schema di servizio. Nel disegno si distinguono la scala dell'Ospedale, la galleria delle forniture e lo scarico verso le fogne. Sotto sono riportate le avvertenze per il lavaggio.
-\end{rulebox}
-
-\textbf{Quando l'ascensore si muove:} il rumore del meccanismo riempie il pianerottolo e si sente anche dal deposito. L'addetto segue il movimento della cabina, poi torna al carico in attesa. Usa questa descrizione durante un trasferimento effettivo: il rumore segue il funzionamento del mezzo.
-
-\textbf{Consegna H14:} quando i PG raggiungono questo settore e consultano lo schema, prima di scendere. Non richiede di trovare un pannello nascosto o un'altra sala macchine. L'inventario H13 ne indica l'esistenza; un addetto può mostrarlo durante una consultazione autorizzata.
-
-\textbf{Cosa mostra:} ascensore e galleria verso il corridoio dell'ala inferiore, scala ospedaliera verso le stanze dei pazienti, scarico verso il vano di manutenzione. «Sala trattamenti» è la dicitura di servizio per la sala del Progetto: lo stesso ambiente, sul medesimo livello delle stanze dei pazienti. Non contiene annotazioni di Elias né spiega il trattamento.
-
+\subsubsection{Usare l'ascensore}
 \textbf{Uso dell'ascensore:} la chiave ne abilita il funzionamento; non deve essere tenuta da chi viaggia. In condizioni ordinarie l'addetto lo abilita per il carico autorizzato. I PG devono ottenere la collaborazione necessaria o descrivere come superano quel controllo: una competenza tecnica può aiutare in un tentativo concreto, non fornisce automaticamente la chiave.
 
 \textbf{Scelta dei PG:} consultare H14 non li obbliga a usare l'ascensore. Possono valutare la scala dell'Ospedale o cercare lo scarico nelle fogne.
 
-\subsection{Come passò Elias il giorno 26}
+\textbf{Rimando agli handout:} la scheda H14 raccoglie le condizioni di consultazione e i collegamenti mostrati dallo schema.
+
+\subsubsection{Ricostruire l'ingresso di Elias}
 L'addetto aveva già aperto l'accesso e abilitato l'ascensore per un trasferimento. Elias sfruttò il movimento delle forniture per raggiungere il settore merci. Il sorvegliante cercò di trattenerlo; Elias lo ferì al braccio per liberarsi e lo risparmiò. L'addetto si allontanò per chiamare aiuto. Rimasto momentaneamente senza osservatori, Elias raggiunse la cabina e scese con l'ascensore già abilitato, senza rubare la chiave. Né il sorvegliante né l'addetto videro la discesa. L'allarme interno partì subito e raggiunse Celestine; segnalava un intruso armato di cui si erano perse le tracce nel deposito. Durante i soccorsi e i primi controlli Elias percorse la galleria, attraversò la sala del Progetto riconoscendo il regolatore e si nascose nell'intercapedine del vano di manutenzione. Il giorno 27 Celestine fece coinvolgere i Cacciatori.
 
 \textbf{Fonti per i PG:} il sorvegliante ferito, rintracciabile all'Ospedale attraverso Roland, racconta lo scontro e ammette di aver perso di vista Elias. L'addetto riferisce di essersi allontanato per chiamare aiuto lasciando l'ascensore abilitato. Entrambi possono sospettare che Elias sia sceso, ma nessuno dei due lo ha visto farlo o sa dove si trovi. Il percorso descritto sopra è un fatto noto al GM. Elias ha conosciuto gli altri collegamenti dallo schema: non ha percorso le fogne per entrare.
 
 \textbf{Dopo l'ingresso:} Elias trova riparo nell'intercapedine del vano di manutenzione. Rimane per preparare un sabotaggio del regolatore e comprendere il reperto; posizione, limiti del riparo ed effetti dell'intervento sono descritti nel nodo finale.
 
-\subsection{L'alternativa dello scarico}
+\subsubsection{Raggiungere lo scarico dalle fogne}
 \textbf{Raggiungere l'imbocco:} le fogne attraversano la città. H02 resta una pianta generale; H14 documenta il collegamento con lo scarico ospedaliero, non un itinerario dalla strada. Il GM sceglie gli ingressi cittadini raggiungibili, il percorso e le difficoltà coerenti con la scena. Distingui trovare l'imbocco dello scarico da superarne la grata: le prove non devono mettere in dubbio l'esistenza del collegamento già documentato.
 
 \textbf{Direzione:} l'acqua defluisce dal vano di manutenzione dell'Ospedale verso le fogne. Per entrare i PG percorrono lo scarico in direzione opposta. Fuori dal lavaggio è abbastanza ampio da attraversare con difficoltà; non è un passaggio ordinario del personale.
@@ -1418,35 +1564,55 @@ L'addetto aveva già aperto l'accesso e abilitato l'ascensore per un trasferimen
 
 \textbf{Arrivo:} oltre la grata si raggiunge il vano di manutenzione adiacente alla sala del Progetto, nell'ala inferiore. Non si entra nel Laboratorio Alchemico e non si aprono i suoi accessi controllati.
 
-\subsection{Documenti mancati e reazioni}
+\subsection{Handout}
+\label{nodo-7-handout}
+\subsubsection{H13 -- Inventario del deposito}
+\textbf{Dove:} Aperto sul piano di registrazione vicino alla porta esterna di servizio.
+
+\textbf{Quando consegnarlo:} Quando i PG riescono a consultarlo tramite l'addetto o raggiungendo le carte. L'esistenza del documento è visibile: non occorre una prova di Indagine per scoprirla. L'ingresso nel deposito, da solo, non equivale ad averne letto il contenuto.
+
+\textbf{Che cosa rivela:} Il regolatore della commessa 44-14 è stato trasferito all'ala inferiore riservata. Il numero collega l'inventario ai documenti della Fonderia e dell'Archivio. Le altre voci mostrano forniture in transito e consumo ordinario. Il rimando a H14 segnala uno schema dei collegamenti consultabile presso l'ascensore.
+
+\textbf{Limiti:} Non indica il peso del solo regolatore. Inviare materiali all'Ospedale è normale: il documento non dimostra da solo coercizione, finalità ultraterrene o complicità degli addetti. Tubi e strumenti generici non permettono di dedurre con Tecnica il funzionamento della macchina nascosta.
+
+\subsubsection{H14 -- Schema degli accessi}
+\textbf{Dove:} Affisso nel settore controllato dell'ascensore, al piano del deposito. H13 ne indica l'esistenza.
+
+\textbf{Quando consegnarlo:} Quando i PG raggiungono il settore e consultano lo schema, prima di scendere. Un addetto può mostrarlo durante una consultazione autorizzata. Non richiede di trovare un pannello nascosto o un'altra sala macchine.
+
+\textbf{Che cosa rivela:} Ascensore e galleria verso il corridoio dell'ala inferiore, scala ospedaliera verso le stanze dei pazienti, scarico verso il vano di manutenzione. Riporta grata, direzione del deflusso e lavaggio alla quarta campana notturna. «Sala trattamenti» indica la sala del Progetto, sul medesimo livello delle stanze.
+
+\textbf{Limiti:} Non contiene annotazioni di Elias, non spiega il trattamento e non descrive tutta la rete fognaria cittadina. Consultarlo non obbliga a usare l'ascensore.
+
 \textbf{Senza H13 o H14:} gli addetti possono confermare il trasferimento del regolatore e spiegare o mostrare i collegamenti che conoscono, se le circostanze del colloquio lo permettono. Non consegnano automaticamente ogni informazione a chi entra. Le prove scritte permettono confronti e pianificazione, ma non sono una sequenza obbligatoria.
 
 \textbf{H12 -- Scoperte e dubbi di Elias:} rimane in suo possesso e può essere mostrato al successivo incontro. Non si trova nel deposito, non contiene istruzioni rivolte ai PG e non è necessario per raggiungere il finale.
 
+\subsection{Evoluzione della scena}
 \begin{clockbox}
 I controlli tengono conto dell'intrusione già avvenuta. Ulteriori restrizioni dipendono da eventi osservati o riferiti, non dalla fine della scena. Se il sorvegliante chiama aiuto, stabilisci come il messaggio raggiunge il destinatario e lascia ai PG modo di reagire. Altre fazioni arrivano soltanto per un motivo concreto. Solo una minaccia giunta a Celestine può innescare le misure sui materiali previste dall'orologio.
 \end{clockbox}
 
+\subsection{Collegamenti}
 \linkto{Ala inferiore tramite ascensore e galleria, scala ospedaliera o scarico dalle fogne. Fonderia e Archivio per il confronto della commessa 44-14; Ospedale e Cacciatori per la testimonianza del sorvegliante ferito.}
 
 \nodehead{17. Nodo finale -- Il Progetto}{Incontro con Elias, interruzione degli abusi e destino delle prove.}{Che cosa scelgono di proteggere i PG, e come intervengono nella situazione in corso?}
 
 \subsection{A colpo d'occhio}
 \begin{tabularx}{\linewidth}{>{\bfseries}p{32mm} X}
-Momento iniziale & Intervallo fra due sedute. La macchina mantiene le condizioni del reperto; nessun paziente è collegato.\\
-Pazienti & Sei nelle stanze dell'ala inferiore, compresi i due cancellati dai registri.\\
-Celestine & Nella sala trattamenti, confronta risultati e prepara il lavoro successivo.\\
-Tecnico & Controlla macchina e collegamenti. Il personale di reparto assiste e accompagna i pazienti.\\
-Elias & Nell'intercapedine del vano di manutenzione; prepara un intervento sul regolatore e cerca ancora di capire il reperto.\\
-Documenti & H12 con Elias; H15 alla postazione del tecnico; H16 fra le carte di lavoro di Celestine.\\
-Alleati & Presenti soltanto se accompagnano i PG o hanno ottenuto concretamente un accesso.\\
+Presenti & Celestine e il tecnico nella sala trattamenti; sei pazienti e personale nelle stanze; Elias nell'intercapedine del vano di manutenzione. Alleati soltanto se accompagnano i PG o hanno ottenuto concretamente un accesso.\\
+Accesso & Scala ospedaliera, galleria delle forniture oppure scarico verso il vano di manutenzione, secondo il percorso ottenuto dai PG.\\
+Handout & H12 con Elias; H15 alla postazione del tecnico; H16 fra le carte di lavoro di Celestine.\\
+Da ricordare & Si comincia fra due sedute: la macchina mantiene le condizioni del reperto e nessun paziente è collegato. Fra i sei nelle stanze ci sono i due cancellati dai registri.\\
+Attività in corso & Celestine confronta risultati e prepara il lavoro successivo; il tecnico controlla macchina e collegamenti; il personale assiste e accompagna i pazienti. Elias prepara un intervento sul regolatore e cerca ancora di capire il reperto.\\
 \end{tabularx}
 
 \textbf{Preparazione:} questa è la situazione di base. Aggiornala se i PG hanno provocato un allarme, ottenuto un'ispezione o indotto Celestine a preparare un trasferimento. Segna posizione degli addetti, controlli già attivi e percorso degli eventuali alleati. L'orologio modifica le condizioni, non impone un incontro o un esito.
 
 \textbf{Ritmo:} la seduta successiva richiede di andare a prendere un paziente, accompagnarlo e prepararlo. Mostra queste azioni se avvengono, lasciando ai PG spazio per intervenire. Una pausa nella conversazione al tavolo non fa partire automaticamente il trattamento.
 
-\subsection{Disposizione dell'ala e arrivo}
+\subsection{Arrivo e ambienti}
+\subsubsection{Disposizione dell'ala e arrivo}
 Le stanze dei pazienti si aprono sul corridoio raggiunto dalla scala ospedaliera. La galleria dell'ascensore confluisce nello stesso corridoio; da lì si accede alla sala trattamenti, indicata così in H14 e chiamata sala del Progetto nel manuale. Il vano di manutenzione è adiacente alla sala e comunica con essa; lo scarico delle fogne termina in quel vano. Tutti questi ambienti appartengono al medesimo livello.
 
 \begin{description}[leftmargin=5mm,style=nextline]
@@ -1455,12 +1621,12 @@ Le stanze dei pazienti si aprono sul corridoio raggiunto dalla scala ospedaliera
 \item[Dallo scarico.] Superati grata e percorso, entrano nel vano di manutenzione vicino al riparo di Elias. Lo scarico non dà accesso al Laboratorio Alchemico.
 \end{description}
 
-\subsection{Corridoio e stanze dei pazienti}
-\begin{rulebox}
+\subsubsection{Corridoio e stanze dei pazienti}
+\begin{readaloud}
 Le porte delle stanze si aprono lungo il corridoio. Attraverso quelle aperte vedete letti, coperte ripiegate e recipienti d'acqua lasciati a portata di mano. Il personale si ferma accanto ai letti per parlare con i degenti e aiutarli a cambiare posizione. Alcune risposte arrivano subito; altre richiedono di ripetere la domanda.
 
 Più avanti, il rumore regolare delle pompe proviene dalla sala trattamenti. Chi si affaccia dalle stanze può vedere le persone che vengono accompagnate in quella direzione.
-\end{rulebox}
+\end{readaloud}
 
 \textbf{I sei:} mantieni il numero e le identità già riportate da Maud. La cancellazione di due nomi riguarda i registri, non una morte o un'ulteriore sparizione. Prima della scena annota chi riesce a camminare e chi ha bisogno di un braccio o di assistenza continuativa: almeno alcuni si muovono autonomamente, altri sono troppo deboli per farlo da soli. Mantieni queste condizioni nel seguito, senza introdurre nuove diagnosi.
 
@@ -1468,31 +1634,32 @@ Più avanti, il rumore regolare delle pompe proviene dalla sala trattamenti. Chi
 
 \textbf{Muoversi e aiutare:} il personale può spiegare quali degenti abbiano bisogno di sostegno. Per portarli via occorre organizzare accompagnatori e una via accessibile. Oren e Maud, se presenti, offrono assistenza; non sono componenti obbligatorie di una soluzione tecnica. La sospensione delle sedute imposte non rende permanenti i miglioramenti né cancella le loro malattie.
 
-\subsection{La sala trattamenti}
-\begin{rulebox}
+\subsubsection{Sala trattamenti}
+\begin{readaloud}
 Il lettino occupa lo spazio di lavoro accanto alla macchina. Le condotte seguono il bordo dell'impianto fino alla vasca; sul vetro riconoscete la runa del disegno destinato al vetraio. Dentro la vasca il reperto organico rimane immerso nel sistema di conservazione.
 
 Il tecnico controlla i collegamenti dalla propria postazione. Uno schema è disposto fra gli strumenti di lavoro. Sul tavolo di Celestine sono aperte le registrazioni delle sedute, con fogli separati per osservazioni e disposizioni. Lei confronta due annotazioni, poi torna a rivolgersi al tecnico.
 
 Fra il lettino, la postazione e il tavolo restano i passaggi usati per lavorare e accompagnare il paziente. Una porta laterale conduce al vano di manutenzione, dove proseguono le condotte.
-\end{rulebox}
+\end{readaloud}
 
 \textbf{Orientamento:} colloca ingresso dal corridoio, porta del vano, lettino e postazioni quando imposti la scena e mantieni quelle posizioni. Mostra chi può vedere un avvicinamento al regolatore o alle carte. Strumenti, fogli e passaggi sono elementi del luogo; diventano appigli se i PG li usano, senza una prova obbligatoria per ogni dettaglio.
 
 \textbf{Macchina:} vasca, pompe e condotte formano l'impianto. Durante una seduta il sangue esce dal paziente, passa attraverso il sistema con il reperto e torna al paziente. Il regolatore aggiunto stabilizza la pressione e permette una portata maggiore. Il confronto con H03 o la testimonianza di Elias ne confermano l'origine. La runa e i benefici temporanei non dimostrano un contatto.
 
-\subsection{Il vano di manutenzione e il riparo}
-\begin{rulebox}
+\subsubsection{Vano di manutenzione e riparo}
+\begin{readaloud}
 Nel vano, le condotte seguono la parete della sala trattamenti e lasciano uno spazio stretto per gli interventi. Lo scarico prosegue verso le fogne; dalla grata arriva il rumore dell'acqua nel collettore. Lungo la parete tecnica, pannelli rimovibili danno accesso al retro delle tubazioni.
 
 Le voci della sala arrivano attraverso la porta quando è aperta; il funzionamento dell'impianto copre parte dei suoni più bassi.
-\end{rulebox}
+\end{readaloud}
 
 \textbf{Intercapedine:} dietro un pannello c'è uno spazio basso lungo pochi metri, sufficiente a rannicchiarsi. Elias lo ha aperto con i propri attrezzi dopo l'ingresso e ha riaccostato il pannello dall'interno, conservando le viti rimosse. Non è una quarta entrata e non porta ad altre stanze. Chi esamina quel pannello può notarne il fissaggio mancante; la ricerca approfondita e il rumore di un movimento possono esporre il riparo.
 
 \textbf{Permanenza:} acqua e provviste portate da casa coprono l'attesa iniziale. Le prime ispezioni si sono concentrate sui locali praticabili del complesso: nessuno ha visto Elias scendere e le ricerche sono distribuite fra il deposito e i possibili passaggi. Il personale conosce lo spazio delle condotte ma non lo ha ancora aperto nella ricerca dell'intruso. Elias rischia di essere visto quando esce. Se sono trascorsi altri giorni, considera risorse consumate e ispezioni effettive: il riparo non lo protegge indefinitamente.
 
-\subsection{Elias: una scelta rimandata}
+\subsection{Interazioni e ostacoli}
+\subsubsection{Parlare con Elias}
 Vuole impedire altri abusi senza morire nel tentativo. Prepara il sabotaggio del regolatore fra due sedute, ma cerca ancora di comprendere il reperto e la possibilità di un contatto. L'interesse è personale e intellettuale: non sente una chiamata soprannaturale. La curiosità contribuisce a rimandare un intervento definitivo.
 
 \textbf{Lucidità:} perde il filo, ricontrolla operazioni note e a volte riconosce di aver reagito con troppa irritazione. Può ragionare, scegliere e rivedere il piano. La malattia precede l'ingresso; fermare il Progetto non lo guarisce.
@@ -1501,7 +1668,7 @@ Vuole impedire altri abusi senza morire nel tentativo. Prepara il sabotaggio del
 
 \textbf{Informazioni e alternative:} riconosce il regolatore e ne spiega la funzione. Ammette di aver risparmiato il sorvegliante. I PG possono offrirgli una diversa possibilità di fermare gli abusi, preservare le prove o uscire. Non sa in anticipo che siano stati chiamati da Eleanor.
 
-\subsection{Il sabotaggio e le sue conseguenze}
+\subsubsection{Intervenire sul regolatore}
 \textbf{Obiettivo immediato:} raggiungere il regolatore nell'intervallo fra le sedute e renderlo inutilizzabile. Richiede un'occasione e un intervento concreto sul componente; non è già avvenuto al momento iniziale e non si completa fuori scena soltanto perché i PG arrivano.
 
 \textbf{Se riesce:} il tecnico sospende la preparazione del trattamento alla portata aumentata e deve intervenire sul guasto. Il reperto resta nella vasca e i sei pazienti, inizialmente nelle stanze, non subiscono un danno automatico. Il sabotaggio del solo regolatore non equivale alla distruzione delle funzioni di conservazione dell'impianto.
@@ -1510,7 +1677,7 @@ Vuole impedire altri abusi senza morire nel tentativo. Prepara il sabotaggio del
 
 \textbf{Azioni distinte:} impedire una nuova seduta, intervenire su una seduta già avviata e distruggere l'impianto sono situazioni diverse. Se il gioco porta a un paziente collegato, considera quello stato concreto; non introdurre una procedura segreta di scollegamento sicuro o una morte automatica allo spegnimento. La situazione iniziale fra le sedute evita di imporre questo problema all'arrivo.
 
-\subsection{Celestine e il lavoro successivo}
+\subsubsection{Affrontare Celestine}
 \textbf{Vuole difendere:} i miglioramenti reali osservati e la possibilità di renderli duraturi. Confronta i referti per preparare la seduta successiva. Quando difende la ricerca, mostra un'osservazione favorevole e ricorda un paziente che ha riconosciuto un familiare. La durata del beneficio e le ricadute emergono confrontando carte, testimonianze e H09.
 
 \textbf{Arrivo dei PG:} davanti a una visita autorizzata chiede l'oggetto della verifica e cerca di controllarla. Davanti a persone scoperte nell'area riservata pretende un'identificazione e chiama il personale. Una minaccia al reperto o alla macchina la spinge a impedirla e chiedere aiuto. Ogni allarme deve essere comunicato concretamente.
@@ -1521,7 +1688,7 @@ Vuole impedire altri abusi senza morire nel tentativo. Prepara il sabotaggio del
 
 \textbf{Fermarla:} una sospensione può derivare da confronto, perdita del sostegno del personale o di Aldren, allontanamento dei pazienti o impossibilità materiale di usare l'impianto. Non richiede che Celestine riconosca immediatamente il proprio errore. Il tecnico conosce il funzionamento, il personale vede i pazienti: ciascuno reagisce a ciò che sa, senza condividere automaticamente la teoria della direttrice.
 
-\subsection{Aiuti effettivamente presenti}
+\subsubsection{Coinvolgere gli alleati presenti}
 \begin{tabularx}{\linewidth}{>{\bfseries}p{29mm} X}
 Roland e Nox & Proteggono uscite e presenti secondo gli accordi. Aspetto alterato e spasmi non autorizzano un'esecuzione; intervengono davanti a un'aggressione incontrollata non contenibile.\\
 Oren e Maud & Riconoscono e assistono i pazienti; aiutano a organizzare gli spostamenti e testimoniano ciò che hanno osservato.\\
@@ -1531,16 +1698,43 @@ Miriam & Aiuta a conservare e interpretare documenti. Può proporre contatti con
 
 \textbf{Accesso e conoscenza:} includi soltanto chi è arrivato attraverso un percorso ottenuto o accompagnando i PG. Aggiorna ciò che ciascuno sa in base a quanto ha visto o ricevuto. Nessuna fazione compare per la sola apertura della scena finale.
 
-\subsection{Documenti consultabili}
-\begin{description}[leftmargin=5mm,style=nextline]
-\item[H12 -- Scoperte e dubbi.] Con Elias. Può mostrarlo durante il colloquio; esprime osservazioni e conflitto fra fermare la ricerca e comprenderla. Rimane facoltativo.
-\item[H15 -- Schema della macchina.] Presso la postazione del tecnico. È un documento di servizio che spiega circuito e regolatore, senza annotazioni di Elias. Consegnalo quando i PG riescono a consultarlo.
-\item[H16 -- Rapporto sul Progetto.] Fra le carte di lavoro di Celestine. Riporta osservazioni, interpretazione e disposizioni. Può essere mostrato durante una verifica o consultato raggiungendo quelle carte; interrogare Celestine non lo materializza automaticamente nelle mani dei PG.
-\end{description}
+\begin{fatebox}
+Scegli sfida, contesa o conflitto in base alle azioni effettive. Eventuali aspetti di scena devono corrispondere a fatti presenti: \aspect{Ricerca senza consenso}, \aspect{Documenti sul tavolo di Celestine}. Pericoli, vantaggi e opposizioni dipendono da posizioni e persone descritte; non richiedere una prova per ogni dettaglio d'ambiente. Questa situazione non stabilisce una sequenza obbligatoria di interventi.
+\end{fatebox}
+
+\subsection{Handout}
+\label{nodo-8-handout}
+\subsubsection{H12 -- Scoperte e dubbi di Elias}
+\textbf{Dove:} Con Elias.
+
+\textbf{Quando consegnarlo:} Può mostrarlo durante il colloquio.
+
+\textbf{Che cosa rivela:} Osservazioni e conflitto fra fermare la ricerca e comprenderla.
+
+\textbf{Limiti:} Rimane facoltativo: non è necessario per raggiungere Elias e non è il progetto costruttivo del regolatore.
+
+\subsubsection{H15 -- Schema della macchina}
+\textbf{Dove:} Presso la postazione del tecnico.
+
+\textbf{Quando consegnarlo:} Quando i PG riescono a consultarlo.
+
+\textbf{Che cosa rivela:} Il circuito del trattamento e la funzione del regolatore, in un documento di servizio.
+
+\textbf{Limiti:} Non contiene annotazioni di Elias e non prova un contatto.
+
+\subsubsection{H16 -- Rapporto sul Progetto}
+\textbf{Dove:} Fra le carte di lavoro di Celestine.
+
+\textbf{Quando consegnarlo:} Può essere mostrato durante una verifica o consultato raggiungendo quelle carte.
+
+\textbf{Che cosa rivela:} Osservazioni, interpretazione e disposizioni sul Progetto.
+
+\textbf{Limiti:} Interrogare Celestine non mette automaticamente il documento nelle mani dei PG; la sua interpretazione rimane distinta dai fatti osservati.
 
 Le testimonianze, la macchina e le condizioni dei pazienti restano fonti anche senza i fogli. Non imporre una lettura prima delle decisioni dei giocatori.
 
-\subsection{Conseguenze da registrare}
+\subsection{Evoluzione della scena}
+\subsubsection{Conseguenze da registrare}
 \begin{tabularx}{\linewidth}{>{\bfseries}p{29mm} X}
 Elias & Esce, rimane, viene affidato a qualcuno, catturato o muore secondo gli eventi. Sopravvivere non risolve la sua malattia.\\
 Pazienti & Chi viene sottratto alle sedute imposte, chi resta sotto controllo e chi si occupa dell'assistenza. Conta tutti e sei.\\
@@ -1550,11 +1744,12 @@ Prove & Chi possiede originali o copie, chi ha ricevuto notizia degli abusi e qu
 
 Le combinazioni emergono dalle scelte. Consegnare carte ad Aldren non rende automaticamente complici i PG; preservarle con Miriam non trasferisce il controllo all'Accademia. Distruggere l'impianto non garantisce né esclude che qualcuno riprenda la ricerca altrove.
 
-\begin{fatebox}
-Scegli sfida, contesa o conflitto in base alle azioni effettive. Eventuali aspetti di scena devono corrispondere a fatti presenti: \aspect{Ricerca senza consenso}, \aspect{Documenti sul tavolo di Celestine}. Pericoli, vantaggi e opposizioni dipendono da posizioni e persone descritte; non richiedere una prova per ogni dettaglio d'ambiente. Questa situazione non stabilisce una sequenza obbligatoria di interventi.
-\end{fatebox}
+
 
 \textbf{Eventuale contatto:} resta una conclusione da definire separatamente. Non avviene automaticamente durante una lite, un sabotaggio o al termine dell'orologio. La vicenda può concludersi risolvendo la sorte delle persone e della ricerca senza verificare l'ipotesi di Celestine.
+
+\subsection{Collegamenti}
+\linkto{Capitolo 20 per combinare gli epiloghi secondo la sorte di Elias e dei pazienti, la custodia dell'impianto e la circolazione delle prove.}
 
 \section{18. Otto scene mobili per riaprire una pista}
 
