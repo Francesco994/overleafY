@@ -40,9 +40,9 @@
 \newcommand{\ornament}{\par\smallskip\begin{center}\begin{tikzpicture}\draw[blood,line width=.7pt] (-2.7,0)--(-.35,0);\draw[blood,line width=.7pt] (.35,0)--(2.7,0);\node[text=blood] at (0,0) {$\diamond$};\end{tikzpicture}\end{center}\smallskip}
 \newcommand{\handtitle}[2]{\begin{center}{\Large\bfseries\textsc{#1}}\\[2mm]{\small\itshape #2}\end{center}\ornament}
 \newcommand{\churchseal}{\begin{tikzpicture}[baseline=-.5ex,scale=.32]\draw[blood,line width=1pt] (0,0) circle (1);\draw[blood,->,>=Latex,line width=1pt] (0,.65)--(0,-.65);\end{tikzpicture}}
-% Runa fittizia: quattro uncini, centro vuoto, braccio superiore interrotto.
+% Runa fittizia: quattro uncini intorno a un centro vuoto; distinta dal marchio amministrativo.
 \newcommand{\vascrune}{\begin{tikzpicture}[baseline=-.5ex,scale=.42,line width=1.3pt]
-\draw[blood] (.18,.18)--(.18,.65);\draw[blood] (.18,.82)--(.18,1.15)--(1.1,1.15)--(1.1,.65);
+\draw[blood] (.18,.18)--(.18,1.15)--(1.1,1.15)--(1.1,.65);
 \draw[blood] (.18,-.18)--(1.15,-.18)--(1.15,-1.1)--(.65,-1.1);
 \draw[blood] (-.18,-.18)--(-.18,-1.15)--(-1.1,-1.15)--(-1.1,-.65);
 \draw[blood] (-.18,.18)--(-1.15,.18)--(-1.15,1.1)--(-.65,1.1);
@@ -310,7 +310,7 @@ Autorizzazione & Ufficio riservato \quad\churchseal \\
 
 Incidere il segno sulla parete della vasca nella posizione indicata.
 
-Riprodurre esattamente il disegno: \textbf{il tratto superiore deve rimanere interrotto.}
+Riprodurre il disegno sulla parete della vasca.
 \end{churchbox}
 
 \newhandout{H07}{Disposizione interna riservata}{Copia per il responsabile dell'Archivio}
