@@ -4,7 +4,7 @@
 \usepackage{fontspec}
 \usepackage[italian]{babel}
 \usepackage{microtype}
-\usepackage{xcolor}
+\usepackage[table]{xcolor}
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta,positioning,calc,shapes.geometric}
 \usepackage[most]{tcolorbox}
@@ -19,10 +19,14 @@
 \usepackage{setspace}
 \usepackage{needspace}
 
+% Corpo di tradizione Bookman; font OpenType e alternative senza file esterni.
 \defaultfontfeatures{Ligatures=TeX}
-\IfFontExistsTF{TeX Gyre Pagella}{\setmainfont{TeX Gyre Pagella}}{\setmainfont{DejaVu Serif}}
+\IfFontExistsTF{TeX Gyre Bonum}
+  {\setmainfont{TeX Gyre Bonum}}
+  {\IfFontExistsTF{TeX Gyre Pagella}{\setmainfont{TeX Gyre Pagella}}{\setmainfont{DejaVu Serif}}}
 \IfFontExistsTF{TeX Gyre Heros}{\setsansfont{TeX Gyre Heros}}{\setsansfont{DejaVu Sans}}
 \IfFontExistsTF{TeX Gyre Pagella}{\newfontfamily\displayfont{TeX Gyre Pagella}}{\newfontfamily\displayfont{DejaVu Serif}}
+\IfFontExistsTF{TeX Gyre Schola}{\newfontfamily\boxheadingfont{TeX Gyre Schola}}{\newcommand{\boxheadingfont}{\displayfont}}
 
 \definecolor{ink}{HTML}{171717}
 \definecolor{ash}{HTML}{E7E3DC}
@@ -43,115 +47,153 @@
 \renewcommand{\footrulewidth}{0pt}
 
 % ================================================================
-% STILE DEL MANUALE: modificare qui colori, cornici e spaziature.
-% I riquadri condividono dimensioni e gerarchie; ogni tipo ha un segno
-% distinto. Tutti consentono la prosecuzione sulla pagina successiva.
+% STILE YHARNAM -- seconda proposta
+% Spunti visivi dalle librerie DND fornite dall'utente (Bergeron,
+% Liu e Meyer): gerarchie tipografiche, note aperte, bordi da documento.
+% Definizioni autonome: nessuna dipendenza da lib/dnd* o immagini.
 % ================================================================
-\definecolor{vellum}{HTML}{F6F0E3}
+\definecolor{vellum}{HTML}{F4EEDF}
 \definecolor{brass}{HTML}{91754B}
+\definecolor{slatepaper}{HTML}{E8EDEE}
 
+% Separatore rastremato: segue la larghezza locale, anche nei riquadri.
 \newcommand{\yhdivider}{%
   \par\nobreak\noindent
-  {\color{blood!55}\hrulefill\hspace{2mm}%
-   \raisebox{-.2ex}{\small\(\diamond\)}%
-   \hspace{2mm}\hrulefill}\par\nobreak}
+  \begin{tikzpicture}
+    \fill[brass!85] (0,0) -- (0,.7mm) -- (\linewidth,.18mm) -- cycle;
+  \end{tikzpicture}\par\nobreak}
 
-% Fregi dei riquadri da leggere: solo sui veri bordi iniziale/finale.
-\newcommand{\yhcornertop}{%
-  \draw[blood!65,line width=.35pt]
-    ([xshift=1mm,yshift=-4mm]frame.north west)
-    --([xshift=1mm,yshift=-1mm]frame.north west)
-    --([xshift=4mm,yshift=-1mm]frame.north west);
-  \draw[blood!65,line width=.35pt]
-    ([xshift=-4mm,yshift=-1mm]frame.north east)
-    --([xshift=-1mm,yshift=-1mm]frame.north east)
-    --([xshift=-1mm,yshift=-4mm]frame.north east);}
-\newcommand{\yhcornerbottom}{%
-  \draw[blood!65,line width=.35pt]
-    ([xshift=1mm,yshift=4mm]frame.south west)
-    --([xshift=1mm,yshift=1mm]frame.south west)
-    --([xshift=4mm,yshift=1mm]frame.south west);
-  \draw[blood!65,line width=.35pt]
-    ([xshift=-4mm,yshift=1mm]frame.south east)
-    --([xshift=-1mm,yshift=1mm]frame.south east)
-    --([xshift=-1mm,yshift=4mm]frame.south east);}
+% Piccole losanghe sui bordi verticali delle letture.
+% Sui riquadri spezzati, ornare solo l'inizio e la fine effettivi.
+\newcommand{\yhreadingtop}{%
+  \foreach \corner in {north west,north east}{%
+    \fill[blood] ([yshift=1mm]frame.\corner)
+      -- ([xshift=.7mm]frame.\corner)
+      -- ([yshift=-1mm]frame.\corner)
+      -- ([xshift=-.7mm]frame.\corner) -- cycle;}}
+\newcommand{\yhreadingbottom}{%
+  \foreach \corner in {south west,south east}{%
+    \fill[blood] ([yshift=1mm]frame.\corner)
+      -- ([xshift=.7mm]frame.\corner)
+      -- ([yshift=-1mm]frame.\corner)
+      -- ([xshift=-.7mm]frame.\corner) -- cycle;}}
+
+% Estremita' oblique delle schede-documento, distinte dalle letture.
+\newcommand{\yhpapersetup}{%
+  \draw[brass,line width=.55pt]
+    ([xshift=1mm,yshift=-2mm]frame.north west)
+    -- ([xshift=3mm]frame.north west)
+    -- ([xshift=8mm]frame.north west);
+  \draw[brass,line width=.55pt]
+    ([xshift=-8mm]frame.north east)
+    -- ([xshift=-3mm]frame.north east)
+    -- ([xshift=-1mm,yshift=-2mm]frame.north east);}
+\newcommand{\yhpaperbase}{%
+  \draw[brass,line width=.55pt]
+    ([xshift=1mm,yshift=2mm]frame.south west)
+    -- ([xshift=3mm]frame.south west)
+    -- ([xshift=8mm]frame.south west);
+  \draw[brass,line width=.55pt]
+    ([xshift=-8mm]frame.south east)
+    -- ([xshift=-3mm]frame.south east)
+    -- ([xshift=-1mm,yshift=2mm]frame.south east);}
 
 \tcbset{
   yhbase/.style={
-    enhanced,breakable,arc=0mm,boxrule=.45pt,
+    enhanced,breakable,arc=0mm,boxrule=0pt,
     left=4mm,right=4mm,top=3mm,bottom=3mm,
-    before skip=9pt,after skip=9pt,
-    fonttitle=\sffamily\small\bfseries,
-    toptitle=1.5mm,bottomtitle=1.5mm},
+    before skip=10pt,after skip=10pt,
+    fonttitle=\boxheadingfont\bfseries\scshape,
+    toptitle=2mm,bottomtitle=1.5mm,
+    before upper={\RaggedRight}},
   yhquiet/.style={
-    yhbase,colback=mist,colframe=iron!45,
-    colbacktitle=ash,coltitle=ink},
+    yhbase,frame hidden,colback=mist,colframe=iron,
+    colbacktitle=mist,coltitle=ink,
+    fontupper=\sffamily\small},
   yhblood/.style={
-    yhbase,colback=ash!35,colframe=blood,
-    colbacktitle=blood,coltitle=white}
+    yhbase,frame hidden,colback=vellum,colbacktitle=vellum,
+    colframe=blood,coltitle=blood,
+    borderline north={1pt}{0pt}{blood},
+    borderline south={.55pt}{0pt}{brass}}
 }
 
-\titleformat{\section}{\displayfont\Large\bfseries\color{blood}}{}{0pt}{}[\yhdivider]
-\titleformat{\subsection}{\displayfont\large\bfseries\color{ink}}{}{0pt}{}[\vspace{-1mm}{\color{brass!65}\titlerule[.35pt]}]
-\titleformat{\subsubsection}{\sffamily\bfseries\color{blood}}{}{0pt}{}
+\titleformat{\section}{\displayfont\LARGE\scshape\color{blood}}{}{0pt}{}[\yhdivider]
+\titleformat{\subsection}{\displayfont\Large\scshape\color{blood}}{}{0pt}{}[\vspace{-1mm}{\color{brass!75}\titlerule[.6pt]}]
+\titleformat{\subsubsection}{\boxheadingfont\normalsize\bfseries\scshape\color{ink}}{}{0pt}{}
 \titlespacing*{\section}{0pt}{15pt}{9pt}
 \titlespacing*{\subsection}{0pt}{13pt}{7pt}
 \titlespacing*{\subsubsection}{0pt}{10pt}{4pt}
-\setlist[itemize]{leftmargin=5mm,itemsep=2pt,topsep=4pt}
-\setlist[enumerate]{leftmargin=6mm,itemsep=2pt,topsep=4pt}
+\setlist[itemize]{leftmargin=5mm,itemsep=1.5pt,topsep=3pt}
+\setlist[enumerate]{leftmargin=6mm,itemsep=1.5pt,topsep=3pt}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{5pt}
 
 \newtcolorbox{rulebox}[1][]{yhquiet,#1}
 \newtcolorbox{readaloud}[1][]{
-  yhbase,colback=vellum,colframe=blood!70!black,
-  colbacktitle=vellum,coltitle=blood,
-  borderline={.3pt}{1.2pt}{brass!75},
-  left=5mm,right=5mm,top=3.5mm,bottom=3.5mm,
-  toptitle=3mm,bottomtitle=2mm,
-  title={DA LEGGERE AD ALTA VOCE},
-  overlay unbroken={\yhcornertop\yhcornerbottom},
-  overlay first={\yhcornertop},
+  yhbase,frame hidden,colback=vellum,colbacktitle=vellum,
+  colframe=blood,coltitle=blood,
+  borderline west={.85pt}{0pt}{blood},
+  borderline east={.85pt}{0pt}{blood},
+  left=5mm,right=5mm,top=3mm,bottom=3.5mm,
+  fonttitle=\boxheadingfont\small\scshape,
+  fontupper=\normalfont\linespread{1.08}\selectfont,
+  title={Da leggere ad alta voce},
+  overlay unbroken={\yhreadingtop\yhreadingbottom},
+  overlay first={\yhreadingtop},
   overlay middle={},
-  overlay last={\yhcornerbottom},#1}
+  overlay last={\yhreadingbottom},#1}
 \newtcolorbox{bloodbox}[1][]{yhblood,#1}
 \newtcolorbox{gmbox}[1][]{
-  yhquiet,boxrule=0pt,leftrule=1.2pt,colframe=blood,
-  colback=mist,colbacktitle=ash,coltitle=ink,
-  title={DIETRO LA SCENA -- GM},#1}
+  yhquiet,colback=slatepaper,colbacktitle=slatepaper,
+  title={Dietro la scena -- GM},#1}
 \newtcolorbox{cluebox}[1][]{
-  yhbase,colback=white,colframe=brass,
-  colbacktitle=vellum,coltitle=ink,
-  title={INFORMAZIONI E INDIZI},#1}
+  yhquiet,colback=vellum!60!white,colbacktitle=vellum!60!white,
+  borderline north={.6pt}{0pt}{brass},
+  title={Informazioni e indizi},#1}
 \newtcolorbox{fatebox}[1][]{
-  yhquiet,leftrule=1.2pt,colframe=iron,
-  title={FATE -- ASPETTI, AZIONI E COMPEL},#1}
+  yhquiet,colback=ash!50!white,colbacktitle=ash!50!white,
+  borderline west={1pt}{0pt}{iron},
+  title={Fate -- Aspetti, azioni e compel},#1}
 \newtcolorbox{clockbox}[1][]{
-  yhblood,title={EVOLUZIONE -- SE IL TEMPO AVANZA},#1}
+  yhblood,colback=blood!4!white,colbacktitle=blood!4!white,
+  fontupper=\sffamily\small,
+  title={Evoluzione -- Se il tempo avanza},#1}
 \newtcolorbox{overviewbox}{
-  yhquiet,colback=pale,boxrule=.4pt,
-  left=3mm,right=3mm,top=2mm,bottom=2mm}
+  yhquiet,colback=pale,left=2mm,right=2mm,top=2mm,bottom=2mm,
+  before upper={\RaggedRight\sffamily\small
+    \renewcommand{\arraystretch}{1.15}
+    \rowcolors{1}{pale}{slatepaper!65!white}}}
 \newtcolorbox{routebox}{
-  yhbase,colback=vellum!55!white,colframe=brass!70,
-  boxrule=0pt,toprule=.6pt,bottomrule=.6pt}
+  yhquiet,colback=vellum!45!white,
+  borderline north={.55pt}{0pt}{brass},
+  borderline south={.35pt}{0pt}{brass}}
 \newtcolorbox{handoutbox}[2]{
-  yhbase,colback=pale,colframe=brass,
-  colbacktitle=vellum,coltitle=ink,
-  title={\colorbox{blood}{\strut\textcolor{white}{\enspace #1\enspace}}%
-    \quad #2},
-  fontupper=\normalfont}
+  yhbase,frame hidden,colback=vellum!70!white,
+  colbacktitle=vellum!70!white,coltitle=ink,
+  borderline north={.6pt}{0pt}{ink!65},
+  borderline south={.6pt}{0pt}{ink!65},
+  left=5mm,right=5mm,toptitle=3mm,bottom=4mm,
+  title={\colorbox{blood}{\strut\textcolor{white}{%
+    \sffamily\small\bfseries\enspace #1\enspace}}\quad #2},
+  fontupper=\sffamily\small,
+  overlay unbroken={\yhpapersetup\yhpaperbase},
+  overlay first={\yhpapersetup},
+  overlay middle={},
+  overlay last={\yhpaperbase}}
 
 \newcommand{\nodehead}[3]{%
 \clearpage
-{\titleformat{\section}{\displayfont\huge\bfseries\color{blood}}{}{0pt}{}[\yhdivider]%
+{\titleformat{\section}{\displayfont\huge\scshape\color{blood}}{}{0pt}{}[\yhdivider]%
 \section{#1}}
-\begin{bloodbox}[title={IL NODO AL TAVOLO}]
+\begin{bloodbox}[title={Il nodo al tavolo}]
 \textbf{Ruolo:} #2\par\smallskip
 \textbf{Domanda del nodo:} #3
 \end{bloodbox}}
 \newcommand{\aspect}[1]{\textit{\textcolor{blood}{#1}}}
 \newcommand{\tickbox}{\ding{113}}
 \newcommand{\linkto}[1]{\begin{routebox}\textbf{Collega a:} #1\end{routebox}}
+\fancyfoot[C]{\small\color{brass}\(\diamond\)\quad
+  \textcolor{ink}{\thepage}\quad\(\diamond\)}
 
 \begin{document}
 
